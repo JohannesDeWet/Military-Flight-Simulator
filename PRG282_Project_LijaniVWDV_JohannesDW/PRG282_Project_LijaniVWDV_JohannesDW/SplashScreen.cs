@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PRG282_Project_LijaniVWDV_JohannesDW
 {
-    public partial class Form1 : Form
+    public partial class frmIntro : Form
     {
-        public Form1()
+        public frmIntro()
         {
             InitializeComponent();
             //Test matin
