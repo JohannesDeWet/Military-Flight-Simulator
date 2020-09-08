@@ -69,10 +69,11 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             // txtPlaneName
             // 
             this.txtPlaneName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtPlaneName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPlaneName.Location = new System.Drawing.Point(3, 0);
             this.txtPlaneName.Name = "txtPlaneName";
             this.txtPlaneName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtPlaneName.Size = new System.Drawing.Size(229, 28);
+            this.txtPlaneName.Size = new System.Drawing.Size(229, 47);
             this.txtPlaneName.TabIndex = 0;
             this.txtPlaneName.Text = "planeName";
             this.txtPlaneName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -199,9 +200,9 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             // 
             // pbPlaneUsed
             // 
-            this.pbPlaneUsed.Location = new System.Drawing.Point(6, 31);
+            this.pbPlaneUsed.Location = new System.Drawing.Point(6, 50);
             this.pbPlaneUsed.Name = "pbPlaneUsed";
-            this.pbPlaneUsed.Size = new System.Drawing.Size(226, 191);
+            this.pbPlaneUsed.Size = new System.Drawing.Size(226, 172);
             this.pbPlaneUsed.TabIndex = 1;
             this.pbPlaneUsed.TabStop = false;
             // 
