@@ -1,0 +1,27 @@
+B-2 Spirit stealth bomber
+--payload 18,143.695kg
+--altitude 15.24km
+--range 11,112km
+--cruise speed 900km/h
+--speed max 1,010 km/h
+
+B-52 stratofortress
+--payload 31,751kg
+--altitude 16km
+--range 16,093km
+--cruise speed 844km/h
+--speed max 1,046 km/h
+
+Sukhoi Su-34
+--payload 8,000kg
+--altitude 4.99872km
+--range 4,000km
+--cruise speed 1 300km/h
+--speed max 2,200km/h
+
+Tupolev Tu-22M
+--payload 24,000kg
+--altitude 14km
+--range 7,000km
+--cruise speed 900km/h
+--speed max 2,300km/h
