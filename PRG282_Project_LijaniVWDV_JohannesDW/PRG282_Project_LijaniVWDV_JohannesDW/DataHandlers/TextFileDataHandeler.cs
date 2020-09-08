@@ -11,6 +11,10 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.DataHandlers
     class TextFileDataHandeler
     {
         private string filepath = @"Resources\TextFiles\MissionReport.txt";
+        /*
+            the format of the file should be as follows
+            (targetes identified)^(targeted attacked)^(targeted locaiton)^(target damage delt)^(mission success persentage)^(mission time)^(Plane used)^
+         */
 
 
 
