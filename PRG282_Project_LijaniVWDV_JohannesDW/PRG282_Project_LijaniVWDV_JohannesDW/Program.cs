@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PRG282_Project_LijaniVWDV_JohannesDW.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmIntro());
+            Application.Run(new frmReport());
         }
     }
 }

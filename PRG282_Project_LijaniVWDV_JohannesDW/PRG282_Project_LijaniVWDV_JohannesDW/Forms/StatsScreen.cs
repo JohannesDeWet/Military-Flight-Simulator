@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PRG282_Project_LijaniVWDV_JohannesDW.DataHandlers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,10 @@ using System.Windows.Forms;
 
 namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 {
-    public partial class StatsScreen : Form
+    public partial class frmReport : Form
     {
-        public StatsScreen()
+        TextFileDataHandeler mydata = new TextFileDataHandeler();
+        public frmReport()
         {
             InitializeComponent();
         }

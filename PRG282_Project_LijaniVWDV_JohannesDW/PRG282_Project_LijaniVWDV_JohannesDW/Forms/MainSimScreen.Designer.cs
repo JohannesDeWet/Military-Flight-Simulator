@@ -1,6 +1,6 @@
 ﻿namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 {
-    partial class FlightSimScreen
+    partial class MainSimScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainSimScreen));
             this.SuspendLayout();
             // 
-            // FlightSimScreen
+            // MainSimScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "FlightSimScreen";
-            this.Text = "FlightSimScreen";
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(932, 512);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "MainSimScreen";
+            this.Text = "SIM Screen";
             this.ResumeLayout(false);
 
         }

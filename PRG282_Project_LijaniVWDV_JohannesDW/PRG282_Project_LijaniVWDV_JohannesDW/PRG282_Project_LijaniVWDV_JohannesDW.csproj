@@ -48,12 +48,13 @@
   <ItemGroup>
     <Compile Include="Classes\Bomb.cs" />
     <Compile Include="Classes\Buildings.cs" />
-    <Compile Include="DataHandlers\DataHandler.cs" />
-    <Compile Include="Forms\FlightSimScreen.cs">
+    <Compile Include="DataHandlers\DataBaseDataHandeler.cs" />
+    <Compile Include="DataHandlers\TextFileDataHandeler.cs" />
+    <Compile Include="Forms\MainSimScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FlightSimScreen.Designer.cs">
-      <DependentUpon>FlightSimScreen.cs</DependentUpon>
+    <Compile Include="Forms\MainSimScreen.Designer.cs">
+      <DependentUpon>MainSimScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SplashScreen.cs">
       <SubType>Form</SubType>
@@ -63,10 +64,22 @@
     </Compile>
     <Compile Include="Classes\Obstacle.cs" />
     <Compile Include="Classes\Plane.cs" />
+    <Compile Include="Forms\StatsScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StatsScreen.Designer.cs">
+      <DependentUpon>StatsScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\MainSimScreen.resx">
+      <DependentUpon>MainSimScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StatsScreen.resx">
+      <DependentUpon>StatsScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 {
-    public partial class FlightSimScreen : Form
+    public partial class MainSimScreen : Form
     {
-        public FlightSimScreen()
+        public MainSimScreen()
         {
             InitializeComponent();
         }

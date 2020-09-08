@@ -40,7 +40,7 @@
             this.lblMainHeading.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblMainHeading.Font = new System.Drawing.Font("Gadugi", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMainHeading.ForeColor = System.Drawing.Color.Gray;
-            this.lblMainHeading.Location = new System.Drawing.Point(-105, 9);
+            this.lblMainHeading.Location = new System.Drawing.Point(-61, 9);
             this.lblMainHeading.Name = "lblMainHeading";
             this.lblMainHeading.Size = new System.Drawing.Size(1049, 89);
             this.lblMainHeading.TabIndex = 0;
@@ -53,7 +53,7 @@
             this.lblSubHeading.BackColor = System.Drawing.Color.Transparent;
             this.lblSubHeading.Font = new System.Drawing.Font("Gadugi", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubHeading.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblSubHeading.Location = new System.Drawing.Point(143, 410);
+            this.lblSubHeading.Location = new System.Drawing.Point(194, 472);
             this.lblSubHeading.Name = "lblSubHeading";
             this.lblSubHeading.Size = new System.Drawing.Size(520, 31);
             this.lblSubHeading.TabIndex = 1;
@@ -66,7 +66,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(932, 512);
             this.Controls.Add(this.lblSubHeading);
             this.Controls.Add(this.lblMainHeading);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
