@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PRG282_Project_LijaniVWDV_JohannesDW
+namespace PRG282_Project_LijaniVWDV_JohannesDW.DataHandlers
 {
-    class DataHandler
+    class TextFileDataHandeler
     {
-        //class for all the connections and populations
     }
 }
