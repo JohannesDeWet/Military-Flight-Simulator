@@ -56,6 +56,12 @@
     <Compile Include="Forms\MainSimScreen.Designer.cs">
       <DependentUpon>MainSimScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PlaneScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlaneScreen.Designer.cs">
+      <DependentUpon>PlaneScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\MainSimScreen.resx">
       <DependentUpon>MainSimScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlaneScreen.resx">
+      <DependentUpon>PlaneScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
@@ -106,7 +115,7 @@
   <ItemGroup>
     <Folder Include="AbstractClasses\" />
     <Folder Include="Classes\PathFinder\" />
-    <Folder Include="UserControl\" />
+    <Folder Include="Forms\UserControl\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
