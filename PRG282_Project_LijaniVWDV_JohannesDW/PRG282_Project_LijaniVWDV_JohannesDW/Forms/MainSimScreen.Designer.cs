@@ -29,7 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainSimScreen));
+            this.ucGrid1 = new PRG282_Project_LijaniVWDV_JohannesDW.Forms.ucGrid();
             this.SuspendLayout();
+            // 
+            // ucGrid1
+            // 
+            this.ucGrid1.Location = new System.Drawing.Point(221, 13);
+            this.ucGrid1.Name = "ucGrid1";
+            this.ucGrid1.Size = new System.Drawing.Size(442, 377);
+            this.ucGrid1.TabIndex = 0;
             // 
             // MainSimScreen
             // 
@@ -37,6 +45,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(932, 512);
+            this.Controls.Add(this.ucGrid1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainSimScreen";
             this.Text = "SIM Screen";
@@ -45,5 +54,7 @@
         }
 
         #endregion
+
+        private ucGrid ucGrid1;
     }
 }
