@@ -8,17 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PRG282_Project_LijaniVWDV_JohannesDW
+namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 {
-    public partial class frmIntro : Form
+    public partial class FlightSimScreen : Form
     {
-        public frmIntro()
+        public FlightSimScreen()
         {
             InitializeComponent();
-            //Test matin
-
-            //Test Lijani
         }
-
     }
 }

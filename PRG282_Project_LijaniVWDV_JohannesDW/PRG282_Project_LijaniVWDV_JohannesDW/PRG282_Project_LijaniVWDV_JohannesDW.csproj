@@ -46,20 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bomb.cs" />
-    <Compile Include="Buildings.cs" />
-    <Compile Include="DataHandler.cs" />
-    <Compile Include="SplashScreen.cs">
+    <Compile Include="Classes\Bomb.cs" />
+    <Compile Include="Classes\Buildings.cs" />
+    <Compile Include="DataHandlers\DataHandler.cs" />
+    <Compile Include="Forms\FlightSimScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SplashScreen.Designer.cs">
+    <Compile Include="Forms\FlightSimScreen.Designer.cs">
+      <DependentUpon>FlightSimScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Obstacle.cs" />
-    <Compile Include="Plane.cs" />
+    <Compile Include="Classes\Obstacle.cs" />
+    <Compile Include="Classes\Plane.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="SplashScreen.resx">
+    <EmbeddedResource Include="Forms\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -83,6 +89,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AbstractClasses\" />
+    <Folder Include="Classes\PathFinder\" />
+    <Folder Include="UserControl\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

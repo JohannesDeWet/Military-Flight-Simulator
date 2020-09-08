@@ -31,17 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIntro));
             this.lblMainHeading = new System.Windows.Forms.Label();
             this.lblSubHeading = new System.Windows.Forms.Label();
-            this.btnStart = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblMainHeading
             // 
             this.lblMainHeading.AutoSize = true;
-            this.lblMainHeading.BackColor = System.Drawing.Color.Black;
+            this.lblMainHeading.BackColor = System.Drawing.Color.Transparent;
             this.lblMainHeading.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblMainHeading.Font = new System.Drawing.Font("Gadugi", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMainHeading.ForeColor = System.Drawing.Color.Transparent;
-            this.lblMainHeading.Location = new System.Drawing.Point(-76, 34);
+            this.lblMainHeading.ForeColor = System.Drawing.Color.Gray;
+            this.lblMainHeading.Location = new System.Drawing.Point(-105, 9);
             this.lblMainHeading.Name = "lblMainHeading";
             this.lblMainHeading.Size = new System.Drawing.Size(1049, 89);
             this.lblMainHeading.TabIndex = 0;
@@ -53,27 +52,13 @@
             this.lblSubHeading.AutoSize = true;
             this.lblSubHeading.BackColor = System.Drawing.Color.Transparent;
             this.lblSubHeading.Font = new System.Drawing.Font("Gadugi", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubHeading.ForeColor = System.Drawing.Color.White;
+            this.lblSubHeading.ForeColor = System.Drawing.Color.DarkGray;
             this.lblSubHeading.Location = new System.Drawing.Point(143, 410);
             this.lblSubHeading.Name = "lblSubHeading";
             this.lblSubHeading.Size = new System.Drawing.Size(520, 31);
             this.lblSubHeading.TabIndex = 1;
             this.lblSubHeading.Text = "Lijani van Wyk de Vries + Johannes de Wet";
             this.lblSubHeading.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // btnStart
-            // 
-            this.btnStart.BackColor = System.Drawing.Color.White;
-            this.btnStart.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnStart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnStart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(247, 196);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(304, 113);
-            this.btnStart.TabIndex = 2;
-            this.btnStart.Text = "S T A R T";
-            this.btnStart.UseVisualStyleBackColor = false;
             // 
             // frmIntro
             // 
@@ -82,11 +67,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblSubHeading);
             this.Controls.Add(this.lblMainHeading);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmIntro";
-            this.Text = "Welcome!";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Military Sim";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,7 +82,6 @@
 
         private System.Windows.Forms.Label lblMainHeading;
         private System.Windows.Forms.Label lblSubHeading;
-        private System.Windows.Forms.Button btnStart;
     }
 }
 
