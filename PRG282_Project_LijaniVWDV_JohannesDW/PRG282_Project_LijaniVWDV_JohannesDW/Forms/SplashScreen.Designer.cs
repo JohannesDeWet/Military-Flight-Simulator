@@ -40,7 +40,7 @@
             this.lblMainHeading.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblMainHeading.Font = new System.Drawing.Font("Gadugi", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMainHeading.ForeColor = System.Drawing.Color.Gray;
-            this.lblMainHeading.Location = new System.Drawing.Point(-61, 9);
+            this.lblMainHeading.Location = new System.Drawing.Point(-29, 9);
             this.lblMainHeading.Name = "lblMainHeading";
             this.lblMainHeading.Size = new System.Drawing.Size(1049, 89);
             this.lblMainHeading.TabIndex = 0;
@@ -69,6 +69,7 @@
             this.ClientSize = new System.Drawing.Size(932, 512);
             this.Controls.Add(this.lblSubHeading);
             this.Controls.Add(this.lblMainHeading);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmIntro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
