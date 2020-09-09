@@ -35,7 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "ucGrid";
-            this.Size = new System.Drawing.Size(488, 434);
+            this.Size = new System.Drawing.Size(439, 398);
             this.ResumeLayout(false);
 
         }
