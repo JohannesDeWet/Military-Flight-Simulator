@@ -30,23 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPlane));
             this.pnlOption1 = new System.Windows.Forms.Panel();
+            this.btnSelectPlane1 = new System.Windows.Forms.Button();
             this.pbPlane1 = new System.Windows.Forms.PictureBox();
             this.txtPlaneName1 = new System.Windows.Forms.Label();
             this.pnlOption4 = new System.Windows.Forms.Panel();
+            this.btnSelectPlane4 = new System.Windows.Forms.Button();
             this.pbPlane4 = new System.Windows.Forms.PictureBox();
             this.txtPlaneName4 = new System.Windows.Forms.Label();
             this.pnlOption3 = new System.Windows.Forms.Panel();
+            this.btnSelectPlane3 = new System.Windows.Forms.Button();
             this.pbPlane3 = new System.Windows.Forms.PictureBox();
             this.txtPlaneName3 = new System.Windows.Forms.Label();
             this.pnlOption2 = new System.Windows.Forms.Panel();
+            this.btnSelectPlane2 = new System.Windows.Forms.Button();
             this.pbPlane2 = new System.Windows.Forms.PictureBox();
             this.txtPlaneName2 = new System.Windows.Forms.Label();
             this.lblPlaneSelectionHeading = new System.Windows.Forms.Label();
             this.lblPlaneSelectSubHeading = new System.Windows.Forms.Label();
-            this.btnSelectPlane1 = new System.Windows.Forms.Button();
-            this.btnSelectPlane3 = new System.Windows.Forms.Button();
-            this.btnSelectPlane2 = new System.Windows.Forms.Button();
-            this.btnSelectPlane4 = new System.Windows.Forms.Button();
             this.pnlOption1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlane1)).BeginInit();
             this.pnlOption4.SuspendLayout();
@@ -67,6 +67,16 @@
             this.pnlOption1.Name = "pnlOption1";
             this.pnlOption1.Size = new System.Drawing.Size(235, 531);
             this.pnlOption1.TabIndex = 1;
+            // 
+            // btnSelectPlane1
+            // 
+            this.btnSelectPlane1.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectPlane1.Location = new System.Drawing.Point(57, 450);
+            this.btnSelectPlane1.Name = "btnSelectPlane1";
+            this.btnSelectPlane1.Size = new System.Drawing.Size(118, 32);
+            this.btnSelectPlane1.TabIndex = 2;
+            this.btnSelectPlane1.Text = "SELECT";
+            this.btnSelectPlane1.UseVisualStyleBackColor = true;
             // 
             // pbPlane1
             // 
@@ -99,6 +109,16 @@
             this.pnlOption4.Size = new System.Drawing.Size(235, 531);
             this.pnlOption4.TabIndex = 2;
             // 
+            // btnSelectPlane4
+            // 
+            this.btnSelectPlane4.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectPlane4.Location = new System.Drawing.Point(57, 450);
+            this.btnSelectPlane4.Name = "btnSelectPlane4";
+            this.btnSelectPlane4.Size = new System.Drawing.Size(118, 32);
+            this.btnSelectPlane4.TabIndex = 4;
+            this.btnSelectPlane4.Text = "SELECT";
+            this.btnSelectPlane4.UseVisualStyleBackColor = true;
+            // 
             // pbPlane4
             // 
             this.pbPlane4.Location = new System.Drawing.Point(6, 50);
@@ -130,6 +150,16 @@
             this.pnlOption3.Size = new System.Drawing.Size(235, 531);
             this.pnlOption3.TabIndex = 3;
             // 
+            // btnSelectPlane3
+            // 
+            this.btnSelectPlane3.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectPlane3.Location = new System.Drawing.Point(63, 450);
+            this.btnSelectPlane3.Name = "btnSelectPlane3";
+            this.btnSelectPlane3.Size = new System.Drawing.Size(118, 32);
+            this.btnSelectPlane3.TabIndex = 3;
+            this.btnSelectPlane3.Text = "SELECT";
+            this.btnSelectPlane3.UseVisualStyleBackColor = true;
+            // 
             // pbPlane3
             // 
             this.pbPlane3.Location = new System.Drawing.Point(6, 50);
@@ -160,6 +190,16 @@
             this.pnlOption2.Name = "pnlOption2";
             this.pnlOption2.Size = new System.Drawing.Size(235, 531);
             this.pnlOption2.TabIndex = 4;
+            // 
+            // btnSelectPlane2
+            // 
+            this.btnSelectPlane2.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectPlane2.Location = new System.Drawing.Point(61, 450);
+            this.btnSelectPlane2.Name = "btnSelectPlane2";
+            this.btnSelectPlane2.Size = new System.Drawing.Size(118, 32);
+            this.btnSelectPlane2.TabIndex = 4;
+            this.btnSelectPlane2.Text = "SELECT";
+            this.btnSelectPlane2.UseVisualStyleBackColor = true;
             // 
             // pbPlane2
             // 
@@ -205,46 +245,6 @@
             this.lblPlaneSelectSubHeading.TabIndex = 6;
             this.lblPlaneSelectSubHeading.Text = "Choose a plane from the options below";
             // 
-            // btnSelectPlane1
-            // 
-            this.btnSelectPlane1.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelectPlane1.Location = new System.Drawing.Point(57, 450);
-            this.btnSelectPlane1.Name = "btnSelectPlane1";
-            this.btnSelectPlane1.Size = new System.Drawing.Size(118, 32);
-            this.btnSelectPlane1.TabIndex = 2;
-            this.btnSelectPlane1.Text = "SELECT";
-            this.btnSelectPlane1.UseVisualStyleBackColor = true;
-            // 
-            // btnSelectPlane3
-            // 
-            this.btnSelectPlane3.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelectPlane3.Location = new System.Drawing.Point(63, 450);
-            this.btnSelectPlane3.Name = "btnSelectPlane3";
-            this.btnSelectPlane3.Size = new System.Drawing.Size(118, 32);
-            this.btnSelectPlane3.TabIndex = 3;
-            this.btnSelectPlane3.Text = "SELECT";
-            this.btnSelectPlane3.UseVisualStyleBackColor = true;
-            // 
-            // btnSelectPlane2
-            // 
-            this.btnSelectPlane2.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelectPlane2.Location = new System.Drawing.Point(61, 450);
-            this.btnSelectPlane2.Name = "btnSelectPlane2";
-            this.btnSelectPlane2.Size = new System.Drawing.Size(118, 32);
-            this.btnSelectPlane2.TabIndex = 4;
-            this.btnSelectPlane2.Text = "SELECT";
-            this.btnSelectPlane2.UseVisualStyleBackColor = true;
-            // 
-            // btnSelectPlane4
-            // 
-            this.btnSelectPlane4.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelectPlane4.Location = new System.Drawing.Point(57, 450);
-            this.btnSelectPlane4.Name = "btnSelectPlane4";
-            this.btnSelectPlane4.Size = new System.Drawing.Size(118, 32);
-            this.btnSelectPlane4.TabIndex = 4;
-            this.btnSelectPlane4.Text = "SELECT";
-            this.btnSelectPlane4.UseVisualStyleBackColor = true;
-            // 
             // frmPlane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,6 +262,7 @@
             this.Name = "frmPlane";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Plane Selection";
+            this.Load += new System.EventHandler(this.frmPlane_Load);
             this.pnlOption1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbPlane1)).EndInit();
             this.pnlOption4.ResumeLayout(false);

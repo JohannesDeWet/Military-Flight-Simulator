@@ -39,14 +39,11 @@
             this.lblMainHeading.AutoSize = true;
             this.lblMainHeading.BackColor = System.Drawing.Color.Black;
             this.lblMainHeading.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblMainHeading.Font = new System.Drawing.Font("Stencil", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMainHeading.ForeColor = System.Drawing.Color.White;
-            this.lblMainHeading.Location = new System.Drawing.Point(-109, 9);
             this.lblMainHeading.Font = new System.Drawing.Font("Gadugi", 55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMainHeading.ForeColor = System.Drawing.Color.Gray;
             this.lblMainHeading.Location = new System.Drawing.Point(-29, 9);
             this.lblMainHeading.Name = "lblMainHeading";
-            this.lblMainHeading.Size = new System.Drawing.Size(1201, 87);
+            this.lblMainHeading.Size = new System.Drawing.Size(1049, 89);
             this.lblMainHeading.TabIndex = 0;
             this.lblMainHeading.Text = "        Military Simulator           ";
             this.lblMainHeading.TextAlign = System.Drawing.ContentAlignment.TopCenter;

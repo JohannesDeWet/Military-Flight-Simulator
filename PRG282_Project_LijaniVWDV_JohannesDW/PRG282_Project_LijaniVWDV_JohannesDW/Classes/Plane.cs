@@ -10,6 +10,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW
     {
         private int planeID;
         private string planeName;
+        private int planePH;
         private string planeType;
         private int maxAltitude;
         private int maxSpeed;
@@ -19,6 +20,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW
 
         public int PlaneID { get => planeID; set => planeID = value; }
         public string PlaneName { get => planeName; set => planeName = value; }
+        public int PlaneHP { get => planePH; set => planePH = value; }
         public string PlaneType { get => planeType; set => planeType = value; }
         public int MaxAltitude { get => maxAltitude; set => maxAltitude = value; }
         public int MaxSpeed { get => maxSpeed; set => maxSpeed = value; }
@@ -31,10 +33,11 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW
 
         }
 
-        public Plane(int id, string name, string type, int alt, int speed, int fuel, int mount)
+        public Plane(int id, string name, int hp, string type, int alt, int speed, int fuel, int mount)
         {
             this.planeID = id;
             this.planeName = name;
+            this.planePH = hp;
             this.planeType = type;
             this.maxAltitude = alt;
             this.maxSpeed = speed;
