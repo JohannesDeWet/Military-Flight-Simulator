@@ -55,6 +55,12 @@
     <Compile Include="ClassesFolder\Path Finding Classes\PriorityQueueB.cs" />
     <Compile Include="DataHandlers\DatabaseDataHandler.cs" />
     <Compile Include="DataHandlers\TextFileDataHandler.cs" />
+    <Compile Include="Forms\InventoryScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InventoryScreen.Designer.cs">
+      <DependentUpon>InventoryScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainSimScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\InventoryScreen.resx">
+      <DependentUpon>InventoryScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainSimScreen.resx">
       <DependentUpon>MainSimScreen.cs</DependentUpon>
     </EmbeddedResource>
