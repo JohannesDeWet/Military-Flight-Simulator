@@ -46,8 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Bomb.cs" />
-    <Compile Include="Classes\Buildings.cs" />
+    <Compile Include="ClassesFolder\Bomb.cs" />
+    <Compile Include="ClassesFolder\Buildings.cs" />
+    <Compile Include="ClassesFolder\Path Finding Classes\HighResolutionTime.cs" />
+    <Compile Include="ClassesFolder\Path Finding Classes\IPathFinder.cs" />
+    <Compile Include="ClassesFolder\Path Finding Classes\PathFinder.cs" />
+    <Compile Include="ClassesFolder\Path Finding Classes\PathFinderFast.cs" />
+    <Compile Include="ClassesFolder\Path Finding Classes\PriorityQueueB.cs" />
     <Compile Include="DataHandlers\DatabaseDataHandler.cs" />
     <Compile Include="DataHandlers\TextFileDataHandler.cs" />
     <Compile Include="Forms\MainSimScreen.cs">
@@ -68,8 +73,8 @@
     <Compile Include="Forms\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Obstacle.cs" />
-    <Compile Include="Classes\Plane.cs" />
+    <Compile Include="ClassesFolder\Obstacle.cs" />
+    <Compile Include="ClassesFolder\Plane.cs" />
     <Compile Include="Forms\StatsScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,9 +153,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AbstractClasses\" />
-    <Folder Include="Classes\PathFinder\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
