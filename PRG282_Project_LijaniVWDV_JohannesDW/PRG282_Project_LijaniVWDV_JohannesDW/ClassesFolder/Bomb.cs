@@ -8,30 +8,27 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW
 {
     class Bomb
     {
-        private int bombID;
+        private string bombID;
         private string bombName;
         private int bombWeight;
         private int damage;
-        private int nrOfSlots;
+        private int mountPoints;
 
-        public int BombID { get => bombID; set => bombID = value; }
+        public string BombID { get => bombID; set => bombID = value; }
         public string BombName { get => bombName; set => bombName = value; }
         public int BombWeight { get => bombWeight; set => bombWeight = value; }
         public int Damage { get => damage; set => damage = value; }
-        public int NrOfSlots { get => nrOfSlots; set => nrOfSlots = value; }
+        public int MountPoints { get => mountPoints; set => mountPoints = value; }
 
-        public Bomb()
-        {
+        public Bomb(){}
 
-        }
-
-        public Bomb(int id, string name, int weight, int damage, int slots)
+        public Bomb(string id, string name, int weight, int damage, int slots)
         {
             this.bombID = id;
             this.bombName = name;
             this.bombWeight = weight;
             this.damage = damage;
-            this.nrOfSlots = slots;
+            this.mountPoints = slots;
         }
     }
 }

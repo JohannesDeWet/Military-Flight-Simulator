@@ -16,7 +16,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW
         private int payload;
         private int cruiseSpeed;
         private int maxSpeed;
-        private int maxWeight;
         private int fuelCapacity;
         private int mountingPoints;
 
@@ -28,7 +27,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW
         public int Payload { get => payload; set => payload = value; }
         public int CruiseSpeed { get => cruiseSpeed; set => cruiseSpeed = value; }
         public int MaxSpeed { get => maxSpeed; set => maxSpeed = value; }
-        public int MaxWeight { get => maxWeight; set => maxWeight = value; }
         public int FuelCapacity { get => fuelCapacity; set => fuelCapacity = value; }
         public int MountingPoints { get => mountingPoints; set => mountingPoints = value; }
 
