@@ -17,10 +17,18 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         DatabaseDataHandler myDatabase = new DatabaseDataHandler();
         BindingSource inventoryGrid = new BindingSource();
         List<Bomb> myBombCollection = new List<Bomb>();
-        List<Bomb> myInventoryCollection = new List<Bomb>();
+        
 
         public InventoryScreen()
         {
+            InitializeComponent();
+        }
+        public InventoryScreen(string planeName, int payload, int fuelCapacity, int mountingPoints)
+        {
+            mySelectedPlane.PlaneName = planeName;
+            mySelectedPlane.Payload = payload;
+            mySelectedPlane.FuelCapacity = fuelCapacity;
+            mySelectedPlane.MountingPoints = mountingPoints;
             InitializeComponent();
         }
         private void InventoryScreen_Load(object sender, EventArgs e)
@@ -66,15 +74,19 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
         private void btnFinished_Click(object sender, EventArgs e)
         {
+            List<string> myInventoryBombIDCollection = new List<string>();
 
+            Hide();
+            frmPlane myInventoryScreen = new frmPlane(myInventoryBombIDCollection);
+            myInventoryScreen.ShowDialog();
+            Close();
         }
-
-        public void SharedInformaiton(string planeName, int payload, int fuelCapacity, int mountingPoints)
+        private List<string> CreateListofInventoryBombItems()
         {
-            mySelectedPlane.PlaneName = planeName;
-            mySelectedPlane.Payload = payload;
-            mySelectedPlane.FuelCapacity = fuelCapacity;
-            mySelectedPlane.MountingPoints = mountingPoints;
+            for (int i = 0; i < dgvCurrentInventory.Rows.Count; i++)
+            {
+                dgvCurrentInventory
+            }
         }
     }
 }
