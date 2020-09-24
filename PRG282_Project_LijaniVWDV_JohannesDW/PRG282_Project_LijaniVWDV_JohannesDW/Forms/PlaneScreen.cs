@@ -14,9 +14,16 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
     public partial class frmPlane : Form
     {
         DatabaseDataHandler myDatabase = new DatabaseDataHandler();
-        List<Plane> myPlaneCollection = new List<Plane>(); 
+        List<Plane> myPlaneCollection = new List<Plane>();
+        List<string> myselectedBomb = new List<string>();
+        Bomb myBomb = new Bomb();
         public frmPlane()
         {
+            InitializeComponent();
+        }
+        public frmPlane(List<string> myBombList)
+        {
+            myselectedBomb = myBombList;
             InitializeComponent();
         }
 
@@ -81,8 +88,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         private void btnInventorySelection1_Click(object sender, EventArgs e)
         {
             Hide();
-            InventoryScreen myInventoryScreen = new InventoryScreen();
-            myInventoryScreen.SharedInformaiton(myPlaneCollection[0].PlaneName, myPlaneCollection[0].Payload, myPlaneCollection[0].FuelCapacity, myPlaneCollection[0].MountingPoints);
+            InventoryScreen myInventoryScreen = new InventoryScreen(myPlaneCollection[0].PlaneName, myPlaneCollection[0].Payload, myPlaneCollection[0].FuelCapacity, myPlaneCollection[0].MountingPoints);
             myInventoryScreen.ShowDialog();
             Close();
         }
