@@ -16,6 +16,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
     // https://foxlearn.com/article/how-to-create-and-use-user-control-in-csharp-276.html
     // https://dotnetcoretutorials.com/2020/07/25/a-search-pathfinding-algorithm-in-c/
 
+    #region enums
     public enum DrawModeSetup
     {
         None = 0,
@@ -30,6 +31,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         Medium = 50,
         High = 100
     }
+    #endregion
 
     public partial class ucGrid : UserControl
     {
@@ -107,10 +109,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             ResetMatrix();
         }
         #endregion
-
-        //Used to draw the grid on the user control
-        //https://stackoverflow.com/questions/1962348/draw-a-line-grid-on-a-windows-form
-
 
         #region Methods
         public void ResetMatrix()

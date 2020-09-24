@@ -198,10 +198,10 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
             {
                 parentNode = mOpen.Pop();
 
-#if DEBUGON
+
                 if (mDebugProgress && PathFinderDebug != null)
                     PathFinderDebug(0, 0, parentNode.X, parentNode.Y, PathFinderNodeType.Current, -1, -1);
-#endif
+
 
                 if (parentNode.X == end.X && parentNode.Y == end.Y)
                 {
@@ -215,6 +215,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
                     mStopped = true;
                     return null;
                 }
+
 
                 if (mPunishChangeDirection)
                     mHoriz = (parentNode.X - parentNode.PX);

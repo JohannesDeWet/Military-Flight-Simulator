@@ -213,9 +213,9 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
 
                
                 if (mDebugProgress && PathFinderDebug != null)
-                    PathFinderDebug(0, 0, start.X, start.Y, PathFinderNodeType.Start, -1, -1);
+                    PathFinderDebug(0, 0, start.X, start.Y, PathFinderNodeType.Start, -1, -1);      //get start
                 if (mDebugProgress && PathFinderDebug != null)
-                    PathFinderDebug(0, 0, end.X, end.Y, PathFinderNodeType.End, -1, -1);
+                    PathFinderDebug(0, 0, end.X, end.Y, PathFinderNodeType.End, -1, -1);            //get end
               
 
                 mLocation = (start.Y << mGridYLog2) + start.X;
@@ -227,6 +227,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
                 mCalcGrid[mLocation].Status = mOpenNodeValue;
 
                 mOpen.Push(mLocation);
+
                 while (mOpen.Count > 0 && !mStop)
                 {
                     mLocation = mOpen.Pop();
@@ -242,23 +243,21 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
                     if (mDebugProgress && PathFinderDebug != null)
                         PathFinderDebug(0, 0, mLocation & mGridXMinus1, mLocation >> mGridYLog2, PathFinderNodeType.Current, -1, -1);
 
-
-                    if (mLocation == mEndLocation)
+                    // when the pathfinder finds the last block (i.e. the end)
+                    if (mLocation == mEndLocation)      
                     {
                         mCalcGrid[mLocation].Status = mCloseNodeValue;
                         mFound = true;
                         break;
                     }
 
-                    if (mCloseNodeCounter > mSearchLimit)
+                    // this will have to do with the fuel limits of the plane
+                    if (mCloseNodeCounter > mSearchLimit/2)       
                     {
                         mStopped = true;
                         mCompletedTime = HighResolutionTime.GetTime();
                         return null;
                     }
-
-                    if (mPunishChangeDirection)
-                        mHoriz = (mLocationX - mCalcGrid[mLocation].PX);
 
                     //Lets calculate each successors
                     for (int i = 0; i < (mDiagonals ? 8 : 4); i++)
@@ -350,6 +349,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
                 }
 
                 mCompletedTime = HighResolutionTime.GetTime();
+
                 if (mFound)
                 {
                     mClose.Clear();
@@ -366,7 +366,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
                     fNode.X = end.X;
                     fNode.Y = end.Y;
 
-                    while (fNode.X != fNode.PX || fNode.Y != fNode.PY)
+                    while (fNode.X != fNode.PX || fNode.Y != fNode.PY)      //adding the final path
                     {
                         mClose.Add(fNode);
 

@@ -29,18 +29,20 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         #endregion
 
         #region Variables
-        private Thread mPFThread = null;         //the thread for when the run button is clicked
-        private IPathFinder mPathFinder = null;         //interface created in the Algorithms class
-        private int mDelay;
+        private Thread mPFThread = null;                     //the thread for when the run button is clicked
+        private IPathFinder mPathFinder = null;             //interface created in the Algorithms class
+        private int mDelay;                                //this will be the speed of the plane at the end of the day
         private bool mPaused;
         private bool mRunning;
+        private int mSearchLimit;
         #endregion
 
         public MainSimScreen()
         {
             InitializeComponent();
+            
+            
 
-          
         }
 
         private delegate void PathFinderDebugDelegate(int parentX, int parentY, int x, int y, PathFinderNodeType type, int totalCost, int cost);
@@ -48,9 +50,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         {
             if (InvokeRequired)
             {
-                while (mPaused)
-                    Thread.Sleep(100);
-
                 Thread.Sleep(mDelay);
                 Invoke(new PathFinderDebugDelegate(PathFinderDebug), new object[] { parentX, parentY, x, y, type, totalCost, cost });
                 return;
@@ -63,6 +62,11 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
 
         #region Methods
+
+        private void TBarSpeed_Scroll(object sender, EventArgs e)
+        {
+
+        }
 
         public void Run()
         {
@@ -108,14 +112,15 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             }
 
             mPathFinder.Formula = ucGrid1.Formula;
+            mPathFinder.SearchLimit = (int)NumSearchLimit.Value;
             mPathFinder.DebugProgress = ChlShowProgress.Checked;
             mPathFinder.DebugFoundPath = true;
 
             List<PathFinderNode> path = mPathFinder.FindPath(ucGrid1.Start, ucGrid1.End);
             //UpdateTimeLabel(mPathFinder.CompletedTime);
 
-            if (path == null)
-                MessageBox.Show("Path Not Found");
+            if (path == null  )
+                MessageBox.Show("The plane could not reach the enemy base safely and had to abort mission.", "MISSION ABORTED",MessageBoxButtons.OK,MessageBoxIcon.Warning);
 
             if (btnStartSimulation.Text == STOP)
                 btnStartSimulation_Click(null, EventArgs.Empty);
@@ -143,6 +148,10 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
         private void btnStartSimulation_Click(object sender, EventArgs e)
         {
+            mSearchLimit = (int)NumSearchLimit.Value;
+
+            mDelay = TBarSpeed.Value;
+
             if (InvokeRequired)
             {
                 this.Invoke(new BtnStartStop_ClickDelegate(btnStartSimulation_Click), new object[] { sender, e });

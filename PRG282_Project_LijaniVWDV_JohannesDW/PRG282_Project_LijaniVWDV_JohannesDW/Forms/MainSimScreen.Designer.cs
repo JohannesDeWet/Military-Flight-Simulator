@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainSimScreen));
             this.btnStartSimulation = new System.Windows.Forms.Button();
             this.PnlSettings = new System.Windows.Forms.Panel();
-            this.ChkUseFastPathFinder = new System.Windows.Forms.CheckBox();
-            this.ChlShowProgress = new System.Windows.Forms.CheckBox();
             this.cmbDrawMode = new System.Windows.Forms.ComboBox();
             this.btnRefreshGrid = new System.Windows.Forms.Button();
             this.lblSelectObstacle = new System.Windows.Forms.Label();
@@ -40,9 +38,16 @@
             this.nrAltirude = new System.Windows.Forms.NumericUpDown();
             this.lblAltitude = new System.Windows.Forms.Label();
             this.ucGrid1 = new PRG282_Project_LijaniVWDV_JohannesDW.Forms.ucGrid();
+            this.ChlShowProgress = new System.Windows.Forms.CheckBox();
+            this.ChkUseFastPathFinder = new System.Windows.Forms.CheckBox();
+            this.TBarSpeed = new System.Windows.Forms.TrackBar();
+            this.LblSearchLimit = new System.Windows.Forms.Label();
+            this.NumSearchLimit = new System.Windows.Forms.NumericUpDown();
             this.PnlSettings.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nrAltirude)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TBarSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumSearchLimit)).BeginInit();
             this.SuspendLayout();
             // 
             // btnStartSimulation
@@ -65,31 +70,6 @@
             this.PnlSettings.Name = "PnlSettings";
             this.PnlSettings.Size = new System.Drawing.Size(151, 99);
             this.PnlSettings.TabIndex = 24;
-            // 
-            // ChkUseFastPathFinder
-            // 
-            this.ChkUseFastPathFinder.Checked = true;
-            this.ChkUseFastPathFinder.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChkUseFastPathFinder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.ChkUseFastPathFinder.Location = new System.Drawing.Point(12, 16);
-            this.ChkUseFastPathFinder.Name = "ChkUseFastPathFinder";
-            this.ChkUseFastPathFinder.Size = new System.Drawing.Size(137, 20);
-            this.ChkUseFastPathFinder.TabIndex = 30;
-            this.ChkUseFastPathFinder.Text = "Fast PathFinder";
-            this.ChkUseFastPathFinder.UseVisualStyleBackColor = true;
-            // 
-            // ChlShowProgress
-            // 
-            this.ChlShowProgress.AutoSize = true;
-            this.ChlShowProgress.Checked = true;
-            this.ChlShowProgress.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ChlShowProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.ChlShowProgress.Location = new System.Drawing.Point(12, 39);
-            this.ChlShowProgress.Name = "ChlShowProgress";
-            this.ChlShowProgress.Size = new System.Drawing.Size(97, 17);
-            this.ChlShowProgress.TabIndex = 29;
-            this.ChlShowProgress.Text = "Show Progress";
-            this.ChlShowProgress.UseVisualStyleBackColor = true;
             // 
             // cmbDrawMode
             // 
@@ -167,12 +147,88 @@
             this.ucGrid1.TabIndex = 26;
             this.ucGrid1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ucGrid1_MouseDown);
             // 
+            // ChlShowProgress
+            // 
+            this.ChlShowProgress.AutoSize = true;
+            this.ChlShowProgress.Checked = true;
+            this.ChlShowProgress.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChlShowProgress.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.ChlShowProgress.Location = new System.Drawing.Point(12, 39);
+            this.ChlShowProgress.Name = "ChlShowProgress";
+            this.ChlShowProgress.Size = new System.Drawing.Size(97, 17);
+            this.ChlShowProgress.TabIndex = 29;
+            this.ChlShowProgress.Text = "Show Progress";
+            this.ChlShowProgress.UseVisualStyleBackColor = true;
+            // 
+            // ChkUseFastPathFinder
+            // 
+            this.ChkUseFastPathFinder.Checked = true;
+            this.ChkUseFastPathFinder.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChkUseFastPathFinder.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.ChkUseFastPathFinder.Location = new System.Drawing.Point(12, 16);
+            this.ChkUseFastPathFinder.Name = "ChkUseFastPathFinder";
+            this.ChkUseFastPathFinder.Size = new System.Drawing.Size(137, 20);
+            this.ChkUseFastPathFinder.TabIndex = 30;
+            this.ChkUseFastPathFinder.Text = "Fast PathFinder";
+            this.ChkUseFastPathFinder.UseVisualStyleBackColor = true;
+            // 
+            // TBarSpeed
+            // 
+            this.TBarSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBarSpeed.AutoSize = false;
+            this.TBarSpeed.LargeChange = 10;
+            this.TBarSpeed.Location = new System.Drawing.Point(65, 59);
+            this.TBarSpeed.Maximum = 60;
+            this.TBarSpeed.Name = "TBarSpeed";
+            this.TBarSpeed.Size = new System.Drawing.Size(121, 33);
+            this.TBarSpeed.TabIndex = 33;
+            this.TBarSpeed.TickFrequency = 10;
+            this.TBarSpeed.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.TBarSpeed.Value = 3;
+            // 
+            // LblSearchLimit
+            // 
+            this.LblSearchLimit.AutoSize = true;
+            this.LblSearchLimit.BackColor = System.Drawing.Color.Transparent;
+            this.LblSearchLimit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.LblSearchLimit.Location = new System.Drawing.Point(90, 125);
+            this.LblSearchLimit.Name = "LblSearchLimit";
+            this.LblSearchLimit.Size = new System.Drawing.Size(65, 13);
+            this.LblSearchLimit.TabIndex = 34;
+            this.LblSearchLimit.Text = "Search Limit";
+            this.LblSearchLimit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // NumSearchLimit
+            // 
+            this.NumSearchLimit.Location = new System.Drawing.Point(93, 141);
+            this.NumSearchLimit.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.NumSearchLimit.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NumSearchLimit.Name = "NumSearchLimit";
+            this.NumSearchLimit.Size = new System.Drawing.Size(62, 20);
+            this.NumSearchLimit.TabIndex = 35;
+            this.NumSearchLimit.Value = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            // 
             // MainSimScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(959, 502);
+            this.Controls.Add(this.NumSearchLimit);
+            this.Controls.Add(this.LblSearchLimit);
+            this.Controls.Add(this.TBarSpeed);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ucGrid1);
             this.Controls.Add(this.PnlSettings);
@@ -184,15 +240,16 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nrAltirude)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TBarSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumSearchLimit)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Button btnStartSimulation;
         private System.Windows.Forms.Panel PnlSettings;
-        private System.Windows.Forms.CheckBox ChkUseFastPathFinder;
-        private System.Windows.Forms.CheckBox ChlShowProgress;
         private ucGrid ucGrid1;
         private System.Windows.Forms.ComboBox cmbDrawMode;
         private System.Windows.Forms.Button btnRefreshGrid;
@@ -200,5 +257,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.NumericUpDown nrAltirude;
         private System.Windows.Forms.Label lblAltitude;
+        private System.Windows.Forms.CheckBox ChkUseFastPathFinder;
+        private System.Windows.Forms.CheckBox ChlShowProgress;
+        private System.Windows.Forms.TrackBar TBarSpeed;
+        private System.Windows.Forms.Label LblSearchLimit;
+        private System.Windows.Forms.NumericUpDown NumSearchLimit;
     }
 }

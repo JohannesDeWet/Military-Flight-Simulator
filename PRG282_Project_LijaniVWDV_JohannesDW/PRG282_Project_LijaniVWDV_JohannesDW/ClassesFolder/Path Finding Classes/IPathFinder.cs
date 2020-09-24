@@ -45,24 +45,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
             set;
         }
 
-        bool PunishChangeDirection
-        {
-            get;
-            set;
-        }
-
-        bool ReopenCloseNodes
-        {
-            get;
-            set;
-        }
-
-        bool TieBreaker
-        {
-            get;
-            set;
-        }
-
         int SearchLimit
         {
             get;
