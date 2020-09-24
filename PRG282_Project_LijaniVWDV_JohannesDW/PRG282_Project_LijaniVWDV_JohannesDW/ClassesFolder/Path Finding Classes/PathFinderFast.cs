@@ -202,11 +202,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
             {
                 HighResolutionTime.Start();
 
-                // Is faster if we don't clear the matrix, just assign different values for open and close and ignore the rest
-                // I could have user Array.Clear() but using unsafe code is faster, no much but it is.
-                //fixed (PathFinderNodeFast* pGrid = tmpGrid) 
-                //    ZeroMemory((byte*) pGrid, sizeof(PathFinderNodeFast) * 1000000);
-
                 mFound = false;
                 mStop = false;
                 mStopped = false;
@@ -216,12 +211,12 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
                 mOpen.Clear();
                 mClose.Clear();
 
-#if DEBUGON
+               
                 if (mDebugProgress && PathFinderDebug != null)
                     PathFinderDebug(0, 0, start.X, start.Y, PathFinderNodeType.Start, -1, -1);
                 if (mDebugProgress && PathFinderDebug != null)
                     PathFinderDebug(0, 0, end.X, end.Y, PathFinderNodeType.End, -1, -1);
-#endif
+              
 
                 mLocation = (start.Y << mGridYLog2) + start.X;
                 mEndLocation = (end.Y << mGridYLog2) + end.X;
@@ -243,10 +238,10 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
                     mLocationX = (ushort)(mLocation & mGridXMinus1);
                     mLocationY = (ushort)(mLocation >> mGridYLog2);
 
-#if DEBUGON
+
                     if (mDebugProgress && PathFinderDebug != null)
                         PathFinderDebug(0, 0, mLocation & mGridXMinus1, mLocation >> mGridYLog2, PathFinderNodeType.Current, -1, -1);
-#endif
+
 
                     if (mLocation == mEndLocation)
                     {
@@ -316,34 +311,14 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
                         mH = mHEstimate * (Math.Abs(mNewLocationX - end.X) + Math.Abs(mNewLocationY - end.Y));
 
                         #region SWITCH
-                        //switch (mFormula)
-                        //{
-                        //    default:
-                        //    case HeuristicFormula.Manhattan:
-                        //        mH = mHEstimate * (Math.Abs(mNewLocationX - end.X) + Math.Abs(mNewLocationY - end.Y));
-                        //        break;
-                        //    case HeuristicFormula.MaxDXDY:
-                        //        mH = mHEstimate * (Math.Max(Math.Abs(mNewLocationX - end.X), Math.Abs(mNewLocationY - end.Y)));
-                        //        break;
-                        //    case HeuristicFormula.DiagonalShortCut:
-                        //        int h_diagonal = Math.Min(Math.Abs(mNewLocationX - end.X), Math.Abs(mNewLocationY - end.Y));
-                        //        int h_straight = (Math.Abs(mNewLocationX - end.X) + Math.Abs(mNewLocationY - end.Y));
-                        //        mH = (mHEstimate * 2) * h_diagonal + mHEstimate * (h_straight - 2 * h_diagonal);
-                        //        break;
-                        //    case HeuristicFormula.Euclidean:
-                        //        mH = (int)(mHEstimate * Math.Sqrt(Math.Pow((mNewLocationY - end.X), 2) + Math.Pow((mNewLocationY - end.Y), 2)));
-                        //        break;
-                        //    case HeuristicFormula.EuclideanNoSQR:
-                        //        mH = (int)(mHEstimate * (Math.Pow((mNewLocationX - end.X), 2) + Math.Pow((mNewLocationY - end.Y), 2)));
-                        //        break;
-                        //    case HeuristicFormula.Custom1:
-                        //        Point dxy = new Point(Math.Abs(end.X - mNewLocationX), Math.Abs(end.Y - mNewLocationY));
-                        //        int Orthogonal = Math.Abs(dxy.X - dxy.Y);
-                        //        int Diagonal = Math.Abs(((dxy.X + dxy.Y) - Orthogonal) / 2);
-                        //        mH = mHEstimate * (Diagonal + Orthogonal + dxy.X + dxy.Y);
-                        //        break;
-                        //}
-                        #endregion //commented out
+                        switch (mFormula)
+                        {
+                            default:
+                            case HeuristicFormula.Manhattan:
+                                mH = mHEstimate * (Math.Abs(mNewLocationX - end.X) + Math.Abs(mNewLocationY - end.Y));
+                                break;                           
+                        }
+                        #endregion
 
                         if (mTieBreaker)
                         {
@@ -356,34 +331,22 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
                         }
                         mCalcGrid[mNewLocation].F = mNewG + mH;
 
-#if DEBUGON
+
                         if (mDebugProgress && PathFinderDebug != null)
                             PathFinderDebug(mLocationX, mLocationY, mNewLocationX, mNewLocationY, PathFinderNodeType.Open, mCalcGrid[mNewLocation].F, mCalcGrid[mNewLocation].G);
-#endif
 
-                        //It is faster if we leave the open node in the priority queue
-                        //When it is removed, it will be already closed, it will be ignored automatically
-                        //if (tmpGrid[newLocation].Status == 1)
-                        //{
-                        //    //int removeX   = newLocation & gridXMinus1;
-                        //    //int removeY   = newLocation >> gridYLog2;
-                        //    mOpen.RemoveLocation(newLocation);
-                        //}
-
-                        //if (tmpGrid[newLocation].Status != 1)
-                        //{
                         mOpen.Push(mNewLocation);
-                        //}
+                        
                         mCalcGrid[mNewLocation].Status = mOpenNodeValue;
                     }
 
                     mCloseNodeCounter++;
                     mCalcGrid[mLocation].Status = mCloseNodeValue;
 
-#if DEBUGON
+
                     if (mDebugProgress && PathFinderDebug != null)
                         PathFinderDebug(0, 0, mLocationX, mLocationY, PathFinderNodeType.Close, mCalcGrid[mLocation].F, mCalcGrid[mLocation].G);
-#endif
+
                 }
 
                 mCompletedTime = HighResolutionTime.GetTime();
@@ -406,10 +369,10 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
                     while (fNode.X != fNode.PX || fNode.Y != fNode.PY)
                     {
                         mClose.Add(fNode);
-#if DEBUGON
+
                         if (mDebugFoundPath && PathFinderDebug != null)
                             PathFinderDebug(fNode.PX, fNode.PY, fNode.X, fNode.Y, PathFinderNodeType.Path, fNode.F, fNode.G);
-#endif
+
                         posX = fNode.PX;
                         posY = fNode.PY;
                         fNodeTmp = mCalcGrid[(posY << mGridYLog2) + posX];
@@ -423,10 +386,10 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
                     }
 
                     mClose.Add(fNode);
-#if DEBUGON
+
                     if (mDebugFoundPath && PathFinderDebug != null)
                         PathFinderDebug(fNode.PX, fNode.PY, fNode.X, fNode.Y, PathFinderNodeType.Path, fNode.F, fNode.G);
-#endif
+
 
                     mStopped = true;
                     return mClose;

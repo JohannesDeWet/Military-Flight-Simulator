@@ -28,16 +28,16 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         private void FillPlaneForm() 
         {
             List<PictureBox> myPicBox = new List<PictureBox> { pbPlane1, pbPlane2, pbPlane3, pbPlane4 };
-            for (int i = 0; i < myPicBox.Count; i++)
-            {
-                myPicBox[i].ImageLocation = @"Resources\Images\Planes\" + myPlaneCollection[i].PlaneName + ".jpg";
-            }
+            //for (int i = 0; i < myPicBox.Count; i++)
+            //{
+            //    myPicBox[i].ImageLocation = @"Resources\Images\Planes\" + myPlaneCollection[i].PlaneName + ".jpg";
+            //}
 
-            List<Label> myLable = new List<Label> { txtPlaneName1, txtPlaneName2, txtPlaneName3, txtPlaneName4 };
-            for (int i = 0; i < myPicBox.Count; i++)
-            {
-                myLable[i].Text = myPlaneCollection[i].PlaneName;
-            }
+            //List<Label> myLable = new List<Label> { txtPlaneName1, txtPlaneName2, txtPlaneName3, txtPlaneName4 };
+            //for (int i = 0; i < myPicBox.Count; i++)
+            //{
+            //    myLable[i].Text = myPlaneCollection[i].PlaneName;
+            //}
 
         }
 

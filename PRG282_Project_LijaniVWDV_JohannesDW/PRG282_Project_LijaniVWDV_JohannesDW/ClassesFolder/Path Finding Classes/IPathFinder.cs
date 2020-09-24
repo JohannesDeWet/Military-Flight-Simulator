@@ -10,8 +10,12 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
 {
     interface IPathFinder
     {
+        #region Event
         event PathFinderDebugHandler PathFinderDebug;
+        #endregion
 
+
+        #region Properties
         bool Stopped
         {
             get;
@@ -82,8 +86,10 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
             get;
             set;
         }
+        #endregion
 
         void FindPathStop();
+
         List<PathFinderNode> FindPath(Point start, Point end);
     }
 }

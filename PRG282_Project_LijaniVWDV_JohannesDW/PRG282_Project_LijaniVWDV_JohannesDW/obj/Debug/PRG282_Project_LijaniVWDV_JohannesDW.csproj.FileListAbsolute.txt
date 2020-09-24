@@ -46,3 +46,4 @@ C:\Users\matin\OneDrive\Documents\Studies\PRG_PROJECT\Military-Flight-Simulator\
 C:\Users\matin\OneDrive\Documents\Studies\PRG_PROJECT\Military-Flight-Simulator\PRG282_Project_LijaniVWDV_JohannesDW\PRG282_Project_LijaniVWDV_JohannesDW\obj\Debug\PRG282_Project_LijaniVWDV_JohannesDW.exe
 C:\Users\matin\OneDrive\Documents\Studies\PRG_PROJECT\Military-Flight-Simulator\PRG282_Project_LijaniVWDV_JohannesDW\PRG282_Project_LijaniVWDV_JohannesDW\obj\Debug\PRG282_Project_LijaniVWDV_JohannesDW.pdb
 C:\Users\matin\OneDrive\Documents\Studies\PRG_PROJECT\Military-Flight-Simulator\PRG282_Project_LijaniVWDV_JohannesDW\PRG282_Project_LijaniVWDV_JohannesDW\obj\Debug\PRG282_Project_LijaniVWDV_JohannesDW.Forms.InventoryScreen.resources
+C:\Users\Lijani\Documents\GitHub\Military-Flight-Simulator\PRG282_Project_LijaniVWDV_JohannesDW\PRG282_Project_LijaniVWDV_JohannesDW\obj\Debug\PRG282_Project_LijaniVWDV_JohannesDW.Forms.InventoryScreen.resources

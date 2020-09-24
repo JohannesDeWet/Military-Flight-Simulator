@@ -33,7 +33,8 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
 
     public enum HeuristicFormula
     {
-        Manhattan = 1
+        Manhattan = 1,
+        
     }
 
     public delegate void PathFinderDebugHandler(int fromX, int fromY, int x, int y, PathFinderNodeType type, int totalCost, int cost);
@@ -41,11 +42,12 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
 
     public class PathFinder : IPathFinder
     {
-        //[System.Runtime.InteropServices.DllImport("KERNEL32.DLL", EntryPoint = "RtlZeroMemory")]
-        //public unsafe static extern bool ZeroMemory(byte* destination, int length);
-
+        #region Event
         public event PathFinderDebugHandler PathFinderDebug;
+        #endregion
 
+
+        #region Variables
         private byte[,] mGrid = null;
         private PriorityQueueB<PathFinderNode> mOpen = new PriorityQueueB<PathFinderNode>(new ComparePFNode());
         private List<PathFinderNode> mClose = new List<PathFinderNode>();
@@ -63,6 +65,18 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
         private double mCompletedTime = 0;
         private bool mDebugProgress = false;
         private bool mDebugFoundPath = false;
+        #endregion
+
+
+        #region Constructor
+        public PathFinder(byte[,] grid)     //constructor
+        {
+            if (grid == null)
+                throw new Exception("Grid cannot be null");
+
+            mGrid = grid;
+        }
+        #endregion
 
 
         #region Properties
@@ -138,28 +152,8 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
         }
         #endregion
 
-        public PathFinder(byte[,] grid)     //constructor
-        {
-            if (grid == null)
-                throw new Exception("Grid cannot be null");
 
-            mGrid = grid;
-        }
-
-        internal class ComparePFNode : IComparer<PathFinderNode>
-        {
-            #region IComparer Members
-            public int Compare(PathFinderNode x, PathFinderNode y)
-            {
-                if (x.F > y.F)
-                    return 1;
-                else if (x.F < y.F)
-                    return -1;
-                return 0;
-            }
-            #endregion
-        }  //internal class
-
+        #region Methods
         public void FindPathStop()
         {
             mStop = true;
@@ -291,38 +285,33 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
                     newNode.PY = parentNode.Y;
                     newNode.G = newG;
 
-                    newNode.H = mHEstimate * (Math.Abs(newNode.X - end.X) + Math.Abs(newNode.Y - end.Y));
-
-                    #region SWITCH
-                    //switch (mFormula)
-                    //{
-                    //    default:
-                    //    case HeuristicFormula.Manhattan:
-                    //        newNode.H = mHEstimate * (Math.Abs(newNode.X - end.X) + Math.Abs(newNode.Y - end.Y));
-                    //        break;
-                    //    case HeuristicFormula.MaxDXDY:
-                    //        newNode.H = mHEstimate * (Math.Max(Math.Abs(newNode.X - end.X), Math.Abs(newNode.Y - end.Y)));
-                    //        break;
-                    //    case HeuristicFormula.DiagonalShortCut:
-                    //        int h_diagonal = Math.Min(Math.Abs(newNode.X - end.X), Math.Abs(newNode.Y - end.Y));
-                    //        int h_straight = (Math.Abs(newNode.X - end.X) + Math.Abs(newNode.Y - end.Y));
-                    //        newNode.H = (mHEstimate * 2) * h_diagonal + mHEstimate * (h_straight - 2 * h_diagonal);
-                    //        break;
-                    //    case HeuristicFormula.Euclidean:
-                    //        newNode.H = (int)(mHEstimate * Math.Sqrt(Math.Pow((newNode.X - end.X), 2) + Math.Pow((newNode.Y - end.Y), 2)));
-                    //        break;
-                    //    case HeuristicFormula.EuclideanNoSQR:
-                    //        newNode.H = (int)(mHEstimate * (Math.Pow((newNode.X - end.X), 2) + Math.Pow((newNode.Y - end.Y), 2)));
-                    //        break;
-                    //    case HeuristicFormula.Custom1:
-                    //        Point dxy = new Point(Math.Abs(end.X - newNode.X), Math.Abs(end.Y - newNode.Y));
-                    //        int Orthogonal = Math.Abs(dxy.X - dxy.Y);
-                    //        int Diagonal = Math.Abs(((dxy.X + dxy.Y) - Orthogonal) / 2);
-                    //        newNode.H = mHEstimate * (Diagonal + Orthogonal + dxy.X + dxy.Y);
-                    //        break;
-                    //}
-                    #endregion
-
+                    switch (mFormula)
+                    {
+                        default:
+                        case HeuristicFormula.Manhattan:
+                            newNode.H = mHEstimate * (Math.Abs(newNode.X - end.X) + Math.Abs(newNode.Y - end.Y));
+                            break;
+                        //case HeuristicFormula.MaxDXDY:
+                        //    newNode.H = mHEstimate * (Math.Max(Math.Abs(newNode.X - end.X), Math.Abs(newNode.Y - end.Y)));
+                        //    break;
+                        //case HeuristicFormula.DiagonalShortCut:
+                        //    int h_diagonal = Math.Min(Math.Abs(newNode.X - end.X), Math.Abs(newNode.Y - end.Y));
+                        //    int h_straight = (Math.Abs(newNode.X - end.X) + Math.Abs(newNode.Y - end.Y));
+                        //    newNode.H = (mHEstimate * 2) * h_diagonal + mHEstimate * (h_straight - 2 * h_diagonal);
+                        //    break;
+                        //case HeuristicFormula.Euclidean:
+                        //    newNode.H = (int)(mHEstimate * Math.Sqrt(Math.Pow((newNode.X - end.X), 2) + Math.Pow((newNode.Y - end.Y), 2)));
+                        //    break;
+                        //case HeuristicFormula.EuclideanNoSQR:
+                        //    newNode.H = (int)(mHEstimate * (Math.Pow((newNode.X - end.X), 2) + Math.Pow((newNode.Y - end.Y), 2)));
+                        //    break;
+                        //case HeuristicFormula.Custom1:
+                        //    Point dxy = new Point(Math.Abs(end.X - newNode.X), Math.Abs(end.Y - newNode.Y));
+                        //    int Orthogonal = Math.Abs(dxy.X - dxy.Y);
+                        //    int Diagonal = Math.Abs(((dxy.X + dxy.Y) - Orthogonal) / 2);
+                        //    newNode.H = mHEstimate * (Diagonal + Orthogonal + dxy.X + dxy.Y);
+                        //    break;
+                    }
                     if (mTieBreaker)
                     {
                         int dx1 = parentNode.X - end.X;
@@ -380,5 +369,26 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
             mStopped = true;
             return null;
         }
+
+        #endregion
+
+
+        #region Inner Classes
+        internal class ComparePFNode : IComparer<PathFinderNode>
+        {
+            #region IComparer Members
+            public int Compare(PathFinderNode x, PathFinderNode y)
+            {
+                if (x.F > y.F)
+                    return 1;
+                else if (x.F < y.F)
+                    return -1;
+                return 0;
+            }
+            #endregion
+        }
+        #endregion
+
+        
     }
 }

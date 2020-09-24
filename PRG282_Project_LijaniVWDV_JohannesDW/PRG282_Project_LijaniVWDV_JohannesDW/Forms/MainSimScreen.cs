@@ -16,21 +16,31 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 {
     public partial class MainSimScreen : Form
     {
+        #region Constants
+        private const string STOP = "Stop";
+        private const string RUN = "Run";
+        private const string PAUSE = "Pause";
+        private const string CONTINUE = "Continue";
+
+        private const string NODE_START = "Start";
+        private const string NODE_END = "End";
+        private const string NODE_X = "X";
+
+        #endregion
+
+        #region Variables
         private Thread mPFThread = null;         //the thread for when the run button is clicked
         private IPathFinder mPathFinder = null;         //interface created in the Algorithms class
         private int mDelay;
         private bool mPaused;
         private bool mRunning;
+        #endregion
 
         public MainSimScreen()
         {
             InitializeComponent();
-            ucObstaclesDetected1.Hide();
-            ucObstacles1.Show();
-            
 
-            //have to just make this so that the right user control show when necessary
-
+          
         }
 
         private delegate void PathFinderDebugDelegate(int parentX, int parentY, int x, int y, PathFinderNodeType type, int totalCost, int cost);
@@ -51,6 +61,86 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
         private delegate void BtnStartStop_ClickDelegate(object sender, EventArgs e);
 
+
+        #region Methods
+
+        public void Run()
+        {
+            ucGrid1.Refresh();
+
+            //path finder thread
+            mPFThread = new Thread(new ThreadStart(RunPathFinder));
+            mPFThread.Name = "Path Finder Thread";
+            mPFThread.Start();
+        }
+
+        public void Stop()
+        {
+            if (mPathFinder != null)
+                mPathFinder.FindPathStop();
+
+            mPFThread.Abort();
+        }
+
+        public void RunPathFinder()
+        {
+            if (ChkUseFastPathFinder.Checked)
+            {
+                if (!(mPathFinder is PathFinderFast))
+                {
+                    if (mPathFinder != null)
+                        mPathFinder.PathFinderDebug -= new PathFinderDebugHandler(PathFinderDebug);
+
+                    mPathFinder = new PathFinderFast(ucGrid1.Matrix);
+                    mPathFinder.PathFinderDebug += new PathFinderDebugHandler(PathFinderDebug);
+                }
+            }
+            else
+            {
+                if (!(mPathFinder is PathFinder))
+                {
+                    if (mPathFinder != null)
+                        mPathFinder.PathFinderDebug -= new PathFinderDebugHandler(PathFinderDebug);
+
+                    mPathFinder = new PathFinder(ucGrid1.Matrix);
+                    mPathFinder.PathFinderDebug += new PathFinderDebugHandler(PathFinderDebug);
+                }
+            }
+
+            mPathFinder.Formula = ucGrid1.Formula;
+            mPathFinder.DebugProgress = ChlShowProgress.Checked;
+            mPathFinder.DebugFoundPath = true;
+
+            List<PathFinderNode> path = mPathFinder.FindPath(ucGrid1.Start, ucGrid1.End);
+            //UpdateTimeLabel(mPathFinder.CompletedTime);
+
+            if (path == null)
+                MessageBox.Show("Path Not Found");
+
+            if (btnStartSimulation.Text == STOP)
+                btnStartSimulation_Click(null, EventArgs.Empty);
+        }
+
+        public void DeterminAlt()
+        {
+            if (nrAltirude.Value > 50 && nrAltirude.Value <= 100)
+            {
+                ucGrid1.ObstacleAlt = ObstacleAltitude.High;
+            }
+            else if (nrAltirude.Value > 30 && nrAltirude.Value <= 50)
+            {
+                ucGrid1.ObstacleAlt = ObstacleAltitude.Medium;
+            }
+            else if (nrAltirude.Value <= 30)
+            {
+                ucGrid1.ObstacleAlt = ObstacleAltitude.Low;
+            }
+        }
+
+        #endregion
+
+        #region Events
+
         private void btnStartSimulation_Click(object sender, EventArgs e)
         {
             if (InvokeRequired)
@@ -66,81 +156,40 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             mRunning = !mRunning;
         }
 
-        public void Run()
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ucGrid1.Refresh();
-            //BtnStartStop.Text = STOP;
-            ToolStrp.Enabled = false;
-            //PnlSettings.Enabled = false;
-            //BtnPause.Enabled = true;
 
+            if (cmbDrawMode.SelectedIndex == 0)
+                ucGrid1.DrawModeSetup = DrawModeSetup.Start;
+            else if (cmbDrawMode.SelectedIndex == 1)
+                ucGrid1.DrawModeSetup = DrawModeSetup.End;
+            else if (cmbDrawMode.SelectedIndex == 2)
+            {
+                ucGrid1.NodeWeight = 0;
+                ucGrid1.DrawModeSetup = DrawModeSetup.Block;
 
-            //path finder thread
-            mPFThread = new Thread(new ThreadStart(RunPathFinder));
-            mPFThread.Name = "Path Finder Thread";
-            mPFThread.Start();
+                DeterminAlt();
+            }
+            else
+            {
+                ucGrid1.DrawModeSetup = DrawModeSetup.Block;
+
+                DeterminAlt();
+            }
         }
 
-        public void Stop()
+        private void btnRefreshGrid_Click(object sender, EventArgs e)       // to clear the grid completely and start again
         {
-            if (mPathFinder != null)
-                mPathFinder.FindPathStop();
-
-            mPFThread.Abort();
-
-           // mPaused = false;
-           // BtnStartStop.Text = RUN;
-           // BtnPause.Text = PAUSE;
-           // ToolStrp.Enabled = true;
-           // PnlSettings.Enabled = true;
-           // BtnPause.Enabled = false;
+            ucGrid1.ResetMatrix();
+            ucGrid1.Invalidate();
         }
 
-        public void RunPathFinder()
+
+        #endregion
+
+        private void ucGrid1_MouseDown(object sender, MouseEventArgs e)
         {
-            //if (ChkUseFastPathFinder.Checked)
-            //{
-            //    if (!(mPathFinder is PathFinderFast))
-            //    {
-            //        if (mPathFinder != null)
-            //            mPathFinder.PathFinderDebug -= new PathFinderDebugHandler(PathFinderDebug);
-
-            //        mPathFinder = new PathFinderFast(PnlGUI.Matrix);
-            //        mPathFinder.PathFinderDebug += new PathFinderDebugHandler(PathFinderDebug);
-            //    }
-            //}
-            //else
-            //{
-                if (!(mPathFinder is PathFinder))
-                {
-                    if (mPathFinder != null)
-                        mPathFinder.PathFinderDebug -= new PathFinderDebugHandler(PathFinderDebug);
-
-                    mPathFinder = new PathFinder(ucGrid1.Matrix);
-                    mPathFinder.PathFinderDebug += new PathFinderDebugHandler(PathFinderDebug);
-                }
-            //}
-
-            mPathFinder.Formula = ucGrid1.Formula;
-            //mPathFinder.Diagonals = ChkDiagonals.Checked;
-            //mPathFinder.HeavyDiagonals = ChkHeavyDiagonals.Checked;
-            //mPathFinder.HeuristicEstimate = (int)NumUpDownHeuristic.Value;
-            //mPathFinder.PunishChangeDirection = ChkPunishChangeDirection.Checked;
-            //mPathFinder.TieBreaker = ChkTieBraker.Checked;
-            //mPathFinder.SearchLimit = (int)NumSearchLimit.Value;
-            //mPathFinder.DebugProgress = ChlShowProgress.Checked;
-            //mPathFinder.ReopenCloseNodes = ChkReopenCloseNodes.Checked;
-            mPathFinder.DebugFoundPath = true;
-
-            List<PathFinderNode> path = mPathFinder.FindPath(ucGrid1.Start, ucGrid1.End);
-            //UpdateTimeLabel(mPathFinder.CompletedTime);
-
-            if (path == null)
-                MessageBox.Show("Path Not Found");
-
-            //if (BtnStartStop.Text == STOP)
-            //    BtnStartStop_Click(null, EventArgs.Empty);
+            DeterminAlt();      //to get the right color according to the altitude of the obstacle
         }
-
     }
 }

@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
 using System.Windows.Forms;
+using System.ComponentModel;
+using System.Collections.Generic;
 
 using PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes;
-using System.Globalization;
+using PRG282_Project_LijaniVWDV_JohannesDW.Forms;
 
 namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 {
@@ -26,26 +24,34 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         Block = 3
     }
 
+    public enum ObstacleAltitude
+    {
+        Low = 30,
+        Medium = 50,
+        High = 100
+    }
+
     public partial class ucGrid : UserControl
     {
 
-        public ucGrid()
-        {
-            InitializeComponent();
-
-            ResetMatrix();
-        }
-
+        #region Variables
         private byte mNodeWeight = 1;
-        private int mGridSize = 30;
+        private int mGridSize = 20;
         private byte[,] mMatrix = new byte[1024, 1024];
         private Point mStart = Point.Empty;
         private Point mEnd = Point.Empty;
         private DrawModeSetup mDrawMode = DrawModeSetup.None;
         private HeuristicFormula mFormula = HeuristicFormula.Manhattan;
-
+        private ObstacleAltitude mAlt = ObstacleAltitude.Low;
+        #endregion
 
         #region Properties
+        public ObstacleAltitude ObstacleAlt 
+        {
+            get { return mAlt; }
+            set { mAlt = value; } 
+        }
+
         public byte[,] Matrix
         {
             get { return mMatrix; }
@@ -93,9 +99,20 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
         #endregion
 
+        #region Constructors
+        public ucGrid()
+        {
+            InitializeComponent();
+
+            ResetMatrix();
+        }
+        #endregion
+
         //Used to draw the grid on the user control
         //https://stackoverflow.com/questions/1962348/draw-a-line-grid-on-a-windows-form
 
+
+        #region Methods
         public void ResetMatrix()
         {
             for (int y = 0; y < mMatrix.GetUpperBound(1); y++)
@@ -124,8 +141,8 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
                 case PathFinderNodeType.Open:
                     c = Color.Green;
                     break;
-                case PathFinderNodeType.Path:
-                    c = Color.Blue;
+                case PathFinderNodeType.Path:       //the final path identified
+                    c = Color.Yellow;
                     break;
                 case PathFinderNodeType.Start:
                     c = Color.Green;
@@ -165,52 +182,84 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
                 g.Dispose();
             }
-            catch (Exception) { }
+            catch (Exception e) 
+            {
+                MessageBox.Show("Unable to process. " + e.Message);
+            }
         }
 
+       public Color GetColor()
+        {
+            Color c = new Color();
+
+            switch (ObstacleAlt)
+            {
+                case ObstacleAltitude.Low:
+                    c = Color.Orange;
+                    break;
+
+                case ObstacleAltitude.Medium:
+                    c = Color.Blue;
+                    break;
+
+                case ObstacleAltitude.High:
+                    c = Color.Black;
+                    break;
+
+                default:
+                    c = Color.DarkGray;
+                    break;
+            }
+
+            return c;
+        }
+
+        #endregion
+
+        #region Overrides
+
+        //MainSimScreen main = new MainSimScreen();
+
+        // These overrides are for drawing on the grid, and for rendering it for the pathfinding
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-
-            for (int y = (e.ClipRectangle.Y / mGridSize) * mGridSize; y <= e.ClipRectangle.Bottom; y += mGridSize)
-                for (int x = (e.ClipRectangle.X / mGridSize) * mGridSize; x <= e.ClipRectangle.Right; x += mGridSize)
-                {
-                    int sx = x / mGridSize;
-                    int sy = y / mGridSize;
-
-                    // Lets render the obstacles
-                    Color color = Color.Empty;
-
-                    if (mMatrix[sx, sy] != 0)
+            if (mMatrix != null)
+            {
+                for (int y = (e.ClipRectangle.Y / mGridSize) * mGridSize; y <= e.ClipRectangle.Bottom; y += mGridSize)
+                    for (int x = (e.ClipRectangle.X / mGridSize) * mGridSize; x <= e.ClipRectangle.Right; x += mGridSize)
                     {
-                        color = Color.DarkGray;
+                        int sx = x / mGridSize;
+                        int sy = y / mGridSize;
 
-                        //The below code is from the other project, but I am not quite sure what it does as of yet, maybe when implementing the actual pathfinding ??? For the coordinates that is.
-                        int colorIndex = 240 - ((int)(Math.Log10(mMatrix[sx, sy]) * 127));
-                        colorIndex = colorIndex < 0 ? 0 : colorIndex > 255 ? 255 : colorIndex;
-                        color = Color.FromArgb(255, colorIndex, colorIndex, colorIndex);
+                        // Lets render the obstacules
+                        Color color = Color.Empty;
+                        if (mMatrix[sx, sy] != 0)
+                        {
+                            int colorIndex = 240 - ((int)(Math.Log10(mMatrix[sx, sy]) * 127));
+                            colorIndex = colorIndex < 0 ? 0 : colorIndex > 255 ? 255 : colorIndex;
+                            color = Color.FromArgb(255, colorIndex, colorIndex, colorIndex);
+                        }
+                        else
+                        {
+                            color = GetColor();      //the colour of the blocks being drawn
+                        }
+                           
 
-                    }
-                    else
-                    {
-                        // I have no idea how we would put the map behind here, I have tried like 70 things and nothing wants to work!
-                        color = Color.Olive;
-                    }
-
-                    using (SolidBrush brush = new SolidBrush(color))
-                        g.FillRectangle(brush, x, y, mGridSize, mGridSize);
-
-                    //Lets render start and end
-                    if (sx == Start.X && sy == Start.Y)
-                        using (SolidBrush brush = new SolidBrush(Color.Green))
+                        using (SolidBrush brush = new SolidBrush(color))
                             g.FillRectangle(brush, x, y, mGridSize, mGridSize);
 
-                    if (sx == End.X && sy == End.Y)
-                        using (SolidBrush brush = new SolidBrush(Color.Red))
-                            g.FillRectangle(brush, x, y, mGridSize, mGridSize);
-                }
+                        //Lets render start and end
+                        if (sx == mStart.X && sy == mStart.Y)
+                            using (SolidBrush brush = new SolidBrush(Color.Green))
+                                g.FillRectangle(brush, x, y, mGridSize, mGridSize);
 
-            //Drawing the grid
+                        if (sx == mEnd.X && sy == mEnd.Y)
+                            using (SolidBrush brush = new SolidBrush(Color.Red))
+                                g.FillRectangle(brush, x, y, mGridSize, mGridSize);
+                    }
+            }
+
             Color c = Color.Black;
             using (Pen pen = new Pen(c))
             {
@@ -224,37 +273,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             base.OnPaint(e);
         }
 
-
-
-        #region attempt to draw grid (easy)
-        //Pen linePen = new Pen(Color.Black);
-        //Graphics grphx = this.CreateGraphics();
-        //grphx.Clear(this.BackColor);
-
-        //for (int i = 1; i < mGridSize; i++)
-        //{
-        //    //Draw verticle line
-        //    grphx.DrawLine(linePen,
-        //        (this.ClientSize.Width / mGridSize) * i,
-        //        0,
-        //        (this.ClientSize.Width / mGridSize) * i,
-        //        this.ClientSize.Height);
-
-        //    //Draw horizontal line
-        //    grphx.DrawLine(linePen,
-        //        0,
-        //        (this.ClientSize.Height / mGridSize) * i,
-        //        this.ClientSize.Width,
-        //        (this.ClientSize.Height / mGridSize) * i);
-
-        //}
-        //linePen.Dispose();
-
-        ////Continues the paint of other elements and controls
-        //base.OnPaint(e);
-        #endregion
-
-
         protected override void OnMouseMove(MouseEventArgs e)
         {
             if (e.Button == MouseButtons.None || mDrawMode == DrawModeSetup.None)
@@ -263,7 +281,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             int x = e.X / mGridSize;
             int y = e.Y / mGridSize;
 
-            switch (mDrawMode)
+            switch (mDrawMode)      //to determine which block type is being used/drawn
             {
                 case DrawModeSetup.Start:
                     this.Invalidate(new Rectangle(mStart.X * mGridSize, mStart.Y * mGridSize, mGridSize, mGridSize));
@@ -276,13 +294,22 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
                     mMatrix[x, y] = 1;
                     break;
                 case DrawModeSetup.Block:
-                    if (e.Button == (MouseButtons.Left | MouseButtons.Right))
-                        mMatrix[x, y] = (byte)(mMatrix[x, y] - mNodeWeight > 1 ? mMatrix[x, y] - mNodeWeight : 1);
-                    else if (e.Button == MouseButtons.Left)
-                        mMatrix[x, y] = mNodeWeight;
-                    else if (e.Button == MouseButtons.Right)
-                        mMatrix[x, y] = (byte)(mMatrix[x, y] + mNodeWeight < 256 ? mMatrix[x, y] + mNodeWeight : 255);
+                    try
+                    {
+                        if (e.Button == (MouseButtons.Left | MouseButtons.Right))
+                            mMatrix[x, y] = (byte)(mMatrix[x, y] - mNodeWeight > 1 ? mMatrix[x, y] - mNodeWeight : 1);
+                        else if (e.Button == MouseButtons.Left)
+                            mMatrix[x, y] = mNodeWeight;
+                        else if (e.Button == MouseButtons.Right)
+                            mMatrix[x, y] = (byte)(mMatrix[x, y] + mNodeWeight < 256 ? mMatrix[x, y] + mNodeWeight : 255);
+                        
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Out of bounds!");
+                    }
                     break;
+
             }
 
             this.Invalidate(new Rectangle(x * mGridSize, y * mGridSize, mGridSize, mGridSize));
@@ -294,5 +321,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.OnMouseMove(e);
             base.OnMouseDown(e);
         }
+        #endregion
     }
 }

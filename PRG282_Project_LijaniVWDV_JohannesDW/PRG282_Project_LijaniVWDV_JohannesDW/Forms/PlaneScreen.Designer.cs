@@ -414,7 +414,7 @@
             this.btnInventorySelection.TabIndex = 17;
             this.btnInventorySelection.Text = "Inventory Layout";
             this.btnInventorySelection.UseVisualStyleBackColor = true;
-            this.btnInventorySelection.Click += new System.EventHandler(this.btnInventorySelection_Click);
+            //this.btnInventorySelection.Click += new System.EventHandler(this.btnInventorySelection_Click);
             // 
             // frmPlane
             // 
