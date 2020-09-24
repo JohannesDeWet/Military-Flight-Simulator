@@ -41,5 +41,31 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.DataHandlers
             }
             return myPlaneCollection;
         }
+        public List<Bomb> SelectAllBombs()
+        {
+            List<Bomb> myBombCollection = new List<Bomb>();
+            try
+            {
+                myConnection = new SqlConnection(@"Data Source =.; Initial Catalog = MilitarySimDataDase; Integrated Security = SSPI");
+            }
+            catch (Exception) { throw; }
+            try
+            {
+                myConnection.Open();
+                myCommand = new SqlCommand("SELECT * FROM Bombs", myConnection);
+                myReader = myCommand.ExecuteReader();
+                while (myReader.Read())
+                {
+                    Bomb myBomb = new Bomb((string)myReader["BombID"], (string)myReader["BombName"], (int)myReader["BombWeight"], (int)myReader["Damage"], (int)myReader["SlotsNeeded"]);
+                    myBombCollection.Add(myBomb);
+                }
+            }
+            catch (Exception) { throw; }
+            finally
+            {
+                myConnection.Close();
+            }
+            return myBombCollection;
+        }
     }
 }
