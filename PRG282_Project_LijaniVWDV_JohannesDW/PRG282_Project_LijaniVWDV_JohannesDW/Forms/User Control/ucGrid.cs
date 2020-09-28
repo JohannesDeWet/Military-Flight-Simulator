@@ -231,9 +231,9 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
                         Color color = Color.Empty;
                         if (mMatrix[sx, sy] != 0)
                         {
-                            int colorIndex = 240 - ((int)(Math.Log10(mMatrix[sx, sy]) * 127));
-                            colorIndex = colorIndex < 0 ? 0 : colorIndex > 255 ? 255 : colorIndex;
-                            color = Color.FromArgb(255, colorIndex, colorIndex, colorIndex);
+                            //int colorIndex = 240 - ((int)(Math.Log10(mMatrix[sx, sy]) * 127));
+                            //colorIndex = colorIndex < 0 ? 0 : colorIndex > 255 ? 255 : colorIndex;
+                            //color = Color.FromArgb(255, colorIndex, colorIndex, colorIndex);                            
                         }
                         else
                         {
@@ -297,8 +297,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
                             mMatrix[x, y] = mNodeWeight;
                         else if (e.Button == MouseButtons.Right)
                             mMatrix[x, y] = (byte)(mMatrix[x, y] + mNodeWeight < 256 ? mMatrix[x, y] + mNodeWeight : 255);
-
-                        // create another mMatrix to determine the altitude and then determine whether the plane needs to pass over it or not
                         
                     }
                     catch (Exception)
