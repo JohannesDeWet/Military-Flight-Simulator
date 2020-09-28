@@ -231,9 +231,9 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
                         Color color = Color.Empty;
                         if (mMatrix[sx, sy] != 0)
                         {
-                            int colorIndex = 240 - ((int)(Math.Log10(mMatrix[sx, sy]) * 127));
-                            colorIndex = colorIndex < 0 ? 0 : colorIndex > 255 ? 255 : colorIndex;
-                            color = Color.FromArgb(255, colorIndex, colorIndex, colorIndex);                            
+                            //int colorIndex = 240 - ((int)(Math.Log10(mMatrix[sx, sy]) * 127));
+                            //colorIndex = colorIndex < 0 ? 0 : colorIndex > 255 ? 255 : colorIndex;
+                            //color = Color.FromArgb(255, colorIndex, colorIndex, colorIndex);                            
                         }
                         else
                         {
