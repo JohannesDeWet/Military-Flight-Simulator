@@ -346,6 +346,7 @@
             this.btnInventorySelection4.TabIndex = 77;
             this.btnInventorySelection4.Text = "Inventory Layout";
             this.btnInventorySelection4.UseVisualStyleBackColor = true;
+            this.btnInventorySelection4.Click += new System.EventHandler(this.btnInventorySelection4_Click);
             // 
             // btnSelectPlane4
             // 
@@ -539,6 +540,7 @@
             this.btnInventorySelection3.TabIndex = 62;
             this.btnInventorySelection3.Text = "Inventory Layout";
             this.btnInventorySelection3.UseVisualStyleBackColor = true;
+            this.btnInventorySelection3.Click += new System.EventHandler(this.btnInventorySelection3_Click);
             // 
             // btnSelectPlane3
             // 
@@ -732,6 +734,7 @@
             this.btnInventorySelection2.TabIndex = 32;
             this.btnInventorySelection2.Text = "Inventory Layout";
             this.btnInventorySelection2.UseVisualStyleBackColor = true;
+            this.btnInventorySelection2.Click += new System.EventHandler(this.btnInventorySelection2_Click);
             // 
             // btnSelectPlane2
             // 

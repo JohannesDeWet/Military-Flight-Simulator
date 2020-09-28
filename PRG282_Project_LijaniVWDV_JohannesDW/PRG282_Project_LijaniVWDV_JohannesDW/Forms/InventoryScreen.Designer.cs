@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryScreen));
             this.pnlOption1 = new System.Windows.Forms.Panel();
+            this.dgvCurrentInventory = new System.Windows.Forms.DataGridView();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnFinished = new System.Windows.Forms.Button();
             this.btnAddBomb = new System.Windows.Forms.Button();
@@ -40,17 +41,24 @@
             this.label9 = new System.Windows.Forms.Label();
             this.lblMaxWeight = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblCunnectWeight = new System.Windows.Forms.Label();
+            this.lblCurrentWeight = new System.Windows.Forms.Label();
             this.lblPlaneName = new System.Windows.Forms.Label();
-            this.dgvCurrentInventory = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblMaxMountPoints = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblCurrentPoints = new System.Windows.Forms.Label();
             this.pnlOption1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAllBombs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCurrentInventory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllBombs)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlOption1
             // 
             this.pnlOption1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(106)))), ((int)(((byte)(125)))), ((int)(((byte)(138)))));
+            this.pnlOption1.Controls.Add(this.label4);
+            this.pnlOption1.Controls.Add(this.lblCurrentPoints);
+            this.pnlOption1.Controls.Add(this.label2);
+            this.pnlOption1.Controls.Add(this.lblMaxMountPoints);
             this.pnlOption1.Controls.Add(this.dgvCurrentInventory);
             this.pnlOption1.Controls.Add(this.btnCancel);
             this.pnlOption1.Controls.Add(this.btnFinished);
@@ -62,17 +70,26 @@
             this.pnlOption1.Controls.Add(this.label9);
             this.pnlOption1.Controls.Add(this.lblMaxWeight);
             this.pnlOption1.Controls.Add(this.label1);
-            this.pnlOption1.Controls.Add(this.lblCunnectWeight);
+            this.pnlOption1.Controls.Add(this.lblCurrentWeight);
             this.pnlOption1.Controls.Add(this.lblPlaneName);
             this.pnlOption1.Location = new System.Drawing.Point(12, 12);
             this.pnlOption1.Name = "pnlOption1";
-            this.pnlOption1.Size = new System.Drawing.Size(1130, 491);
+            this.pnlOption1.Size = new System.Drawing.Size(1130, 543);
             this.pnlOption1.TabIndex = 2;
+            // 
+            // dgvCurrentInventory
+            // 
+            this.dgvCurrentInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCurrentInventory.Location = new System.Drawing.Point(569, 99);
+            this.dgvCurrentInventory.Name = "dgvCurrentInventory";
+            this.dgvCurrentInventory.RowHeadersWidth = 45;
+            this.dgvCurrentInventory.Size = new System.Drawing.Size(547, 172);
+            this.dgvCurrentInventory.TabIndex = 63;
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Stencil", 14F);
-            this.btnCancel.Location = new System.Drawing.Point(413, 415);
+            this.btnCancel.Location = new System.Drawing.Point(410, 481);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(315, 40);
             this.btnCancel.TabIndex = 62;
@@ -83,7 +100,7 @@
             // btnFinished
             // 
             this.btnFinished.Font = new System.Drawing.Font("Stencil", 14F);
-            this.btnFinished.Location = new System.Drawing.Point(413, 369);
+            this.btnFinished.Location = new System.Drawing.Point(410, 435);
             this.btnFinished.Name = "btnFinished";
             this.btnFinished.Size = new System.Drawing.Size(315, 40);
             this.btnFinished.TabIndex = 61;
@@ -173,14 +190,14 @@
             this.label1.Text = "Current Weight:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblCunnectWeight
+            // lblCurrentWeight
             // 
-            this.lblCunnectWeight.Location = new System.Drawing.Point(572, 343);
-            this.lblCunnectWeight.Name = "lblCunnectWeight";
-            this.lblCunnectWeight.Size = new System.Drawing.Size(153, 23);
-            this.lblCunnectWeight.TabIndex = 48;
-            this.lblCunnectWeight.Text = "Current Weight";
-            this.lblCunnectWeight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCurrentWeight.Location = new System.Drawing.Point(572, 343);
+            this.lblCurrentWeight.Name = "lblCurrentWeight";
+            this.lblCurrentWeight.Size = new System.Drawing.Size(153, 23);
+            this.lblCurrentWeight.TabIndex = 48;
+            this.lblCurrentWeight.Text = "Current Weight";
+            this.lblCurrentWeight.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblPlaneName
             // 
@@ -194,14 +211,41 @@
             this.lblPlaneName.Text = "planeName";
             this.lblPlaneName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dgvCurrentInventory
+            // label2
             // 
-            this.dgvCurrentInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCurrentInventory.Location = new System.Drawing.Point(569, 99);
-            this.dgvCurrentInventory.Name = "dgvCurrentInventory";
-            this.dgvCurrentInventory.RowHeadersWidth = 45;
-            this.dgvCurrentInventory.Size = new System.Drawing.Size(547, 172);
-            this.dgvCurrentInventory.TabIndex = 63;
+            this.label2.Location = new System.Drawing.Point(410, 377);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(153, 23);
+            this.label2.TabIndex = 64;
+            this.label2.Text = "Max Mount Points:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMaxMountPoints
+            // 
+            this.lblMaxMountPoints.Location = new System.Drawing.Point(410, 400);
+            this.lblMaxMountPoints.Name = "lblMaxMountPoints";
+            this.lblMaxMountPoints.Size = new System.Drawing.Size(153, 23);
+            this.lblMaxMountPoints.TabIndex = 65;
+            this.lblMaxMountPoints.Text = "Max Mount Points";
+            this.lblMaxMountPoints.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(572, 377);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(153, 23);
+            this.label4.TabIndex = 66;
+            this.label4.Text = "Current Mount Points:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblCurrentPoints
+            // 
+            this.lblCurrentPoints.Location = new System.Drawing.Point(572, 400);
+            this.lblCurrentPoints.Name = "lblCurrentPoints";
+            this.lblCurrentPoints.Size = new System.Drawing.Size(153, 23);
+            this.lblCurrentPoints.TabIndex = 67;
+            this.lblCurrentPoints.Text = "Current Mount Points";
+            this.lblCurrentPoints.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // InventoryScreen
             // 
@@ -209,7 +253,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1153, 518);
+            this.ClientSize = new System.Drawing.Size(1153, 570);
             this.Controls.Add(this.pnlOption1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InventoryScreen";
@@ -217,8 +261,8 @@
             this.Text = "Inventory Selection";
             this.Load += new System.EventHandler(this.InventoryScreen_Load);
             this.pnlOption1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAllBombs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCurrentInventory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAllBombs)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -227,7 +271,7 @@
 
         private System.Windows.Forms.Panel pnlOption1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblCunnectWeight;
+        private System.Windows.Forms.Label lblCurrentWeight;
         private System.Windows.Forms.Label lblPlaneName;
         private System.Windows.Forms.Button btnRemoveBomb;
         private System.Windows.Forms.Label label7;
@@ -239,5 +283,9 @@
         private System.Windows.Forms.Button btnFinished;
         private System.Windows.Forms.Button btnAddBomb;
         private System.Windows.Forms.DataGridView dgvCurrentInventory;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblCurrentPoints;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblMaxMountPoints;
     }
 }
