@@ -24,6 +24,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         {
             InitializeComponent();
         }
+
         public InventoryScreen(string planeName, int payload, int fuelCapacity, int mountingPoints)
         {
             mySelectedPlane.PlaneName = planeName;

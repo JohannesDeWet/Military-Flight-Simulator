@@ -276,30 +276,9 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
 
                         // Unbreakeable?
                         if (mGrid[mNewLocationX, mNewLocationY] == 0) {
-                            MessageBox.Show("obstacle");
                             continue;
                         }
-                            
-
-
-                        //if (mHeavyDiagonals && i > 3)
-                        //    mNewG = mCalcGrid[mLocation].G + (int)(mGrid[mNewLocationX, mNewLocationY] * 2.41);
-                        //else
-                        //    mNewG = mCalcGrid[mLocation].G + mGrid[mNewLocationX, mNewLocationY];
-
-                        //if (mPunishChangeDirection)
-                        //{
-                        //    if ((mNewLocationX - mLocationX) != 0)
-                        //    {
-                        //        if (mHoriz == 0)
-                        //            mNewG += Math.Abs(mNewLocationX - end.X) + Math.Abs(mNewLocationY - end.Y);
-                        //    }
-                        //    if ((mNewLocationY - mLocationY) != 0)
-                        //    {
-                        //        if (mHoriz != 0)
-                        //            mNewG += Math.Abs(mNewLocationX - end.X) + Math.Abs(mNewLocationY - end.Y);
-                        //    }
-                        //}
+                         
 
                         //Is it open or closed?
                         if (mCalcGrid[mNewLocation].Status == mOpenNodeValue || mCalcGrid[mNewLocation].Status == mCloseNodeValue)
@@ -316,25 +295,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
 
                         mH = mHEstimate * (Math.Abs(mNewLocationX - end.X) + Math.Abs(mNewLocationY - end.Y));
 
-                        //#region SWITCH
-                        //switch (mFormula)
-                        //{
-                        //    default:
-                        //    case HeuristicFormula.Manhattan:
-                        //        mH = mHEstimate * (Math.Abs(mNewLocationX - end.X) + Math.Abs(mNewLocationY - end.Y));
-                        //        break;                           
-                        //}
-                        //#endregion
-
-                        //if (mTieBreaker)
-                        //{
-                        //    int dx1 = mLocationX - end.X;
-                        //    int dy1 = mLocationY - end.Y;
-                        //    int dx2 = start.X - end.X;
-                        //    int dy2 = start.Y - end.Y;
-                        //    int cross = Math.Abs(dx1 * dy2 - dx2 * dy1);
-                        //    mH = (int)(mH + cross * 0.001);
-                        //}
 
                         mCalcGrid[mNewLocation].F = mNewG + mH;
 
@@ -357,8 +317,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
                 }
 
                 // PATHFINDER HAS REACHED THE END NODE
-
-                //mCompletedTime = HighResolutionTime.GetTime();
 
                 if (mFound)
                 {
