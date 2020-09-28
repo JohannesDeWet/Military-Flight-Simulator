@@ -13,11 +13,11 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 {
     public partial class InventoryScreen : Form
     {
-        Plane mySelectedPlane = new Plane();
-        DatabaseDataHandler myDatabase = new DatabaseDataHandler();
-        BindingSource inventoryGrid = new BindingSource();
-        List<Bomb> myBombCollection = new List<Bomb>();
-        List<Bomb> myInventoryCollection = new List<Bomb>();
+        private Plane mySelectedPlane = new Plane();
+        private DatabaseDataHandler myDatabase = new DatabaseDataHandler();
+        private BindingSource inventoryGrid = new BindingSource();
+        private List<Bomb> myBombCollection = new List<Bomb>();
+        private List<Bomb> myInventoryCollection = new List<Bomb>();
 
 
         public InventoryScreen()
@@ -50,6 +50,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             lblPlaneName.Text = mySelectedPlane.PlaneName;
             lblMaxWeight.Text = mySelectedPlane.Payload.ToString();
             lblMaxMountPoints.Text = mySelectedPlane.MountingPoints.ToString();
+            lblFlyRange.Text = mySelectedPlane.FuelCapacity.ToString();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -67,19 +68,17 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             inventoryGrid.Add(myBombCollection[dgvAllBombs.CurrentCell.RowIndex]);
             dgvCurrentInventory.DataSource = inventoryGrid;
             VisualOverOutput(CalculateCurrentWeight(), CalculateCurrentPoints());
-            lblCurrentWeight.Text = CalculateCurrentWeight().ToString();
-            lblCurrentPoints.Text = CalculateCurrentPoints().ToString();
+            ChangeWeightPointFeulLable(CalculateCurrentWeight(), CalculateCurrentPoints(), CalculateRangeRemoved(CalculateCurrentWeight()));
         }
 
         private void btnRemoveBomb_Click(object sender, EventArgs e)
         {
-                myInventoryCollection.RemoveAt(dgvCurrentInventory.CurrentCell.RowIndex);
-                inventoryGrid.DataSource = typeof(Bomb);
-                inventoryGrid.RemoveAt(dgvCurrentInventory.CurrentCell.RowIndex);
-                dgvCurrentInventory.DataSource = inventoryGrid;
-                VisualOverOutput(CalculateCurrentWeight(), CalculateCurrentPoints());
-                lblCurrentWeight.Text = CalculateCurrentWeight().ToString();
-                lblCurrentPoints.Text = CalculateCurrentPoints().ToString();
+            myInventoryCollection.RemoveAt(dgvCurrentInventory.CurrentCell.RowIndex);
+            inventoryGrid.DataSource = typeof(Bomb);
+            inventoryGrid.RemoveAt(dgvCurrentInventory.CurrentCell.RowIndex);
+            dgvCurrentInventory.DataSource = inventoryGrid;
+            VisualOverOutput(CalculateCurrentWeight(), CalculateCurrentPoints());
+            ChangeWeightPointFeulLable(CalculateCurrentWeight(), CalculateCurrentPoints(), CalculateRangeRemoved(CalculateCurrentWeight()));
 
         }
 
@@ -88,7 +87,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             if (CanAddAllToInventory(CalculateCurrentWeight(),CalculateCurrentPoints()))
             {
                 Hide();
-                frmPlane myInventoryScreen = new frmPlane(CreateListofInventoryBombItems(), mySelectedPlane.PlaneName);
+                frmPlane myInventoryScreen = new frmPlane(CreateListofInventoryBombItems(), mySelectedPlane.PlaneName, (mySelectedPlane.FuelCapacity-CalculateRangeRemoved(CalculateCurrentWeight())));
                 myInventoryScreen.ShowDialog();
                 Close();
             }
@@ -155,6 +154,19 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             {
                 lblCurrentPoints.ForeColor = Color.FromArgb(255, 0, 0);
             }
+        }
+        private float CalculateRangeRemoved(int currentWeight) 
+        {
+            //change the factor of how much the feul range will change based on weight
+            float weightFactor = 3.6f;
+            return currentWeight * weightFactor;
+        }
+        private void ChangeWeightPointFeulLable(int currentWeight, int currentPoints, float rangeRemoved) 
+        {
+            lblCurrentWeight.Text = currentWeight.ToString();
+            lblCurrentPoints.Text = currentPoints.ToString();
+            lblRangeremoved.Text = "-" + rangeRemoved;
+            lblRangeLeft.Text = (mySelectedPlane.FuelCapacity - rangeRemoved).ToString();
         }
     }
 }

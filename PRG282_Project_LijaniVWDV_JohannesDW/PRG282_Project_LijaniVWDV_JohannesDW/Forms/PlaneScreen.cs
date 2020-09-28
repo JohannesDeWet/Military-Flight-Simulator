@@ -13,19 +13,21 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 {
     public partial class frmPlane : Form
     {
-        DatabaseDataHandler myDatabase = new DatabaseDataHandler();
-        List<Plane> myPlaneCollection = new List<Plane>();
-        List<string> myselectedBombs = new List<string>();
-        string myselectedPlane = "";
-        Bomb myBomb = new Bomb();
+        private DatabaseDataHandler myDatabase = new DatabaseDataHandler();
+        private List<Plane> myPlaneCollection = new List<Plane>();
+        private List<string> myselectedBombs = new List<string>();
+        private string myselectedPlane = "";
+        private float myremainingRange = 0;
+        private Bomb myBomb = new Bomb();
         public frmPlane()
         {
             InitializeComponent();
         }
-        public frmPlane(List<string> myBombList, string selectedplanename)
+        public frmPlane(List<string> myBombList, string selectedplanename, float rangeLeft)
         {
             myselectedBombs = myBombList;
             myselectedPlane = selectedplanename;
+            myremainingRange = rangeLeft;
             InitializeComponent();
         }
 
