@@ -93,18 +93,6 @@
     <Compile Include="Forms\User Control\ucGrid.Designer.cs">
       <DependentUpon>ucGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\User Control\ucObstacles.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\User Control\ucObstacles.Designer.cs">
-      <DependentUpon>ucObstacles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\User Control\ucObstaclesDetected.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\User Control\ucObstaclesDetected.Designer.cs">
-      <DependentUpon>ucObstaclesDetected.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\User Control\ucPlaneStats.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,12 +118,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User Control\ucGrid.resx">
       <DependentUpon>ucGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User Control\ucObstacles.resx">
-      <DependentUpon>ucObstacles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\User Control\ucObstaclesDetected.resx">
-      <DependentUpon>ucObstaclesDetected.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\User Control\ucPlaneStats.resx">
       <DependentUpon>ucPlaneStats.cs</DependentUpon>

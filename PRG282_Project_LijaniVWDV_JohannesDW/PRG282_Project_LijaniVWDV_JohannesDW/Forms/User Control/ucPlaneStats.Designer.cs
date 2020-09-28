@@ -63,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 93);
+            this.label2.Location = new System.Drawing.Point(29, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 2;
@@ -72,7 +72,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 131);
+            this.label3.Location = new System.Drawing.Point(13, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 3;
@@ -90,7 +90,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 218);
+            this.label5.Location = new System.Drawing.Point(30, 215);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 5;
@@ -149,7 +149,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPlaneStatsHead);
             this.Name = "ucPlaneStats";
-            this.Size = new System.Drawing.Size(261, 260);
+            this.Size = new System.Drawing.Size(261, 259);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -215,9 +215,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         #endregion
 
         #region Overrides
-
-        //MainSimScreen main = new MainSimScreen();
-
         // These overrides are for drawing on the grid, and for rendering it for the pathfinding
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -230,13 +227,13 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
                         int sx = x / mGridSize;
                         int sy = y / mGridSize;
 
-                        // Lets render the obstacules
+                        // Lets render the obstacles
                         Color color = Color.Empty;
                         if (mMatrix[sx, sy] != 0)
                         {
                             int colorIndex = 240 - ((int)(Math.Log10(mMatrix[sx, sy]) * 127));
                             colorIndex = colorIndex < 0 ? 0 : colorIndex > 255 ? 255 : colorIndex;
-                            color = Color.FromArgb(255, colorIndex, colorIndex, colorIndex);
+                            color = Color.FromArgb(255, colorIndex, colorIndex, colorIndex);                            
                         }
                         else
                         {

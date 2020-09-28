@@ -17,7 +17,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPlane());
+            Application.Run(new MainSimScreen());
         }
     }
 }

@@ -40,8 +40,9 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         public MainSimScreen()
         {
             InitializeComponent();
-            
-            
+
+            grpbxRunSim.Visible = false;
+            ucPlaneStats1.Visible = false;
 
         }
 
@@ -63,10 +64,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
         #region Methods
 
-        private void TBarSpeed_Scroll(object sender, EventArgs e)
-        {
-
-        }
+        
 
         public void Run()
         {
@@ -199,6 +197,44 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         private void ucGrid1_MouseDown(object sender, MouseEventArgs e)
         {
             DeterminAlt();      //to get the right color according to the altitude of the obstacle
+        }
+
+        private void btnSubmitObstacles_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you satisfied with your obstacles?",
+                      "Confirm Submission", MessageBoxButtons.YesNo);
+
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    pnlPlaceObstacles.Visible = false;
+                    grpbxRunSim.Visible = true;
+                    ucPlaneStats1.Visible = true;
+                    break;
+                case DialogResult.No:
+                    break;
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to quit?",
+                     "Confirm Exit", MessageBoxButtons.YesNo);
+
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    Environment.Exit(1);         // this throws an error ? I do not understand it
+                    break;
+                case DialogResult.No:
+                    break;
+            }
+        }
+
+        private void btnContinue_Click(object sender, EventArgs e)
+        {
+            frmReport report = new frmReport();
+            report.Show();
         }
     }
 }
