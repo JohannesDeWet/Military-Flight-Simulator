@@ -130,8 +130,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.DataHandlers
                 myReader = myCommand.ExecuteReader();
                 while (myReader.Read())
                 {
-                    Admin myAdmin = new Admin((string)myReader["AdminID"], (string)myReader["Username"], (string)myReader["Password"]);
-                    myAdminCollection.Add(myAdmin);
+                    myAdminCollection.Add(new Admin((string)myReader["Username"], (string)myReader["Password"]));
                 }
             }
             catch (Exception) { throw; }
@@ -140,6 +139,47 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.DataHandlers
                 myConnection.Close();
             }
             return myAdminCollection;
+        }
+        public void AddAdmin(string username, string password)
+        {
+            try
+            {
+                myConnection = new SqlConnection(@"Data Source =.; Initial Catalog = MilitarySimDataDase; Integrated Security = SSPI");
+            }
+            catch (Exception) { throw; }
+            try
+            {
+
+                myCommand = new SqlCommand(@"INSERT INTO AdminUsers(Username,Password) VALUES (@Username,@Password)", myConnection);
+                myCommand.Parameters.AddWithValue("@Username", username);
+                myCommand.Parameters.AddWithValue("@Password", password);
+
+                myConnection.Open();
+                myCommand.ExecuteNonQuery();
+            }
+            finally
+            {
+                myConnection.Close();
+            }
+        }
+        public void DeleteAdmin(string name)
+        {
+            try
+            {
+                myConnection = new SqlConnection(@"Data Source =.; Initial Catalog = MilitarySimDataDase; Integrated Security = SSPI");
+            }
+            catch (Exception) { throw; }
+            try
+            {
+                myCommand = new SqlCommand($"DELETE FROM AdminUsers WHERE Username = '{name}'", myConnection);
+
+                myConnection.Open();
+                myCommand.ExecuteNonQuery();
+            }
+            finally
+            {
+                myConnection.Close();
+            }
         }
     }
 

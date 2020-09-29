@@ -39,6 +39,7 @@
             this.lblUserName = new System.Windows.Forms.Label();
             this.dgvAllAdmins = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.pnlPlaneNameAnePicture.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllAdmins)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +49,7 @@
             this.btnEditAdmins.BackColor = System.Drawing.Color.Black;
             this.btnEditAdmins.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditAdmins.ForeColor = System.Drawing.Color.White;
-            this.btnEditAdmins.Location = new System.Drawing.Point(48, 279);
+            this.btnEditAdmins.Location = new System.Drawing.Point(52, 344);
             this.btnEditAdmins.Name = "btnEditAdmins";
             this.btnEditAdmins.Size = new System.Drawing.Size(271, 36);
             this.btnEditAdmins.TabIndex = 12;
@@ -60,7 +61,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.Black;
             this.btnCancel.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(48, 321);
+            this.btnCancel.Location = new System.Drawing.Point(52, 428);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(271, 36);
             this.btnCancel.TabIndex = 11;
@@ -140,24 +141,42 @@
             // 
             // dgvAllAdmins
             // 
+            this.dgvAllAdmins.AllowUserToAddRows = false;
+            this.dgvAllAdmins.AllowUserToDeleteRows = false;
             this.dgvAllAdmins.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllAdmins.Location = new System.Drawing.Point(349, 9);
             this.dgvAllAdmins.Name = "dgvAllAdmins";
+            this.dgvAllAdmins.ReadOnly = true;
             this.dgvAllAdmins.RowHeadersWidth = 45;
-            this.dgvAllAdmins.Size = new System.Drawing.Size(340, 348);
+            this.dgvAllAdmins.Size = new System.Drawing.Size(340, 455);
             this.dgvAllAdmins.TabIndex = 56;
+            this.dgvAllAdmins.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvAllAdmins_MouseClick);
             // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Black;
             this.btnAdd.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(48, 237);
+            this.btnAdd.Location = new System.Drawing.Point(52, 302);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(271, 36);
             this.btnAdd.TabIndex = 57;
             this.btnAdd.Text = "A D D  A D M I N";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.BackColor = System.Drawing.Color.Black;
+            this.btnRemove.Font = new System.Drawing.Font("Stencil", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemove.ForeColor = System.Drawing.Color.White;
+            this.btnRemove.Location = new System.Drawing.Point(52, 386);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(271, 36);
+            this.btnRemove.TabIndex = 58;
+            this.btnRemove.Text = "R E M O V E  A D M I N";
+            this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // frmEditAdmin
             // 
@@ -165,7 +184,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(719, 382);
+            this.ClientSize = new System.Drawing.Size(719, 478);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvAllAdmins);
             this.Controls.Add(this.btnEditAdmins);
@@ -197,5 +217,6 @@
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.DataGridView dgvAllAdmins;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnRemove;
     }
 }
