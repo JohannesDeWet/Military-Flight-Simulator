@@ -1,6 +1,6 @@
 ﻿namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 {
-    partial class InventoryScreen
+    partial class frmInventory
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryScreen));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInventory));
             this.pnlOption1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lblCurrentPoints = new System.Windows.Forms.Label();

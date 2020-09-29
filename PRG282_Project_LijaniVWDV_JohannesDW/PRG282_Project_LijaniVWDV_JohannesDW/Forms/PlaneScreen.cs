@@ -92,7 +92,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         private void btnInventorySelection1_Click(object sender, EventArgs e)
         {
             Hide();
-            InventoryScreen myInventoryScreen = new InventoryScreen(myPlaneCollection[0].PlaneName, myPlaneCollection[0].Payload, myPlaneCollection[0].FuelCapacity, myPlaneCollection[0].MountingPoints);
+            frmInventory myInventoryScreen = new frmInventory(myPlaneCollection[0].PlaneName, myPlaneCollection[0].Payload, myPlaneCollection[0].FuelCapacity, myPlaneCollection[0].MountingPoints);
             myInventoryScreen.ShowDialog();
             Close();
         }
@@ -100,7 +100,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         private void btnInventorySelection2_Click(object sender, EventArgs e)
         {
             Hide();
-            InventoryScreen myInventoryScreen = new InventoryScreen(myPlaneCollection[1].PlaneName, myPlaneCollection[1].Payload, myPlaneCollection[1].FuelCapacity, myPlaneCollection[1].MountingPoints);
+            frmInventory myInventoryScreen = new frmInventory(myPlaneCollection[1].PlaneName, myPlaneCollection[1].Payload, myPlaneCollection[1].FuelCapacity, myPlaneCollection[1].MountingPoints);
             myInventoryScreen.ShowDialog();
             Close();
         }
@@ -108,7 +108,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         private void btnInventorySelection3_Click(object sender, EventArgs e)
         {
             Hide();
-            InventoryScreen myInventoryScreen = new InventoryScreen(myPlaneCollection[2].PlaneName, myPlaneCollection[2].Payload, myPlaneCollection[2].FuelCapacity, myPlaneCollection[2].MountingPoints);
+            frmInventory myInventoryScreen = new frmInventory(myPlaneCollection[2].PlaneName, myPlaneCollection[2].Payload, myPlaneCollection[2].FuelCapacity, myPlaneCollection[2].MountingPoints);
             myInventoryScreen.ShowDialog();
             Close();
         }
@@ -116,7 +116,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         private void btnInventorySelection4_Click(object sender, EventArgs e)
         {
             Hide();
-            InventoryScreen myInventoryScreen = new InventoryScreen(myPlaneCollection[3].PlaneName, myPlaneCollection[3].Payload, myPlaneCollection[3].FuelCapacity, myPlaneCollection[3].MountingPoints);
+            frmInventory myInventoryScreen = new frmInventory(myPlaneCollection[3].PlaneName, myPlaneCollection[3].Payload, myPlaneCollection[3].FuelCapacity, myPlaneCollection[3].MountingPoints);
             myInventoryScreen.ShowDialog();
             Close();
         }

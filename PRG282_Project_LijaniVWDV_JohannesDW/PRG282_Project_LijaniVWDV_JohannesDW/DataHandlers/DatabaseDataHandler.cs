@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-
+using PRG282_Project_LijaniVWDV_JohannesDW.ClassesFolder;
 
 namespace PRG282_Project_LijaniVWDV_JohannesDW.DataHandlers
 {
@@ -67,5 +67,80 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.DataHandlers
             }
             return myBombCollection;
         }
+        public bool AdminCanLogin(string username, string password)
+        {
+            bool canLog = false;
+            try
+            {
+                myConnection = new SqlConnection(@"Data Source =.; Initial Catalog = MilitarySimDataDase; Integrated Security = SSPI");
+            }
+            catch (Exception) { throw; }
+            try
+            {
+                myConnection.Open();
+                myCommand = new SqlCommand("SELECT COUNT(AdminID) FROM AdminUsers WHERE Username = '" + username + "' AND Password = '" + password + "'", myConnection);
+                int rowCount = Convert.ToInt32(myCommand.ExecuteScalar());
+                if (rowCount >= 1)
+                {
+                    canLog = true;
+                }
+                else if (rowCount <= 0)
+                {
+                    canLog = false;
+                }
+            }
+            catch (Exception) { throw; }
+            finally
+            {
+                myConnection.Close();
+            }
+            return canLog;
+        }
+        public void EditPlanes(string planeId, int hp, int altitude, int payload, int maxspeed, int range, int mountPoints)
+        {
+            try
+            {
+                myConnection = new SqlConnection(@"Data Source =.; Initial Catalog = MilitarySimDataDase; Integrated Security = SSPI");
+            }
+            catch (Exception) { throw; }
+            try
+            {
+                myConnection.Open();
+                myCommand = new SqlCommand($"UPDATE Planes SET PlaneHP = '{hp}', MaxAltitude = '{altitude}', PayLoad = '{payload}', MaxSpeed = '{maxspeed}', FuelRange = '{range}', MountingPoints = '{mountPoints}' WHERE PlaneID = '{planeId}'", myConnection);
+                myCommand.ExecuteNonQuery();
+            }
+            catch (Exception) { throw; }
+            finally
+            {
+                myConnection.Close();
+            }
+        }
+        public List<Admin> SelectAllAdmins()
+        {
+            List<Admin> myAdminCollection = new List<Admin>();
+            try
+            {
+                myConnection = new SqlConnection(@"Data Source =.; Initial Catalog = MilitarySimDataDase; Integrated Security = SSPI");
+            }
+            catch (Exception) { throw; }
+            try
+            {
+                myConnection.Open();
+                myCommand = new SqlCommand("SELECT * FROM AdminUsers", myConnection);
+                myReader = myCommand.ExecuteReader();
+                while (myReader.Read())
+                {
+                    Admin myAdmin = new Admin((string)myReader["AdminID"], (string)myReader["Username"], (string)myReader["Password"]);
+                    myAdminCollection.Add(myAdmin);
+                }
+            }
+            catch (Exception) { throw; }
+            finally
+            {
+                myConnection.Close();
+            }
+            return myAdminCollection;
+        }
     }
+
 }

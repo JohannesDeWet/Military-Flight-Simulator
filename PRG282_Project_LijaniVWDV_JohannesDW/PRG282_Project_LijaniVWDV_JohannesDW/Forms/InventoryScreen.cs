@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 {
-    public partial class InventoryScreen : Form
+    public partial class frmInventory : Form
     {
         private Plane mySelectedPlane = new Plane();
         private DatabaseDataHandler myDatabase = new DatabaseDataHandler();
@@ -20,12 +20,12 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         private List<Bomb> myInventoryCollection = new List<Bomb>();
 
 
-        public InventoryScreen()
+        public frmInventory()
         {
             InitializeComponent();
         }
 
-        public InventoryScreen(string planeName, int payload, int fuelCapacity, int mountingPoints)
+        public frmInventory(string planeName, int payload, int fuelCapacity, int mountingPoints)
         {
             mySelectedPlane.PlaneName = planeName;
             mySelectedPlane.Payload = payload;

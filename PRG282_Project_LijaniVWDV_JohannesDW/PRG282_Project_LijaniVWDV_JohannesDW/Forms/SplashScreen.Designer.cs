@@ -66,12 +66,13 @@
             this.btnLaunch.BackColor = System.Drawing.Color.Black;
             this.btnLaunch.Font = new System.Drawing.Font("Stencil", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLaunch.ForeColor = System.Drawing.Color.White;
-            this.btnLaunch.Location = new System.Drawing.Point(293, 220);
+            this.btnLaunch.Location = new System.Drawing.Point(299, 220);
             this.btnLaunch.Name = "btnLaunch";
             this.btnLaunch.Size = new System.Drawing.Size(271, 111);
             this.btnLaunch.TabIndex = 2;
             this.btnLaunch.Text = "L A U N C H";
             this.btnLaunch.UseVisualStyleBackColor = false;
+            this.btnLaunch.Click += new System.EventHandler(this.btnLaunch_Click);
             // 
             // frmIntro
             // 

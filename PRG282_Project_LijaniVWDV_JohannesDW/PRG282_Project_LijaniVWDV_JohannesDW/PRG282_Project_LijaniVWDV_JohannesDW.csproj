@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassesFolder\Admin.cs" />
     <Compile Include="ClassesFolder\Bomb.cs" />
     <Compile Include="ClassesFolder\Buildings.cs" />
     <Compile Include="ClassesFolder\Path Finding Classes\HighResolutionTime.cs" />
@@ -55,6 +56,18 @@
     <Compile Include="ClassesFolder\Path Finding Classes\PriorityQueueB.cs" />
     <Compile Include="DataHandlers\DatabaseDataHandler.cs" />
     <Compile Include="DataHandlers\TextFileDataHandler.cs" />
+    <Compile Include="Forms\AdminEditScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminEditScreen.Designer.cs">
+      <DependentUpon>AdminEditScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminLoginScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminLoginScreen.Designer.cs">
+      <DependentUpon>AdminLoginScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\InventoryScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +79,12 @@
     </Compile>
     <Compile Include="Forms\MainSimScreen.Designer.cs">
       <DependentUpon>MainSimScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlaneEditScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlaneEditScreen.Designer.cs">
+      <DependentUpon>PlaneEditScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\PlaneScreen.cs">
       <SubType>Form</SubType>
@@ -101,11 +120,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AdminEditScreen.resx">
+      <DependentUpon>AdminEditScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminLoginScreen.resx">
+      <DependentUpon>AdminLoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InventoryScreen.resx">
       <DependentUpon>InventoryScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainSimScreen.resx">
       <DependentUpon>MainSimScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlaneEditScreen.resx">
+      <DependentUpon>PlaneEditScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PlaneScreen.resx">
       <DependentUpon>PlaneScreen.cs</DependentUpon>

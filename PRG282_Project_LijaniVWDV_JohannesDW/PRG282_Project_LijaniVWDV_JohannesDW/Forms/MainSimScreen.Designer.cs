@@ -41,11 +41,11 @@
             this.ucGrid1 = new PRG282_Project_LijaniVWDV_JohannesDW.Forms.ucGrid();
             this.lblMainSimHeading = new System.Windows.Forms.Label();
             this.pnlPlaceObstacles = new System.Windows.Forms.Panel();
-            this.lblPlaceObjects = new System.Windows.Forms.Label();
             this.btnSubmitObstacles = new System.Windows.Forms.Button();
+            this.lblPlaceObjects = new System.Windows.Forms.Label();
             this.grpbxRunSim = new System.Windows.Forms.GroupBox();
-            this.ucPlaneStats1 = new PRG282_Project_LijaniVWDV_JohannesDW.Forms.User_Control.ucPlaneStats();
             this.ChkUseFastPathFinder = new System.Windows.Forms.CheckBox();
+            this.ucPlaneStats1 = new PRG282_Project_LijaniVWDV_JohannesDW.Forms.User_Control.ucPlaneStats();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnContinue = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nrAltirude)).BeginInit();
@@ -166,6 +166,10 @@
             // 
             // ucGrid1
             // 
+            this.ucGrid1.BackColor = System.Drawing.Color.Transparent;
+            this.ucGrid1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ucGrid1.BackgroundImage")));
+            this.ucGrid1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ucGrid1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ucGrid1.DrawModeSetup = PRG282_Project_LijaniVWDV_JohannesDW.Forms.DrawModeSetup.None;
             this.ucGrid1.End = new System.Drawing.Point(0, 0);
             this.ucGrid1.Formula = PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes.HeuristicFormula.Manhattan;
@@ -206,6 +210,17 @@
             this.pnlPlaceObstacles.Size = new System.Drawing.Size(247, 259);
             this.pnlPlaceObstacles.TabIndex = 37;
             // 
+            // btnSubmitObstacles
+            // 
+            this.btnSubmitObstacles.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmitObstacles.Location = new System.Drawing.Point(51, 201);
+            this.btnSubmitObstacles.Name = "btnSubmitObstacles";
+            this.btnSubmitObstacles.Size = new System.Drawing.Size(121, 43);
+            this.btnSubmitObstacles.TabIndex = 35;
+            this.btnSubmitObstacles.Text = "S U B M I T";
+            this.btnSubmitObstacles.UseVisualStyleBackColor = true;
+            this.btnSubmitObstacles.Click += new System.EventHandler(this.btnSubmitObstacles_Click);
+            // 
             // lblPlaceObjects
             // 
             this.lblPlaceObjects.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -217,17 +232,6 @@
             this.lblPlaceObjects.TabIndex = 1;
             this.lblPlaceObjects.Text = "Place obstacles:";
             this.lblPlaceObjects.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnSubmitObstacles
-            // 
-            this.btnSubmitObstacles.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmitObstacles.Location = new System.Drawing.Point(51, 201);
-            this.btnSubmitObstacles.Name = "btnSubmitObstacles";
-            this.btnSubmitObstacles.Size = new System.Drawing.Size(121, 43);
-            this.btnSubmitObstacles.TabIndex = 35;
-            this.btnSubmitObstacles.Text = "S U B M I T";
-            this.btnSubmitObstacles.UseVisualStyleBackColor = true;
-            this.btnSubmitObstacles.Click += new System.EventHandler(this.btnSubmitObstacles_Click);
             // 
             // grpbxRunSim
             // 
@@ -245,14 +249,6 @@
             this.grpbxRunSim.TabStop = false;
             this.grpbxRunSim.Text = "Play Simulation";
             // 
-            // ucPlaneStats1
-            // 
-            this.ucPlaneStats1.BackColor = System.Drawing.Color.SlateGray;
-            this.ucPlaneStats1.Location = new System.Drawing.Point(830, 182);
-            this.ucPlaneStats1.Name = "ucPlaneStats1";
-            this.ucPlaneStats1.Size = new System.Drawing.Size(261, 259);
-            this.ucPlaneStats1.TabIndex = 39;
-            // 
             // ChkUseFastPathFinder
             // 
             this.ChkUseFastPathFinder.Checked = true;
@@ -264,6 +260,14 @@
             this.ChkUseFastPathFinder.TabIndex = 30;
             this.ChkUseFastPathFinder.Text = "Fast PathFinder";
             this.ChkUseFastPathFinder.UseVisualStyleBackColor = true;
+            // 
+            // ucPlaneStats1
+            // 
+            this.ucPlaneStats1.BackColor = System.Drawing.Color.SlateGray;
+            this.ucPlaneStats1.Location = new System.Drawing.Point(830, 182);
+            this.ucPlaneStats1.Name = "ucPlaneStats1";
+            this.ucPlaneStats1.Size = new System.Drawing.Size(261, 259);
+            this.ucPlaneStats1.TabIndex = 39;
             // 
             // btnExit
             // 
@@ -305,6 +309,7 @@
             this.Controls.Add(this.ucGrid1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainSimScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SIM Screen";
             ((System.ComponentModel.ISupportInitialize)(this.nrAltirude)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TBarSpeed)).EndInit();
