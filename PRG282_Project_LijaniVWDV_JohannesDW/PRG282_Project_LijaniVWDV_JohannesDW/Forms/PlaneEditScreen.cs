@@ -84,5 +84,13 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         {
             myDatabase.EditPlanes(myPlaneCollection[0].PlaneID,Convert.ToInt32(txtHp1.Text), Convert.ToInt32(txtAlittude1.Text), Convert.ToInt32(txtWeight1.Text), Convert.ToInt32(txtSpeed1.Text), Convert.ToInt32(txtRange1.Text), Convert.ToInt32(txtHardPoints1.Text));
         }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            Hide();
+            frmLoginScreen myLoginScreen = new frmLoginScreen();
+            myLoginScreen.ShowDialog();
+            Close();
+        }
     }
 }

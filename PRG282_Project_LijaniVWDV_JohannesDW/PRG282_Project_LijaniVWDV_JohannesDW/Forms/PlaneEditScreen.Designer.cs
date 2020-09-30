@@ -32,23 +32,62 @@
             this.lblPlaneSelectSubHeading = new System.Windows.Forms.Label();
             this.lblPlaneSelectionHeading = new System.Windows.Forms.Label();
             this.pnlOption2 = new System.Windows.Forms.Panel();
+            this.txtHardPoints2 = new System.Windows.Forms.TextBox();
             this.btnSelectPlane2 = new System.Windows.Forms.Button();
+            this.txtWeight2 = new System.Windows.Forms.TextBox();
             this.pbPlane2 = new System.Windows.Forms.PictureBox();
+            this.txtSpeed2 = new System.Windows.Forms.TextBox();
             this.lblPlaneName2 = new System.Windows.Forms.Label();
+            this.txtHp2 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.txtRange2 = new System.Windows.Forms.TextBox();
             this.lblPlaneType2 = new System.Windows.Forms.Label();
+            this.txtAlittude2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnEditPllane2 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlOption3 = new System.Windows.Forms.Panel();
+            this.txtHardPoints3 = new System.Windows.Forms.TextBox();
             this.btnSelectPlane3 = new System.Windows.Forms.Button();
+            this.txtWeight3 = new System.Windows.Forms.TextBox();
             this.pbPlane3 = new System.Windows.Forms.PictureBox();
+            this.txtSpeed3 = new System.Windows.Forms.TextBox();
             this.lblPlaneName3 = new System.Windows.Forms.Label();
+            this.txtHp3 = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
+            this.txtRange3 = new System.Windows.Forms.TextBox();
             this.lblPlaneType3 = new System.Windows.Forms.Label();
+            this.txtAlittude3 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnEditPllane3 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.pnlOption4 = new System.Windows.Forms.Panel();
+            this.txtHardPoints4 = new System.Windows.Forms.TextBox();
             this.btnSelectPlane4 = new System.Windows.Forms.Button();
+            this.txtWeight4 = new System.Windows.Forms.TextBox();
             this.pbPlane4 = new System.Windows.Forms.PictureBox();
+            this.txtSpeed4 = new System.Windows.Forms.TextBox();
             this.lblPlaneName4 = new System.Windows.Forms.Label();
+            this.txtHp4 = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
+            this.txtRange4 = new System.Windows.Forms.TextBox();
             this.lblPlaneType4 = new System.Windows.Forms.Label();
+            this.txtAlittude4 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btnEditPllane4 = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.pnlOption1 = new System.Windows.Forms.Panel();
             this.txtHardPoints1 = new System.Windows.Forms.TextBox();
             this.txtWeight1 = new System.Windows.Forms.TextBox();
@@ -68,45 +107,7 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.txtHardPoints2 = new System.Windows.Forms.TextBox();
-            this.txtWeight2 = new System.Windows.Forms.TextBox();
-            this.txtSpeed2 = new System.Windows.Forms.TextBox();
-            this.txtHp2 = new System.Windows.Forms.TextBox();
-            this.txtRange2 = new System.Windows.Forms.TextBox();
-            this.txtAlittude2 = new System.Windows.Forms.TextBox();
-            this.btnEditPllane2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtHardPoints3 = new System.Windows.Forms.TextBox();
-            this.txtWeight3 = new System.Windows.Forms.TextBox();
-            this.txtSpeed3 = new System.Windows.Forms.TextBox();
-            this.txtHp3 = new System.Windows.Forms.TextBox();
-            this.txtRange3 = new System.Windows.Forms.TextBox();
-            this.txtAlittude3 = new System.Windows.Forms.TextBox();
-            this.btnEditPllane3 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtHardPoints4 = new System.Windows.Forms.TextBox();
-            this.txtWeight4 = new System.Windows.Forms.TextBox();
-            this.txtSpeed4 = new System.Windows.Forms.TextBox();
-            this.txtHp4 = new System.Windows.Forms.TextBox();
-            this.txtRange4 = new System.Windows.Forms.TextBox();
-            this.txtAlittude4 = new System.Windows.Forms.TextBox();
-            this.btnEditPllane4 = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.btnDone = new System.Windows.Forms.Button();
             this.pnlOption2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlane2)).BeginInit();
             this.pnlOption3.SuspendLayout();
@@ -167,6 +168,14 @@
             this.pnlOption2.Size = new System.Drawing.Size(235, 531);
             this.pnlOption2.TabIndex = 10;
             // 
+            // txtHardPoints2
+            // 
+            this.txtHardPoints2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.txtHardPoints2.Location = new System.Drawing.Point(122, 427);
+            this.txtHardPoints2.Name = "txtHardPoints2";
+            this.txtHardPoints2.Size = new System.Drawing.Size(113, 20);
+            this.txtHardPoints2.TabIndex = 66;
+            // 
             // btnSelectPlane2
             // 
             this.btnSelectPlane2.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -177,6 +186,14 @@
             this.btnSelectPlane2.Text = "SELECT";
             this.btnSelectPlane2.UseVisualStyleBackColor = true;
             // 
+            // txtWeight2
+            // 
+            this.txtWeight2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.txtWeight2.Location = new System.Drawing.Point(6, 427);
+            this.txtWeight2.Name = "txtWeight2";
+            this.txtWeight2.Size = new System.Drawing.Size(110, 20);
+            this.txtWeight2.TabIndex = 65;
+            // 
             // pbPlane2
             // 
             this.pbPlane2.Location = new System.Drawing.Point(6, 50);
@@ -185,6 +202,14 @@
             this.pbPlane2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlane2.TabIndex = 1;
             this.pbPlane2.TabStop = false;
+            // 
+            // txtSpeed2
+            // 
+            this.txtSpeed2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.txtSpeed2.Location = new System.Drawing.Point(122, 370);
+            this.txtSpeed2.Name = "txtSpeed2";
+            this.txtSpeed2.Size = new System.Drawing.Size(110, 20);
+            this.txtSpeed2.TabIndex = 64;
             // 
             // lblPlaneName2
             // 
@@ -198,6 +223,14 @@
             this.lblPlaneName2.Text = "planeName";
             this.lblPlaneName2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtHp2
+            // 
+            this.txtHp2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.txtHp2.Location = new System.Drawing.Point(6, 370);
+            this.txtHp2.Name = "txtHp2";
+            this.txtHp2.Size = new System.Drawing.Size(110, 20);
+            this.txtHp2.TabIndex = 63;
+            // 
             // label21
             // 
             this.label21.Location = new System.Drawing.Point(6, 229);
@@ -207,6 +240,14 @@
             this.label21.Text = "Plane Type";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtRange2
+            // 
+            this.txtRange2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.txtRange2.Location = new System.Drawing.Point(122, 312);
+            this.txtRange2.Name = "txtRange2";
+            this.txtRange2.Size = new System.Drawing.Size(110, 20);
+            this.txtRange2.TabIndex = 62;
+            // 
             // lblPlaneType2
             // 
             this.lblPlaneType2.Location = new System.Drawing.Point(6, 252);
@@ -215,6 +256,78 @@
             this.lblPlaneType2.TabIndex = 19;
             this.lblPlaneType2.Text = "Plane type";
             this.lblPlaneType2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtAlittude2
+            // 
+            this.txtAlittude2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.txtAlittude2.Location = new System.Drawing.Point(6, 312);
+            this.txtAlittude2.Name = "txtAlittude2";
+            this.txtAlittude2.Size = new System.Drawing.Size(110, 20);
+            this.txtAlittude2.TabIndex = 61;
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(6, 289);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(110, 23);
+            this.label5.TabIndex = 54;
+            this.label5.Text = "Max Altitude:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnEditPllane2
+            // 
+            this.btnEditPllane2.Font = new System.Drawing.Font("Stencil", 14F);
+            this.btnEditPllane2.Location = new System.Drawing.Point(9, 455);
+            this.btnEditPllane2.Name = "btnEditPllane2";
+            this.btnEditPllane2.Size = new System.Drawing.Size(220, 35);
+            this.btnEditPllane2.TabIndex = 60;
+            this.btnEditPllane2.Text = "Edit Plane";
+            this.btnEditPllane2.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(122, 289);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(110, 23);
+            this.label8.TabIndex = 55;
+            this.label8.Text = "Range:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(122, 404);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 23);
+            this.label1.TabIndex = 59;
+            this.label1.Text = "Hard Point Amount:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(122, 347);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 23);
+            this.label4.TabIndex = 57;
+            this.label4.Text = "Plane Speed:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(6, 404);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(110, 23);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "Max Weight:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(6, 347);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 23);
+            this.label3.TabIndex = 56;
+            this.label3.Text = "Plane HP:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlOption3
             // 
@@ -242,6 +355,14 @@
             this.pnlOption3.Size = new System.Drawing.Size(235, 531);
             this.pnlOption3.TabIndex = 9;
             // 
+            // txtHardPoints3
+            // 
+            this.txtHardPoints3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.txtHardPoints3.Location = new System.Drawing.Point(122, 427);
+            this.txtHardPoints3.Name = "txtHardPoints3";
+            this.txtHardPoints3.Size = new System.Drawing.Size(113, 20);
+            this.txtHardPoints3.TabIndex = 79;
+            // 
             // btnSelectPlane3
             // 
             this.btnSelectPlane3.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -252,6 +373,14 @@
             this.btnSelectPlane3.Text = "SELECT";
             this.btnSelectPlane3.UseVisualStyleBackColor = true;
             // 
+            // txtWeight3
+            // 
+            this.txtWeight3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.txtWeight3.Location = new System.Drawing.Point(6, 427);
+            this.txtWeight3.Name = "txtWeight3";
+            this.txtWeight3.Size = new System.Drawing.Size(110, 20);
+            this.txtWeight3.TabIndex = 78;
+            // 
             // pbPlane3
             // 
             this.pbPlane3.Location = new System.Drawing.Point(6, 50);
@@ -260,6 +389,14 @@
             this.pbPlane3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlane3.TabIndex = 1;
             this.pbPlane3.TabStop = false;
+            // 
+            // txtSpeed3
+            // 
+            this.txtSpeed3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.txtSpeed3.Location = new System.Drawing.Point(122, 370);
+            this.txtSpeed3.Name = "txtSpeed3";
+            this.txtSpeed3.Size = new System.Drawing.Size(110, 20);
+            this.txtSpeed3.TabIndex = 77;
             // 
             // lblPlaneName3
             // 
@@ -273,6 +410,14 @@
             this.lblPlaneName3.Text = "planeName";
             this.lblPlaneName3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtHp3
+            // 
+            this.txtHp3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.txtHp3.Location = new System.Drawing.Point(6, 370);
+            this.txtHp3.Name = "txtHp3";
+            this.txtHp3.Size = new System.Drawing.Size(110, 20);
+            this.txtHp3.TabIndex = 76;
+            // 
             // label32
             // 
             this.label32.Location = new System.Drawing.Point(6, 229);
@@ -282,6 +427,14 @@
             this.label32.Text = "Plane Type";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtRange3
+            // 
+            this.txtRange3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.txtRange3.Location = new System.Drawing.Point(122, 312);
+            this.txtRange3.Name = "txtRange3";
+            this.txtRange3.Size = new System.Drawing.Size(110, 20);
+            this.txtRange3.TabIndex = 75;
+            // 
             // lblPlaneType3
             // 
             this.lblPlaneType3.Location = new System.Drawing.Point(6, 252);
@@ -290,6 +443,78 @@
             this.lblPlaneType3.TabIndex = 49;
             this.lblPlaneType3.Text = "Plane type";
             this.lblPlaneType3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtAlittude3
+            // 
+            this.txtAlittude3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.txtAlittude3.Location = new System.Drawing.Point(6, 312);
+            this.txtAlittude3.Name = "txtAlittude3";
+            this.txtAlittude3.Size = new System.Drawing.Size(110, 20);
+            this.txtAlittude3.TabIndex = 74;
+            // 
+            // label13
+            // 
+            this.label13.Location = new System.Drawing.Point(6, 289);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(110, 23);
+            this.label13.TabIndex = 67;
+            this.label13.Text = "Max Altitude:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnEditPllane3
+            // 
+            this.btnEditPllane3.Font = new System.Drawing.Font("Stencil", 14F);
+            this.btnEditPllane3.Location = new System.Drawing.Point(9, 455);
+            this.btnEditPllane3.Name = "btnEditPllane3";
+            this.btnEditPllane3.Size = new System.Drawing.Size(220, 35);
+            this.btnEditPllane3.TabIndex = 73;
+            this.btnEditPllane3.Text = "Edit Plane";
+            this.btnEditPllane3.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.Location = new System.Drawing.Point(122, 289);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(110, 23);
+            this.label14.TabIndex = 68;
+            this.label14.Text = "Range:";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(122, 404);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(110, 23);
+            this.label9.TabIndex = 72;
+            this.label9.Text = "Hard Point Amount:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(122, 347);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(110, 23);
+            this.label12.TabIndex = 70;
+            this.label12.Text = "Plane Speed:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(6, 404);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(110, 23);
+            this.label10.TabIndex = 71;
+            this.label10.Text = "Max Weight:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.Location = new System.Drawing.Point(6, 347);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(110, 23);
+            this.label11.TabIndex = 69;
+            this.label11.Text = "Plane HP:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlOption4
             // 
@@ -317,6 +542,14 @@
             this.pnlOption4.Size = new System.Drawing.Size(235, 531);
             this.pnlOption4.TabIndex = 8;
             // 
+            // txtHardPoints4
+            // 
+            this.txtHardPoints4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.txtHardPoints4.Location = new System.Drawing.Point(119, 427);
+            this.txtHardPoints4.Name = "txtHardPoints4";
+            this.txtHardPoints4.Size = new System.Drawing.Size(113, 20);
+            this.txtHardPoints4.TabIndex = 92;
+            // 
             // btnSelectPlane4
             // 
             this.btnSelectPlane4.Font = new System.Drawing.Font("Stencil", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -327,6 +560,14 @@
             this.btnSelectPlane4.Text = "SELECT";
             this.btnSelectPlane4.UseVisualStyleBackColor = true;
             // 
+            // txtWeight4
+            // 
+            this.txtWeight4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.txtWeight4.Location = new System.Drawing.Point(3, 427);
+            this.txtWeight4.Name = "txtWeight4";
+            this.txtWeight4.Size = new System.Drawing.Size(110, 20);
+            this.txtWeight4.TabIndex = 91;
+            // 
             // pbPlane4
             // 
             this.pbPlane4.Location = new System.Drawing.Point(6, 50);
@@ -335,6 +576,14 @@
             this.pbPlane4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlane4.TabIndex = 1;
             this.pbPlane4.TabStop = false;
+            // 
+            // txtSpeed4
+            // 
+            this.txtSpeed4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.txtSpeed4.Location = new System.Drawing.Point(119, 370);
+            this.txtSpeed4.Name = "txtSpeed4";
+            this.txtSpeed4.Size = new System.Drawing.Size(110, 20);
+            this.txtSpeed4.TabIndex = 90;
             // 
             // lblPlaneName4
             // 
@@ -348,6 +597,14 @@
             this.lblPlaneName4.Text = "planeName";
             this.lblPlaneName4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtHp4
+            // 
+            this.txtHp4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.txtHp4.Location = new System.Drawing.Point(3, 370);
+            this.txtHp4.Name = "txtHp4";
+            this.txtHp4.Size = new System.Drawing.Size(110, 20);
+            this.txtHp4.TabIndex = 89;
+            // 
             // label46
             // 
             this.label46.Location = new System.Drawing.Point(6, 229);
@@ -357,6 +614,14 @@
             this.label46.Text = "Plane Type";
             this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtRange4
+            // 
+            this.txtRange4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.txtRange4.Location = new System.Drawing.Point(119, 312);
+            this.txtRange4.Name = "txtRange4";
+            this.txtRange4.Size = new System.Drawing.Size(110, 20);
+            this.txtRange4.TabIndex = 88;
+            // 
             // lblPlaneType4
             // 
             this.lblPlaneType4.Location = new System.Drawing.Point(6, 252);
@@ -365,6 +630,78 @@
             this.lblPlaneType4.TabIndex = 64;
             this.lblPlaneType4.Text = "Plane type";
             this.lblPlaneType4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtAlittude4
+            // 
+            this.txtAlittude4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.txtAlittude4.Location = new System.Drawing.Point(3, 312);
+            this.txtAlittude4.Name = "txtAlittude4";
+            this.txtAlittude4.Size = new System.Drawing.Size(110, 20);
+            this.txtAlittude4.TabIndex = 87;
+            // 
+            // label19
+            // 
+            this.label19.Location = new System.Drawing.Point(3, 289);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(110, 23);
+            this.label19.TabIndex = 80;
+            this.label19.Text = "Max Altitude:";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnEditPllane4
+            // 
+            this.btnEditPllane4.Font = new System.Drawing.Font("Stencil", 14F);
+            this.btnEditPllane4.Location = new System.Drawing.Point(6, 455);
+            this.btnEditPllane4.Name = "btnEditPllane4";
+            this.btnEditPllane4.Size = new System.Drawing.Size(220, 35);
+            this.btnEditPllane4.TabIndex = 86;
+            this.btnEditPllane4.Text = "Edit Plane";
+            this.btnEditPllane4.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.Location = new System.Drawing.Point(119, 289);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(110, 23);
+            this.label20.TabIndex = 81;
+            this.label20.Text = "Range:";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label15
+            // 
+            this.label15.Location = new System.Drawing.Point(119, 404);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(110, 23);
+            this.label15.TabIndex = 85;
+            this.label15.Text = "Hard Point Amount:";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.Location = new System.Drawing.Point(119, 347);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(110, 23);
+            this.label18.TabIndex = 83;
+            this.label18.Text = "Plane Speed:";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label16
+            // 
+            this.label16.Location = new System.Drawing.Point(3, 404);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(110, 23);
+            this.label16.TabIndex = 84;
+            this.label16.Text = "Max Weight:";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label17
+            // 
+            this.label17.Location = new System.Drawing.Point(3, 347);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(110, 23);
+            this.label17.TabIndex = 82;
+            this.label17.Text = "Plane HP:";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlOption1
             // 
@@ -554,341 +891,16 @@
             this.label24.Text = "Range:";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtHardPoints2
-            // 
-            this.txtHardPoints2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.txtHardPoints2.Location = new System.Drawing.Point(122, 427);
-            this.txtHardPoints2.Name = "txtHardPoints2";
-            this.txtHardPoints2.Size = new System.Drawing.Size(113, 20);
-            this.txtHardPoints2.TabIndex = 66;
-            // 
-            // txtWeight2
-            // 
-            this.txtWeight2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.txtWeight2.Location = new System.Drawing.Point(6, 427);
-            this.txtWeight2.Name = "txtWeight2";
-            this.txtWeight2.Size = new System.Drawing.Size(110, 20);
-            this.txtWeight2.TabIndex = 65;
-            // 
-            // txtSpeed2
-            // 
-            this.txtSpeed2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.txtSpeed2.Location = new System.Drawing.Point(122, 370);
-            this.txtSpeed2.Name = "txtSpeed2";
-            this.txtSpeed2.Size = new System.Drawing.Size(110, 20);
-            this.txtSpeed2.TabIndex = 64;
-            // 
-            // txtHp2
-            // 
-            this.txtHp2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.txtHp2.Location = new System.Drawing.Point(6, 370);
-            this.txtHp2.Name = "txtHp2";
-            this.txtHp2.Size = new System.Drawing.Size(110, 20);
-            this.txtHp2.TabIndex = 63;
-            // 
-            // txtRange2
-            // 
-            this.txtRange2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.txtRange2.Location = new System.Drawing.Point(122, 312);
-            this.txtRange2.Name = "txtRange2";
-            this.txtRange2.Size = new System.Drawing.Size(110, 20);
-            this.txtRange2.TabIndex = 62;
-            // 
-            // txtAlittude2
-            // 
-            this.txtAlittude2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.txtAlittude2.Location = new System.Drawing.Point(6, 312);
-            this.txtAlittude2.Name = "txtAlittude2";
-            this.txtAlittude2.Size = new System.Drawing.Size(110, 20);
-            this.txtAlittude2.TabIndex = 61;
-            // 
-            // btnEditPllane2
-            // 
-            this.btnEditPllane2.Font = new System.Drawing.Font("Stencil", 14F);
-            this.btnEditPllane2.Location = new System.Drawing.Point(9, 455);
-            this.btnEditPllane2.Name = "btnEditPllane2";
-            this.btnEditPllane2.Size = new System.Drawing.Size(220, 35);
-            this.btnEditPllane2.TabIndex = 60;
-            this.btnEditPllane2.Text = "Edit Plane";
-            this.btnEditPllane2.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(122, 404);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 23);
-            this.label1.TabIndex = 59;
-            this.label1.Text = "Hard Point Amount:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(6, 404);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 23);
-            this.label2.TabIndex = 58;
-            this.label2.Text = "Max Weight:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(6, 347);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 23);
-            this.label3.TabIndex = 56;
-            this.label3.Text = "Plane HP:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(122, 347);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 23);
-            this.label4.TabIndex = 57;
-            this.label4.Text = "Plane Speed:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(6, 289);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 23);
-            this.label5.TabIndex = 54;
-            this.label5.Text = "Max Altitude:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.Location = new System.Drawing.Point(122, 289);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 23);
-            this.label8.TabIndex = 55;
-            this.label8.Text = "Range:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtHardPoints3
-            // 
-            this.txtHardPoints3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.txtHardPoints3.Location = new System.Drawing.Point(122, 427);
-            this.txtHardPoints3.Name = "txtHardPoints3";
-            this.txtHardPoints3.Size = new System.Drawing.Size(113, 20);
-            this.txtHardPoints3.TabIndex = 79;
-            // 
-            // txtWeight3
-            // 
-            this.txtWeight3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.txtWeight3.Location = new System.Drawing.Point(6, 427);
-            this.txtWeight3.Name = "txtWeight3";
-            this.txtWeight3.Size = new System.Drawing.Size(110, 20);
-            this.txtWeight3.TabIndex = 78;
-            // 
-            // txtSpeed3
-            // 
-            this.txtSpeed3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.txtSpeed3.Location = new System.Drawing.Point(122, 370);
-            this.txtSpeed3.Name = "txtSpeed3";
-            this.txtSpeed3.Size = new System.Drawing.Size(110, 20);
-            this.txtSpeed3.TabIndex = 77;
-            // 
-            // txtHp3
-            // 
-            this.txtHp3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.txtHp3.Location = new System.Drawing.Point(6, 370);
-            this.txtHp3.Name = "txtHp3";
-            this.txtHp3.Size = new System.Drawing.Size(110, 20);
-            this.txtHp3.TabIndex = 76;
-            // 
-            // txtRange3
-            // 
-            this.txtRange3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.txtRange3.Location = new System.Drawing.Point(122, 312);
-            this.txtRange3.Name = "txtRange3";
-            this.txtRange3.Size = new System.Drawing.Size(110, 20);
-            this.txtRange3.TabIndex = 75;
-            // 
-            // txtAlittude3
-            // 
-            this.txtAlittude3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.txtAlittude3.Location = new System.Drawing.Point(6, 312);
-            this.txtAlittude3.Name = "txtAlittude3";
-            this.txtAlittude3.Size = new System.Drawing.Size(110, 20);
-            this.txtAlittude3.TabIndex = 74;
-            // 
-            // btnEditPllane3
-            // 
-            this.btnEditPllane3.Font = new System.Drawing.Font("Stencil", 14F);
-            this.btnEditPllane3.Location = new System.Drawing.Point(9, 455);
-            this.btnEditPllane3.Name = "btnEditPllane3";
-            this.btnEditPllane3.Size = new System.Drawing.Size(220, 35);
-            this.btnEditPllane3.TabIndex = 73;
-            this.btnEditPllane3.Text = "Edit Plane";
-            this.btnEditPllane3.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.Location = new System.Drawing.Point(122, 404);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 23);
-            this.label9.TabIndex = 72;
-            this.label9.Text = "Hard Point Amount:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.Location = new System.Drawing.Point(6, 404);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(110, 23);
-            this.label10.TabIndex = 71;
-            this.label10.Text = "Max Weight:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            this.label11.Location = new System.Drawing.Point(6, 347);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(110, 23);
-            this.label11.TabIndex = 69;
-            this.label11.Text = "Plane HP:";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            this.label12.Location = new System.Drawing.Point(122, 347);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(110, 23);
-            this.label12.TabIndex = 70;
-            this.label12.Text = "Plane Speed:";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label13
-            // 
-            this.label13.Location = new System.Drawing.Point(6, 289);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(110, 23);
-            this.label13.TabIndex = 67;
-            this.label13.Text = "Max Altitude:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label14
-            // 
-            this.label14.Location = new System.Drawing.Point(122, 289);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(110, 23);
-            this.label14.TabIndex = 68;
-            this.label14.Text = "Range:";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtHardPoints4
-            // 
-            this.txtHardPoints4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.txtHardPoints4.Location = new System.Drawing.Point(119, 427);
-            this.txtHardPoints4.Name = "txtHardPoints4";
-            this.txtHardPoints4.Size = new System.Drawing.Size(113, 20);
-            this.txtHardPoints4.TabIndex = 92;
-            // 
-            // txtWeight4
-            // 
-            this.txtWeight4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.txtWeight4.Location = new System.Drawing.Point(3, 427);
-            this.txtWeight4.Name = "txtWeight4";
-            this.txtWeight4.Size = new System.Drawing.Size(110, 20);
-            this.txtWeight4.TabIndex = 91;
-            // 
-            // txtSpeed4
-            // 
-            this.txtSpeed4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.txtSpeed4.Location = new System.Drawing.Point(119, 370);
-            this.txtSpeed4.Name = "txtSpeed4";
-            this.txtSpeed4.Size = new System.Drawing.Size(110, 20);
-            this.txtSpeed4.TabIndex = 90;
-            // 
-            // txtHp4
-            // 
-            this.txtHp4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.txtHp4.Location = new System.Drawing.Point(3, 370);
-            this.txtHp4.Name = "txtHp4";
-            this.txtHp4.Size = new System.Drawing.Size(110, 20);
-            this.txtHp4.TabIndex = 89;
-            // 
-            // txtRange4
-            // 
-            this.txtRange4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.txtRange4.Location = new System.Drawing.Point(119, 312);
-            this.txtRange4.Name = "txtRange4";
-            this.txtRange4.Size = new System.Drawing.Size(110, 20);
-            this.txtRange4.TabIndex = 88;
-            // 
-            // txtAlittude4
-            // 
-            this.txtAlittude4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.txtAlittude4.Location = new System.Drawing.Point(3, 312);
-            this.txtAlittude4.Name = "txtAlittude4";
-            this.txtAlittude4.Size = new System.Drawing.Size(110, 20);
-            this.txtAlittude4.TabIndex = 87;
-            // 
-            // btnEditPllane4
-            // 
-            this.btnEditPllane4.Font = new System.Drawing.Font("Stencil", 14F);
-            this.btnEditPllane4.Location = new System.Drawing.Point(6, 455);
-            this.btnEditPllane4.Name = "btnEditPllane4";
-            this.btnEditPllane4.Size = new System.Drawing.Size(220, 35);
-            this.btnEditPllane4.TabIndex = 86;
-            this.btnEditPllane4.Text = "Edit Plane";
-            this.btnEditPllane4.UseVisualStyleBackColor = true;
-            // 
-            // label15
-            // 
-            this.label15.Location = new System.Drawing.Point(119, 404);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(110, 23);
-            this.label15.TabIndex = 85;
-            this.label15.Text = "Hard Point Amount:";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label16
-            // 
-            this.label16.Location = new System.Drawing.Point(3, 404);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(110, 23);
-            this.label16.TabIndex = 84;
-            this.label16.Text = "Max Weight:";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label17
-            // 
-            this.label17.Location = new System.Drawing.Point(3, 347);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(110, 23);
-            this.label17.TabIndex = 82;
-            this.label17.Text = "Plane HP:";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label18
-            // 
-            this.label18.Location = new System.Drawing.Point(119, 347);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(110, 23);
-            this.label18.TabIndex = 83;
-            this.label18.Text = "Plane Speed:";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label19
-            // 
-            this.label19.Location = new System.Drawing.Point(3, 289);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(110, 23);
-            this.label19.TabIndex = 80;
-            this.label19.Text = "Max Altitude:";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label20
-            // 
-            this.label20.Location = new System.Drawing.Point(119, 289);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(110, 23);
-            this.label20.TabIndex = 81;
-            this.label20.Text = "Range:";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // btnDone
+            // 
+            this.btnDone.Font = new System.Drawing.Font("Stencil", 14F);
+            this.btnDone.Location = new System.Drawing.Point(448, 677);
+            this.btnDone.Name = "btnDone";
+            this.btnDone.Size = new System.Drawing.Size(220, 35);
+            this.btnDone.TabIndex = 67;
+            this.btnDone.Text = "Done Edit";
+            this.btnDone.UseVisualStyleBackColor = true;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // frmPlaneEdit
             // 
@@ -896,7 +908,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1107, 688);
+            this.ClientSize = new System.Drawing.Size(1107, 724);
+            this.Controls.Add(this.btnDone);
             this.Controls.Add(this.lblPlaneSelectSubHeading);
             this.Controls.Add(this.lblPlaneSelectionHeading);
             this.Controls.Add(this.pnlOption2);
@@ -1005,5 +1018,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnDone;
     }
 }

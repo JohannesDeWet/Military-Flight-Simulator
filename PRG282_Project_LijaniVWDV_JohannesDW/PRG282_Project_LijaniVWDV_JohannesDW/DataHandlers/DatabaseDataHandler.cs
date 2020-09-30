@@ -78,7 +78,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.DataHandlers
             try
             {
                 myConnection.Open();
-                myCommand = new SqlCommand("SELECT COUNT(AdminID) FROM AdminUsers WHERE Username = '" + username + "' AND Password = '" + password + "'", myConnection);
+                myCommand = new SqlCommand("SELECT COUNT(Username) FROM AdminUsers WHERE Username = '" + username + "' AND Password = '" + password + "'", myConnection);
                 int rowCount = Convert.ToInt32(myCommand.ExecuteScalar());
                 if (rowCount >= 1)
                 {
@@ -176,6 +176,25 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.DataHandlers
                 myConnection.Open();
                 myCommand.ExecuteNonQuery();
             }
+            finally
+            {
+                myConnection.Close();
+            }
+        }
+        public void EditAdmin(string initialName,string newName, string password)
+        {
+            try
+            {
+                myConnection = new SqlConnection(@"Data Source =.; Initial Catalog = MilitarySimDataDase; Integrated Security = SSPI");
+            }
+            catch (Exception) { throw; }
+            try
+            {
+                myConnection.Open();
+                myCommand = new SqlCommand($"UPDATE AdminUsers SET Username = '{newName}', Password = '{password}' WHERE Username = '{initialName}'", myConnection);
+                myCommand.ExecuteNonQuery();
+            }
+            catch (Exception) { throw; }
             finally
             {
                 myConnection.Close();

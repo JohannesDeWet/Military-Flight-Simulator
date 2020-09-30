@@ -92,5 +92,22 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
             
         }
+
+        private void btnEditAdmins_Click(object sender, EventArgs e)
+        {
+            string adminCurrentName = myAdminCollection[dgvAllAdmins.CurrentCell.RowIndex].AdminName;
+            myAdminCollection[dgvAllAdmins.CurrentCell.RowIndex].AdminName = txtUsername.Text;
+            myAdminCollection[dgvAllAdmins.CurrentCell.RowIndex].AdminPassword = txtPassWord.Text;
+            myDatabase.EditAdmin(adminCurrentName,txtUsername.Text,txtPassWord.Text);
+            FillInventoryForm();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Hide();
+            frmLoginScreen myAdminScreen = new frmLoginScreen();
+            myAdminScreen.ShowDialog();
+            Close();
+        }
     }
 }

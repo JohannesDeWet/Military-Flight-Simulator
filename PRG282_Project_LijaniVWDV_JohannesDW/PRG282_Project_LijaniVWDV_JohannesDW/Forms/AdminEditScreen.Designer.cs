@@ -55,6 +55,7 @@
             this.btnEditAdmins.TabIndex = 12;
             this.btnEditAdmins.Text = "E D I T  A D M I N";
             this.btnEditAdmins.UseVisualStyleBackColor = false;
+            this.btnEditAdmins.Click += new System.EventHandler(this.btnEditAdmins_Click);
             // 
             // btnCancel
             // 
@@ -67,6 +68,7 @@
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "C A N C E L";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label2
             // 
