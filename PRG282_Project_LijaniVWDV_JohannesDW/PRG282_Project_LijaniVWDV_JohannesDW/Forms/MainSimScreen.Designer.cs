@@ -86,9 +86,9 @@
             this.cmbDrawMode.DisplayMember = "(none)";
             this.cmbDrawMode.FormattingEnabled = true;
             this.cmbDrawMode.Items.AddRange(new object[] {
-            "Start",
-            "Stop",
-            "Block"});
+            "Block",
+            "Home Base",
+            "Enemy Base"});
             this.cmbDrawMode.Location = new System.Drawing.Point(51, 68);
             this.cmbDrawMode.Name = "cmbDrawMode";
             this.cmbDrawMode.Size = new System.Drawing.Size(121, 21);
@@ -117,10 +117,25 @@
             // 
             // nrAltirude
             // 
+            this.nrAltirude.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.nrAltirude.Location = new System.Drawing.Point(51, 135);
+            this.nrAltirude.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.nrAltirude.Name = "nrAltirude";
             this.nrAltirude.Size = new System.Drawing.Size(120, 20);
             this.nrAltirude.TabIndex = 34;
+            this.nrAltirude.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // lblAltitude
             // 

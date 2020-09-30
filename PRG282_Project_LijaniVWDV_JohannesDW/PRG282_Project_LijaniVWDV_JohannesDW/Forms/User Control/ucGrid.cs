@@ -110,6 +110,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             InitializeComponent();
 
             ResetMatrix();
+
         }
         #endregion
 
@@ -220,9 +221,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             return c;
         }
 
-        #endregion
-
-       
+        #endregion  
 
         #region Overrides
         // These overrides are for drawing on the grid, and for rendering it for the pathfinding

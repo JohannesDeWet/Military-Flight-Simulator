@@ -39,22 +39,23 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
         public static int planealtitude;
 
+
         public MainSimScreen()
         {
             InitializeComponent();
 
+            WelcomeUser();
             //making sure the user follows the right path of events
             grpbxRunSim.Visible = false;
             ucPlaneStats1.Visible = false;
 
-            nrAltirude.Visible = false;
-            lblHint.Visible = false;
-            lblAltitude.Visible = false;
+            nrAltirude.Visible = true;
+            lblHint.Visible = true;
+            lblAltitude.Visible = true;
 
         }
 
         
-
         private delegate void PathFinderDebugDelegate(int parentX, int parentY, int x, int y, PathFinderNodeType type, int totalCost, int cost);
         private void PathFinderDebug(int parentX, int parentY, int x, int y, PathFinderNodeType type, int totalCost, int cost)
         {
@@ -73,7 +74,16 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
         #region Methods
 
-        
+        public void WelcomeUser()
+        {
+            string welcomeMessage = "Welcome to the simulation screen! Here you will place the obstacles to navigate and then run the simulation. \n Enjoy!";
+
+            MessageBox.Show(welcomeMessage, "Main Simulation Screen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Let's start with the obstacles. Just draw them on the grid.", "Main Simulation Screen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            cmbDrawMode.Focus();
+            cmbDrawMode.SelectedIndex = 0;
+        }
 
         public void Run()
         {
@@ -181,21 +191,21 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             {
                 MessageBox.Show("Please choose the object you want to place");
             } 
-            else if (cmbDrawMode.SelectedIndex == 0)
+            else if (cmbDrawMode.SelectedIndex == 1)
             {
                 ucGrid1.DrawModeSetup = DrawModeSetup.Start;
                 nrAltirude.Visible = false;
                 lblHint.Visible = false;
                 lblAltitude.Visible = false;
             }            
-            else if (cmbDrawMode.SelectedIndex == 1)
+            else if (cmbDrawMode.SelectedIndex == 2)
             {
                 ucGrid1.DrawModeSetup = DrawModeSetup.End;
                 nrAltirude.Visible = false;
                 lblHint.Visible = false;
                 lblAltitude.Visible = false;
             }
-            else if (cmbDrawMode.SelectedIndex == 2)
+            else if (cmbDrawMode.SelectedIndex == 0)
             {
                 ucGrid1.NodeWeight = 0;
                 ucGrid1.DrawModeSetup = DrawModeSetup.Block;
@@ -223,8 +233,12 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         {
             ucGrid1.ResetMatrix();
             ucGrid1.Invalidate();
-        }
 
+            MessageBox.Show("Let's start with the obstacles. Just draw them on the grid.", "Main Simulation Screen", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            cmbDrawMode.Focus();
+            cmbDrawMode.SelectedIndex = 0;
+        }
 
         #endregion
 
