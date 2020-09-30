@@ -28,7 +28,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
         private List<PathFinderNode> mClose = new List<PathFinderNode>();
         private bool mStop = false;
         private bool mStopped = true;
-        private int mHoriz = 0;
+        //private int mHoriz = 0;
         private HeuristicFormula mFormula = HeuristicFormula.Manhattan;
         private bool mDiagonals = true;
         private int mHEstimate = 2;
@@ -201,11 +201,9 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
         {
             lock (this)
             {
-                //HighResolutionTime.Start();
 
                 mFound = false;
                 mStop = false;
-                //mStopped = false;
                 mCloseNodeCounter = 0;
                 mOpenNodeValue += 2;
                 mCloseNodeValue += 2;

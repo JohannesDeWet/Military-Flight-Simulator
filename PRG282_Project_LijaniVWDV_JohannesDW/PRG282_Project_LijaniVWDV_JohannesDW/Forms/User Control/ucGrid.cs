@@ -22,7 +22,8 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         None = 0,
         Start = 1,
         End = 2,
-        Block = 3
+        Block = 3,
+        PassOver = 4
     }
 
     public enum ObstacleAltitude
@@ -37,6 +38,8 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
     {
 
         #region Variables
+        public int planeAlt = 54; // this will be the max altitude of the chosen plane
+
         private byte mNodeWeight = 1;
         private int mGridSize = 20;
         private byte[,] mMatrix = new byte[1024, 1024];
@@ -209,10 +212,17 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
                     break;
             }
 
+            if (mDrawMode == DrawModeSetup.PassOver)
+            {
+                c = Color.Aqua;
+            }
+
             return c;
         }
 
         #endregion
+
+       
 
         #region Overrides
         // These overrides are for drawing on the grid, and for rendering it for the pathfinding
@@ -229,17 +239,27 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
                         // Lets render the obstacles
                         Color color = Color.Empty;
-                        if (mMatrix[sx, sy] != 0)
+
+                        if (mDrawMode == DrawModeSetup.PassOver)
                         {
+                            color = GetColor();
+                        }
+
+                         if (mMatrix[sx, sy] != 0 )
+                        {
+                            //We placed a map as the background of ucGrid and no longer need the below code.
+                            //if an image is not used as the background, the below code is necessary
+
                             //int colorIndex = 240 - ((int)(Math.Log10(mMatrix[sx, sy]) * 127));
                             //colorIndex = colorIndex < 0 ? 0 : colorIndex > 255 ? 255 : colorIndex;
-                            //color = Color.FromArgb(255, colorIndex, colorIndex, colorIndex);                            
+                            //color = Color.FromArgb(255, colorIndex, colorIndex, colorIndex);                  
+                            
                         }
                         else
                         {
                             color = GetColor();      //the colour of the blocks being drawn
                         }
-                           
+
 
                         using (SolidBrush brush = new SolidBrush(color))
                             g.FillRectangle(brush, x, y, mGridSize, mGridSize);
@@ -254,6 +274,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
                                 g.FillRectangle(brush, x, y, mGridSize, mGridSize);
                     }
             }
+            
 
             Color c = Color.Black;
             using (Pen pen = new Pen(c))
@@ -268,8 +289,10 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             base.OnPaint(e);
         }
 
+
         protected override void OnMouseMove(MouseEventArgs e)
         {
+            //If no mode is chosen or if no mouse button is being clicked
             if (e.Button == MouseButtons.None || mDrawMode == DrawModeSetup.None)
                 return;
 
@@ -289,20 +312,27 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
                     mMatrix[x, y] = 1;
                     break;
                 case DrawModeSetup.Block:
+                    //MessageBox.Show(MainSimScreen.planealtitude.ToString(), planeAlt.ToString()) ;
                     try
                     {
-                        if (e.Button == (MouseButtons.Left | MouseButtons.Right))
+                        if (e.Button == (MouseButtons.Left | MouseButtons.Right)) //erases the obstacles drawn 
                             mMatrix[x, y] = (byte)(mMatrix[x, y] - mNodeWeight > 1 ? mMatrix[x, y] - mNodeWeight : 1);
                         else if (e.Button == MouseButtons.Left)
-                            mMatrix[x, y] = mNodeWeight;
+                            DeterminePass(mMatrix,x,y, MainSimScreen.planealtitude);
+                            //mMatrix[x, y] = mNodeWeight;
                         else if (e.Button == MouseButtons.Right)
                             mMatrix[x, y] = (byte)(mMatrix[x, y] + mNodeWeight < 256 ? mMatrix[x, y] + mNodeWeight : 255);
                         
                     }
-                    catch (Exception)
+                    catch (Exception mess)
                     {
-                        MessageBox.Show("Out of bounds!");
+                        MessageBox.Show("Out of bounds!" + mess.Message);
                     }
+                    break;
+
+                case DrawModeSetup.PassOver:
+                    if (e.Button == MouseButtons.Left)
+                        DeterminePass(mMatrix, x, y, MainSimScreen.planealtitude);
                     break;
 
             }
@@ -311,10 +341,28 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             base.OnMouseMove(e);
         }
 
+
         protected override void OnMouseDown(MouseEventArgs e)
         {
             this.OnMouseMove(e);
             base.OnMouseDown(e);
+        }
+
+        
+
+        public void DeterminePass(byte[,] matrix, int x, int y, int altitude)
+        {
+
+            if (planeAlt > altitude)
+            {
+                mDrawMode = DrawModeSetup.PassOver;
+                mMatrix[x, y] = (byte)(mMatrix[x, y] - mNodeWeight > 1 ? mMatrix[x, y] - mNodeWeight : 1); //causes nodeweight to be 1
+            }
+            else
+            {
+                matrix[x, y] = mNodeWeight; // nodeweight is equal to 0
+            }
+
         }
         #endregion
     }

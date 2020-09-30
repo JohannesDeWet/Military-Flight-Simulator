@@ -49,7 +49,6 @@
     <Compile Include="ClassesFolder\Admin.cs" />
     <Compile Include="ClassesFolder\Bomb.cs" />
     <Compile Include="ClassesFolder\Buildings.cs" />
-    <Compile Include="ClassesFolder\Path Finding Classes\HighResolutionTime.cs" />
     <Compile Include="ClassesFolder\Path Finding Classes\IPathFinder.cs" />
     <Compile Include="ClassesFolder\Path Finding Classes\PathFinder.cs" />
     <Compile Include="ClassesFolder\Path Finding Classes\PathFinderFast.cs" />

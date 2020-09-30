@@ -161,8 +161,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
 
         public List<PathFinderNode> FindPath(Point start, Point end)
         {
-            HighResolutionTime.Start();
-
             PathFinderNode parentNode;
             bool found = false;
             int gridX = mGrid.GetUpperBound(0);
@@ -347,7 +345,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
 #endif
             }
 
-            mCompletedTime = HighResolutionTime.GetTime();
             if (found)
             {
                 PathFinderNode fNode = mClose[mClose.Count - 1];
@@ -355,10 +352,10 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
                 {
                     if (fNode.PX == mClose[i].X && fNode.PY == mClose[i].Y || i == mClose.Count - 1)
                     {
-#if DEBUGON
+
                         if (mDebugFoundPath && PathFinderDebug != null)
                             PathFinderDebug(fNode.X, fNode.Y, mClose[i].X, mClose[i].Y, PathFinderNodeType.Path, mClose[i].F, mClose[i].G);
-#endif
+
                         fNode = mClose[i];
                     }
                     else

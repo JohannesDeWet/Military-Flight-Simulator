@@ -37,14 +37,23 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         private int mSearchLimit;
         #endregion
 
+        public static int planealtitude;
+
         public MainSimScreen()
         {
             InitializeComponent();
 
+            //making sure the user follows the right path of events
             grpbxRunSim.Visible = false;
             ucPlaneStats1.Visible = false;
 
+            nrAltirude.Visible = false;
+            lblHint.Visible = false;
+            lblAltitude.Visible = false;
+
         }
+
+        
 
         private delegate void PathFinderDebugDelegate(int parentX, int parentY, int x, int y, PathFinderNodeType type, int totalCost, int cost);
         private void PathFinderDebug(int parentX, int parentY, int x, int y, PathFinderNodeType type, int totalCost, int cost)
@@ -115,14 +124,14 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             mPathFinder.DebugFoundPath = true;
 
             List<PathFinderNode> path = mPathFinder.FindPath(ucGrid1.Start, ucGrid1.End);
-            //UpdateTimeLabel(mPathFinder.CompletedTime);
 
             if (path == null  )
-                MessageBox.Show("The plane could not reach the enemy base safely and had to abort mission.", "MISSION ABORTED",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("The plane could not reach the enemy base safely and had to abort mission.", "MISSION ABORTED", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             if (btnStartSimulation.Text == STOP)
                 btnStartSimulation_Click(null, EventArgs.Empty);
         }
+
 
         public void DeterminAlt()
         {
@@ -138,6 +147,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             {
                 ucGrid1.ObstacleAlt = ObstacleAltitude.Low;
             }
+
         }
 
         #endregion
@@ -163,23 +173,47 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             mRunning = !mRunning;
         }
 
+        int chosenPlaneAlt = 54;
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            if (cmbDrawMode.SelectedIndex == 0)
+            if (cmbDrawMode.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please choose the object you want to place");
+            } 
+            else if (cmbDrawMode.SelectedIndex == 0)
+            {
                 ucGrid1.DrawModeSetup = DrawModeSetup.Start;
+                nrAltirude.Visible = false;
+                lblHint.Visible = false;
+                lblAltitude.Visible = false;
+            }            
             else if (cmbDrawMode.SelectedIndex == 1)
+            {
                 ucGrid1.DrawModeSetup = DrawModeSetup.End;
+                nrAltirude.Visible = false;
+                lblHint.Visible = false;
+                lblAltitude.Visible = false;
+            }
             else if (cmbDrawMode.SelectedIndex == 2)
             {
                 ucGrid1.NodeWeight = 0;
                 ucGrid1.DrawModeSetup = DrawModeSetup.Block;
 
-                DeterminAlt();
+                nrAltirude.Visible = true;
+                lblHint.Visible = true;
+                lblAltitude.Visible = true;
+
+                DeterminAlt(); 
+                
             }
             else
             {
                 ucGrid1.DrawModeSetup = DrawModeSetup.Block;
+
+                nrAltirude.Visible = true;
+                lblHint.Visible = true;
+                lblAltitude.Visible = true;
 
                 DeterminAlt();
             }
@@ -235,6 +269,12 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         {
             frmReport report = new frmReport();
             report.Show();
+        }
+
+        private void ucGrid1_Enter(object sender, EventArgs e)
+        {
+            planealtitude = (int)nrAltirude.Value;
+            //MessageBox.Show(planealtitude.ToString());
         }
     }
 }
