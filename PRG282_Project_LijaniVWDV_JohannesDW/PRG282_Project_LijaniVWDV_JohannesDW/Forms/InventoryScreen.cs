@@ -104,7 +104,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             List<string> myInventoryBombIDCollection = new List<string>();
             for (int i = 0; i < myInventoryCollection.Count; i++)
             {
-                myInventoryBombIDCollection.Add(myInventoryCollection[i].BombID);
+                myInventoryBombIDCollection.Add(myInventoryCollection[i].BombName);
             }
             return myInventoryBombIDCollection;
         }

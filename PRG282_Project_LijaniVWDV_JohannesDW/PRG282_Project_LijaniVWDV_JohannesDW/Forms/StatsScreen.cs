@@ -16,10 +16,10 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         TextFileDataHandler mydata = new TextFileDataHandler();
         DatabaseDataHandler mydatabase = new DatabaseDataHandler();
         List<Buildings> myBuilding = new List<Buildings>();
+        string mySelectedBuilding = "";
         string selectedPlaneName = "";
         int mSearchLimit=0;
         List<string> myInventory = new List<string>();
-        Plane myPlane = new Plane();
         public frmReport()
         {
             InitializeComponent();
@@ -37,13 +37,15 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             txtPlaneName.Text = selectedPlaneName;
             pbPlaneUsed.ImageLocation = @"Resources\Images\Planes\" + selectedPlaneName + ".jpg";
             FillBombList();
+            FillBuildingList();
+            FillSpecific();
         }
 
         private void frmReport_Load(object sender, EventArgs e)
         {
             myBuilding = mydatabase.GetBuildings();
             FillScreen();
-            FillPostRunStats();
+
         }
         private void FillBombList() 
         {
@@ -54,6 +56,25 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
                     lstBombs.Items.Add(item);
                 }
+        }
+        private void FillBuildingList() 
+        {
+            lstAllTargets.Items.Clear();
+            foreach (var dr in myBuilding)
+            {
+                ListViewItem item = new ListViewItem(dr.BuildingName);
+
+                lstAllTargets.Items.Add(item);
+            }
+        }
+        private void FillSpecific()
+        {
+            int selected = GenerateUniqueNumbers(1, myBuilding.Count, -1)[0];
+            mySelectedBuilding = myBuilding[selected].BuildingName;
+            lstBuildingChosen.Items.Clear();
+            ListViewItem item = new ListViewItem(mySelectedBuilding);
+
+            lstBuildingChosen.Items.Add(item);
         }
         public List<int> GenerateUniqueNumbers(int amountOfNumbers, int maxRange, int excludeNumber)
         {
@@ -83,26 +104,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
                 }
             }
             return randomContainer;
-        }
-
-        public void FillPostRunStats()
-        {
-            myPlane = mydatabase.GetSpecificPlane(selectedPlaneName);
-
-            ListViewItem lvi = new ListViewItem(myPlane.PlaneName);
-            lvi.SubItems.Add(myPlane.FuelCapacity.ToString());
-            lvi.SubItems.Add(myPlane.MaxSpeed.ToString());
-            lvi.SubItems.Add(myPlane.MaxAltitude.ToString());
-            lvi.SubItems.Add(mSearchLimit.ToString());
-            lstPostRun.Items.Add(lvi);
-
-            //string[] row = { myPlane.PlaneName, myPlane.FuelCapacity.ToString(), myPlane.MaxSpeed.ToString(), myPlane.MaxAltitude.ToString(), mSearchLimit.ToString() };
-            //lstPostRun.Items.Clear();
-            
-            //ListViewItem item = new ListViewItem(row);
-
-            //lstBombs.Items.Add(item);
-           
         }
     }
 }
