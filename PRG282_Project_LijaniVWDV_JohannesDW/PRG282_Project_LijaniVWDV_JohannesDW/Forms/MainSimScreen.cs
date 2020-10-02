@@ -50,6 +50,9 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             InitializeComponent();
         }
 
+        List<string> inventoryList = new List<string>();
+        frmInventory frmIn = new frmInventory();
+
         public MainSimScreen(string planeName, int range, int hp, int payload, int speed, int alt)
         {
             selectedPlaneName = planeName;
@@ -60,7 +63,10 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             planeAlt = alt;
             globalAltitudeChosenPlane = planeAlt;
 
+           
             InitializeComponent();
+
+            frmReport rep = new frmReport(selectedPlaneName, range, inventoryList);
         }
         #endregion
 
@@ -298,6 +304,9 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
         private void MainSimScreen_Load(object sender, EventArgs e)
         {
+
+            inventoryList = frmIn.CreateListofInventoryBombItems();
+
             WelcomeUser();
 
             //making sure the user follows the right path of events

@@ -98,7 +98,8 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             }
 
         }
-        private List<string> CreateListofInventoryBombItems()
+
+        public List<string> CreateListofInventoryBombItems()
         {
             List<string> myInventoryBombIDCollection = new List<string>();
             for (int i = 0; i < myInventoryCollection.Count; i++)
