@@ -41,7 +41,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         private void frmReport_Load(object sender, EventArgs e)
         {
             myBuilding = mydatabase.GetBuildings();
-
+            FillScreen();
         }
         private void FillBombList() 
         {
