@@ -58,7 +58,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             mSearchLimit = range;
             planeHP = hp;
             planePayload = payload;
-            mDelay = speed;
+            mDelay = speed/1000;
             planeAlt = alt;
             globalAltitudeChosenPlane = planeAlt;
             inventoryList = inventory;
@@ -290,8 +290,10 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
+            PathFinderFast pfs = new PathFinderFast();
+            
             Hide();
-            frmReport myAdminScreen = new frmReport(selectedPlaneName, mSearchLimit, inventoryList);
+            frmReport myAdminScreen = new frmReport(selectedPlaneName, pfs.ReturnNodeCount(), inventoryList);
             myAdminScreen.ShowDialog();
             Close();
         }

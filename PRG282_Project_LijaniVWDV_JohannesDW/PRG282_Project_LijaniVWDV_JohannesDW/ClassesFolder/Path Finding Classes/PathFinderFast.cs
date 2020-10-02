@@ -44,6 +44,8 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
         private byte mOpenNodeValue = 1;
         private byte mCloseNodeValue = 2;
 
+        public static int travelled;
+
         //Promoted local variables to member variables to avoid recreation between calls
         private int mH = 0;
         private int mLocation = 0;
@@ -163,6 +165,11 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
                 mCalcGrid = new PathFinderNodeFast[mGridX * mGridY];
 
             mOpen = new PriorityQueueB<int>(new ComparePFNodeMatrix(mCalcGrid));
+        }
+
+        public PathFinderFast()
+        {
+
         }
 
         #region Internal Class
@@ -314,10 +321,13 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
 
                 }
 
+                
+
                 // PATHFINDER HAS REACHED THE END NODE
 
                 if (mFound)
                 {
+                    
                     mClose.Clear();
                     int posX = end.X;
                     int posY = end.Y;
@@ -363,6 +373,11 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
                 mStopped = true;
                 return null;
             }
+        }
+
+        public int ReturnNodeCount()
+        {
+            return mCloseNodeCounter;
         }
 
         public void CheckAltitude()
