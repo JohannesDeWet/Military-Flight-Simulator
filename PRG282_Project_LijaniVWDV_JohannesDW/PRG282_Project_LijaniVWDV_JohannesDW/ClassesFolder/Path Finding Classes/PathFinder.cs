@@ -33,8 +33,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
 
     public enum HeuristicFormula
     {
-        Manhattan = 1,
-        
+        Manhattan = 1,        
     }
 
     public delegate void PathFinderDebugHandler(int fromX, int fromY, int x, int y, PathFinderNodeType type, int totalCost, int cost);
@@ -45,7 +44,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
         #region Event
         public event PathFinderDebugHandler PathFinderDebug;
         #endregion
-
 
         #region Variables
         private byte[,] mGrid = null;
@@ -66,7 +64,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes
         private bool mDebugProgress = false;
         private bool mDebugFoundPath = false;
         #endregion
-
 
         #region Constructor
         public PathFinder(byte[,] grid)     //constructor

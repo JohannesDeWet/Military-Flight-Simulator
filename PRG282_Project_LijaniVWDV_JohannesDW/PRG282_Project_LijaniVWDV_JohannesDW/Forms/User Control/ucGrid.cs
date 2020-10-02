@@ -38,7 +38,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
     {
 
         #region Variables
-        public int planeAlt = 54; // this will be the max altitude of the chosen plane
 
         private byte mNodeWeight = 1;
         private int mGridSize = 20;
@@ -110,7 +109,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             InitializeComponent();
 
             ResetMatrix();
-
         }
         #endregion
 
@@ -317,8 +315,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
                         if (e.Button == (MouseButtons.Left | MouseButtons.Right)) //erases the obstacles drawn 
                             mMatrix[x, y] = (byte)(mMatrix[x, y] - mNodeWeight > 1 ? mMatrix[x, y] - mNodeWeight : 1);
                         else if (e.Button == MouseButtons.Left)
-                            DeterminePass(mMatrix,x,y, MainSimScreen.planealtitude);
-                            //mMatrix[x, y] = mNodeWeight;
+                            DeterminePass(mMatrix,x,y, MainSimScreen.globalAltitude);
                         else if (e.Button == MouseButtons.Right)
                             mMatrix[x, y] = (byte)(mMatrix[x, y] + mNodeWeight < 256 ? mMatrix[x, y] + mNodeWeight : 255);
                         
@@ -331,7 +328,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
                 case DrawModeSetup.PassOver:
                     if (e.Button == MouseButtons.Left)
-                        DeterminePass(mMatrix, x, y, MainSimScreen.planealtitude);
+                        DeterminePass(mMatrix, x, y, MainSimScreen.globalAltitude);
                     break;
 
             }
@@ -352,7 +349,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         public void DeterminePass(byte[,] matrix, int x, int y, int altitude)
         {
 
-            if (planeAlt > altitude)
+            if (MainSimScreen.globalAltitudeChosenPlane > altitude)
             {
                 mDrawMode = DrawModeSetup.PassOver;
                 mMatrix[x, y] = (byte)(mMatrix[x, y] - mNodeWeight > 1 ? mMatrix[x, y] - mNodeWeight : 1); //causes nodeweight to be 1

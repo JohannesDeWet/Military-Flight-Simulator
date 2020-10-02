@@ -38,7 +38,6 @@
             this.lblAltitude = new System.Windows.Forms.Label();
             this.TBarSpeed = new System.Windows.Forms.TrackBar();
             this.NumSearchLimit = new System.Windows.Forms.NumericUpDown();
-            this.ucGrid1 = new PRG282_Project_LijaniVWDV_JohannesDW.Forms.ucGrid();
             this.lblMainSimHeading = new System.Windows.Forms.Label();
             this.pnlPlaceObstacles = new System.Windows.Forms.Panel();
             this.lblHint = new System.Windows.Forms.Label();
@@ -46,14 +45,23 @@
             this.lblPlaceObjects = new System.Windows.Forms.Label();
             this.grpbxRunSim = new System.Windows.Forms.GroupBox();
             this.ChkUseFastPathFinder = new System.Windows.Forms.CheckBox();
-            this.ucPlaneStats1 = new PRG282_Project_LijaniVWDV_JohannesDW.Forms.User_Control.ucPlaneStats();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnContinue = new System.Windows.Forms.Button();
+            this.ucGrid1 = new PRG282_Project_LijaniVWDV_JohannesDW.Forms.ucGrid();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblPlaneStats = new System.Windows.Forms.Label();
+            this.lblPlaneName = new System.Windows.Forms.Label();
+            this.lblPlaneRange = new System.Windows.Forms.Label();
+            this.lblPlanePayload = new System.Windows.Forms.Label();
+            this.lblPlaneHP = new System.Windows.Forms.Label();
+            this.lblPlaneSpeed = new System.Windows.Forms.Label();
+            this.lblPlaneAlt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nrAltirude)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TBarSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumSearchLimit)).BeginInit();
             this.pnlPlaceObstacles.SuspendLayout();
             this.grpbxRunSim.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnStartSimulation
@@ -117,14 +125,14 @@
             // 
             // nrAltirude
             // 
-            this.nrAltirude.Increment = new decimal(new int[] {
-            5,
+            this.nrAltirude.Location = new System.Drawing.Point(51, 135);
+            this.nrAltirude.Maximum = new decimal(new int[] {
+            20,
             0,
             0,
             0});
-            this.nrAltirude.Location = new System.Drawing.Point(51, 135);
             this.nrAltirude.Minimum = new decimal(new int[] {
-            10,
+            1,
             0,
             0,
             0});
@@ -132,7 +140,7 @@
             this.nrAltirude.Size = new System.Drawing.Size(120, 20);
             this.nrAltirude.TabIndex = 34;
             this.nrAltirude.Value = new decimal(new int[] {
-            10,
+            1,
             0,
             0,
             0});
@@ -181,26 +189,6 @@
             0,
             0,
             0});
-            // 
-            // ucGrid1
-            // 
-            this.ucGrid1.BackColor = System.Drawing.Color.Transparent;
-            this.ucGrid1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ucGrid1.BackgroundImage")));
-            this.ucGrid1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ucGrid1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ucGrid1.DrawModeSetup = PRG282_Project_LijaniVWDV_JohannesDW.Forms.DrawModeSetup.None;
-            this.ucGrid1.End = new System.Drawing.Point(0, 0);
-            this.ucGrid1.Formula = PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes.HeuristicFormula.Manhattan;
-            this.ucGrid1.GridSize = 20;
-            this.ucGrid1.Location = new System.Drawing.Point(289, 107);
-            this.ucGrid1.Name = "ucGrid1";
-            this.ucGrid1.NodeWeight = ((byte)(1));
-            this.ucGrid1.ObstacleAlt = PRG282_Project_LijaniVWDV_JohannesDW.Forms.ObstacleAltitude.Low;
-            this.ucGrid1.Size = new System.Drawing.Size(523, 458);
-            this.ucGrid1.Start = new System.Drawing.Point(0, 0);
-            this.ucGrid1.TabIndex = 26;
-            this.ucGrid1.Enter += new System.EventHandler(this.ucGrid1_Enter);
-            this.ucGrid1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ucGrid1_MouseDown);
             // 
             // lblMainSimHeading
             // 
@@ -290,14 +278,6 @@
             this.ChkUseFastPathFinder.UseVisualStyleBackColor = true;
             this.ChkUseFastPathFinder.Visible = false;
             // 
-            // ucPlaneStats1
-            // 
-            this.ucPlaneStats1.BackColor = System.Drawing.Color.SlateGray;
-            this.ucPlaneStats1.Location = new System.Drawing.Point(830, 182);
-            this.ucPlaneStats1.Name = "ucPlaneStats1";
-            this.ucPlaneStats1.Size = new System.Drawing.Size(261, 259);
-            this.ucPlaneStats1.TabIndex = 39;
-            // 
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Stencil", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -320,6 +300,106 @@
             this.btnContinue.UseVisualStyleBackColor = true;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
+            // ucGrid1
+            // 
+            this.ucGrid1.BackColor = System.Drawing.Color.Transparent;
+            this.ucGrid1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ucGrid1.BackgroundImage")));
+            this.ucGrid1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ucGrid1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ucGrid1.DrawModeSetup = PRG282_Project_LijaniVWDV_JohannesDW.Forms.DrawModeSetup.None;
+            this.ucGrid1.End = new System.Drawing.Point(0, 0);
+            this.ucGrid1.Formula = PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes.HeuristicFormula.Manhattan;
+            this.ucGrid1.GridSize = 20;
+            this.ucGrid1.Location = new System.Drawing.Point(289, 107);
+            this.ucGrid1.Name = "ucGrid1";
+            this.ucGrid1.NodeWeight = ((byte)(1));
+            this.ucGrid1.ObstacleAlt = PRG282_Project_LijaniVWDV_JohannesDW.Forms.ObstacleAltitude.Low;
+            this.ucGrid1.Size = new System.Drawing.Size(523, 458);
+            this.ucGrid1.Start = new System.Drawing.Point(0, 0);
+            this.ucGrid1.TabIndex = 26;
+            this.ucGrid1.Enter += new System.EventHandler(this.ucGrid1_Enter);
+            this.ucGrid1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ucGrid1_MouseDown);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.Controls.Add(this.lblPlaneAlt);
+            this.panel1.Controls.Add(this.lblPlaneSpeed);
+            this.panel1.Controls.Add(this.lblPlaneHP);
+            this.panel1.Controls.Add(this.lblPlanePayload);
+            this.panel1.Controls.Add(this.lblPlaneRange);
+            this.panel1.Controls.Add(this.lblPlaneName);
+            this.panel1.Controls.Add(this.lblPlaneStats);
+            this.panel1.Location = new System.Drawing.Point(842, 110);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(238, 330);
+            this.panel1.TabIndex = 42;
+            // 
+            // lblPlaneStats
+            // 
+            this.lblPlaneStats.AutoSize = true;
+            this.lblPlaneStats.Font = new System.Drawing.Font("Stencil", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlaneStats.Location = new System.Drawing.Point(47, 8);
+            this.lblPlaneStats.Name = "lblPlaneStats";
+            this.lblPlaneStats.Size = new System.Drawing.Size(140, 24);
+            this.lblPlaneStats.TabIndex = 0;
+            this.lblPlaneStats.Text = "Plane Stats:";
+            // 
+            // lblPlaneName
+            // 
+            this.lblPlaneName.AutoSize = true;
+            this.lblPlaneName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlaneName.Location = new System.Drawing.Point(94, 32);
+            this.lblPlaneName.Name = "lblPlaneName";
+            this.lblPlaneName.Size = new System.Drawing.Size(52, 17);
+            this.lblPlaneName.TabIndex = 1;
+            this.lblPlaneName.Text = "label1";
+            // 
+            // lblPlaneRange
+            // 
+            this.lblPlaneRange.AutoSize = true;
+            this.lblPlaneRange.Location = new System.Drawing.Point(39, 73);
+            this.lblPlaneRange.Name = "lblPlaneRange";
+            this.lblPlaneRange.Size = new System.Drawing.Size(42, 13);
+            this.lblPlaneRange.TabIndex = 2;
+            this.lblPlaneRange.Text = "Range:";
+            // 
+            // lblPlanePayload
+            // 
+            this.lblPlanePayload.AutoSize = true;
+            this.lblPlanePayload.Location = new System.Drawing.Point(39, 179);
+            this.lblPlanePayload.Name = "lblPlanePayload";
+            this.lblPlanePayload.Size = new System.Drawing.Size(48, 13);
+            this.lblPlanePayload.TabIndex = 3;
+            this.lblPlanePayload.Text = "Payload:";
+            // 
+            // lblPlaneHP
+            // 
+            this.lblPlaneHP.AutoSize = true;
+            this.lblPlaneHP.Location = new System.Drawing.Point(39, 132);
+            this.lblPlaneHP.Name = "lblPlaneHP";
+            this.lblPlaneHP.Size = new System.Drawing.Size(25, 13);
+            this.lblPlaneHP.TabIndex = 4;
+            this.lblPlaneHP.Text = "HP:";
+            // 
+            // lblPlaneSpeed
+            // 
+            this.lblPlaneSpeed.AutoSize = true;
+            this.lblPlaneSpeed.Location = new System.Drawing.Point(39, 280);
+            this.lblPlaneSpeed.Name = "lblPlaneSpeed";
+            this.lblPlaneSpeed.Size = new System.Drawing.Size(44, 13);
+            this.lblPlaneSpeed.TabIndex = 5;
+            this.lblPlaneSpeed.Text = "Speed: ";
+            // 
+            // lblPlaneAlt
+            // 
+            this.lblPlaneAlt.AutoSize = true;
+            this.lblPlaneAlt.Location = new System.Drawing.Point(39, 228);
+            this.lblPlaneAlt.Name = "lblPlaneAlt";
+            this.lblPlaneAlt.Size = new System.Drawing.Size(45, 13);
+            this.lblPlaneAlt.TabIndex = 6;
+            this.lblPlaneAlt.Text = "Altitude:";
+            // 
             // MainSimScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,9 +407,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1103, 590);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.ucPlaneStats1);
             this.Controls.Add(this.grpbxRunSim);
             this.Controls.Add(this.pnlPlaceObstacles);
             this.Controls.Add(this.lblMainSimHeading);
@@ -341,6 +421,7 @@
             this.Name = "MainSimScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SIM Screen";
+            this.Load += new System.EventHandler(this.MainSimScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nrAltirude)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TBarSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumSearchLimit)).EndInit();
@@ -348,6 +429,8 @@
             this.pnlPlaceObstacles.PerformLayout();
             this.grpbxRunSim.ResumeLayout(false);
             this.grpbxRunSim.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,10 +452,17 @@
         private System.Windows.Forms.Label lblPlaceObjects;
         private System.Windows.Forms.Button btnSubmitObstacles;
         private System.Windows.Forms.GroupBox grpbxRunSim;
-        private User_Control.ucPlaneStats ucPlaneStats1;
         private System.Windows.Forms.CheckBox ChkUseFastPathFinder;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.Label lblHint;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblPlaneName;
+        private System.Windows.Forms.Label lblPlaneStats;
+        private System.Windows.Forms.Label lblPlaneRange;
+        private System.Windows.Forms.Label lblPlaneHP;
+        private System.Windows.Forms.Label lblPlanePayload;
+        private System.Windows.Forms.Label lblPlaneAlt;
+        private System.Windows.Forms.Label lblPlaneSpeed;
     }
 }
