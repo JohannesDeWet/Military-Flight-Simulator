@@ -62,11 +62,8 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             mDelay = speed;
             planeAlt = alt;
             globalAltitudeChosenPlane = planeAlt;
-
-           
+        
             InitializeComponent();
-
-            frmReport rep = new frmReport(selectedPlaneName, range, inventoryList);
         }
         #endregion
 
@@ -143,7 +140,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             }
 
             mPathFinder.Formula = ucGrid1.Formula;
-            mPathFinder.SearchLimit = (int)NumSearchLimit.Value;
+            //mPathFinder.SearchLimit = (int)plane;
             mPathFinder.DebugProgress = ChlShowProgress.Checked;
             mPathFinder.DebugFoundPath = true;
 
@@ -180,9 +177,9 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
         private void btnStartSimulation_Click(object sender, EventArgs e)
         {
-            mSearchLimit = (int)NumSearchLimit.Value;
+            //mSearchLimit = (int)NumSearchLimit.Value;
 
-            mDelay = TBarSpeed.Value;
+           // mDelay = TBarSpeed.Value;
 
             if (InvokeRequired)
             {
@@ -293,7 +290,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            frmReport report = new frmReport();
+            frmReport report = new frmReport(selectedPlaneName, mSearchLimit, inventoryList);
             report.Show();
         }
 
