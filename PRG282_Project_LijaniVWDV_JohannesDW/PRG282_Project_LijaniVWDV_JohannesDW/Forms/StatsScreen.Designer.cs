@@ -46,10 +46,13 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.CHTarget = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.listView3 = new System.Windows.Forms.ListView();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLaunch = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblPlaneRange = new System.Windows.Forms.Label();
+            this.lblPlaneAlt = new System.Windows.Forms.Label();
+            this.lblPlaneSpeed = new System.Windows.Forms.Label();
+            this.lblRangeTravelled = new System.Windows.Forms.Label();
             this.pnlPlaneNameAnePicture.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlaneUsed)).BeginInit();
             this.panel6.SuspendLayout();
@@ -112,7 +115,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
             this.panel6.Controls.Add(this.lstAllTargets);
             this.panel6.Controls.Add(this.label6);
-            this.panel6.Location = new System.Drawing.Point(689, 106);
+            this.panel6.Location = new System.Drawing.Point(522, 106);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(235, 187);
             this.panel6.TabIndex = 5;
@@ -202,21 +205,15 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.panel5.Controls.Add(this.listView3);
+            this.panel5.Controls.Add(this.lblRangeTravelled);
+            this.panel5.Controls.Add(this.lblPlaneSpeed);
+            this.panel5.Controls.Add(this.lblPlaneAlt);
+            this.panel5.Controls.Add(this.lblPlaneRange);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Location = new System.Drawing.Point(267, 106);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(235, 401);
             this.panel5.TabIndex = 6;
-            // 
-            // listView3
-            // 
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(23, 41);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(195, 344);
-            this.listView3.TabIndex = 1;
-            this.listView3.UseCompatibleStateImageBehavior = false;
             // 
             // label2
             // 
@@ -255,6 +252,46 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.button1.Text = "H O M E";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // lblPlaneRange
+            // 
+            this.lblPlaneRange.AutoSize = true;
+            this.lblPlaneRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlaneRange.Location = new System.Drawing.Point(35, 61);
+            this.lblPlaneRange.Name = "lblPlaneRange";
+            this.lblPlaneRange.Size = new System.Drawing.Size(80, 25);
+            this.lblPlaneRange.TabIndex = 1;
+            this.lblPlaneRange.Text = "Range: ";
+            // 
+            // lblPlaneAlt
+            // 
+            this.lblPlaneAlt.AutoSize = true;
+            this.lblPlaneAlt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlaneAlt.Location = new System.Drawing.Point(27, 297);
+            this.lblPlaneAlt.Name = "lblPlaneAlt";
+            this.lblPlaneAlt.Size = new System.Drawing.Size(88, 25);
+            this.lblPlaneAlt.TabIndex = 2;
+            this.lblPlaneAlt.Text = "Altitude: ";
+            // 
+            // lblPlaneSpeed
+            // 
+            this.lblPlaneSpeed.AutoSize = true;
+            this.lblPlaneSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlaneSpeed.Location = new System.Drawing.Point(26, 214);
+            this.lblPlaneSpeed.Name = "lblPlaneSpeed";
+            this.lblPlaneSpeed.Size = new System.Drawing.Size(81, 25);
+            this.lblPlaneSpeed.TabIndex = 3;
+            this.lblPlaneSpeed.Text = "Speed: ";
+            // 
+            // lblRangeTravelled
+            // 
+            this.lblRangeTravelled.AutoSize = true;
+            this.lblRangeTravelled.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRangeTravelled.Location = new System.Drawing.Point(3, 133);
+            this.lblRangeTravelled.Name = "lblRangeTravelled";
+            this.lblRangeTravelled.Size = new System.Drawing.Size(104, 25);
+            this.lblRangeTravelled.TabIndex = 4;
+            this.lblRangeTravelled.Text = "Travelled: ";
+            // 
             // frmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,6 +316,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.panel6.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,7 +335,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.ListView listView3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLaunch;
         private System.Windows.Forms.Button button1;
@@ -305,5 +342,9 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         private System.Windows.Forms.ColumnHeader CBTarget;
         private System.Windows.Forms.ListView lstBuildingChosen;
         private System.Windows.Forms.ColumnHeader CHTarget;
+        private System.Windows.Forms.Label lblRangeTravelled;
+        private System.Windows.Forms.Label lblPlaneSpeed;
+        private System.Windows.Forms.Label lblPlaneAlt;
+        private System.Windows.Forms.Label lblPlaneRange;
     }
 }

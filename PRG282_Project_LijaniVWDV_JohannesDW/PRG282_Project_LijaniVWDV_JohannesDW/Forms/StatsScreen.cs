@@ -105,5 +105,15 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             }
             return randomContainer;
         }
+
+        public void StatReport()
+        {
+            Plane specificPlane = mydatabase.GetSpecificPlane(selectedPlaneName);
+
+            lblPlaneRange.Text += specificPlane.FuelCapacity.ToString();
+            lblRangeTravelled.Text += mSearchLimit.ToString();
+            lblPlaneSpeed.Text += specificPlane.MaxSpeed.ToString();
+            lblPlaneAlt.Text += specificPlane.MaxAltitude.ToString();
+        }
     }
 }
