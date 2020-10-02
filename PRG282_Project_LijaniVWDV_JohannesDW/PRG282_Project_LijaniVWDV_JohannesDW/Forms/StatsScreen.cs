@@ -105,5 +105,18 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             }
             return randomContainer;
         }
+
+        private void btnLaunch_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Hide();
+            frmIntro intro = new frmIntro();
+            intro.ShowDialog();
+            Close();
+        }
     }
 }

@@ -112,7 +112,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
             this.panel6.Controls.Add(this.lstAllTargets);
             this.panel6.Controls.Add(this.label6);
-            this.panel6.Location = new System.Drawing.Point(689, 106);
+            this.panel6.Location = new System.Drawing.Point(522, 106);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(235, 187);
             this.panel6.TabIndex = 5;
@@ -242,6 +242,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.btnLaunch.TabIndex = 3;
             this.btnLaunch.Text = "E X I T";
             this.btnLaunch.UseVisualStyleBackColor = false;
+            this.btnLaunch.Click += new System.EventHandler(this.btnLaunch_Click);
             // 
             // button1
             // 
@@ -254,6 +255,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.button1.TabIndex = 8;
             this.button1.Text = "H O M E";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmReport
             // 
