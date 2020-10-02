@@ -16,6 +16,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         TextFileDataHandler mydata = new TextFileDataHandler();
         DatabaseDataHandler mydatabase = new DatabaseDataHandler();
         List<Buildings> myBuilding = new List<Buildings>();
+        string mySelectedBuilding = "";
         string selectedPlaneName = "";
         int mSearchLimit=0;
         List<string> myInventory = new List<string>();
@@ -36,12 +37,16 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             txtPlaneName.Text = selectedPlaneName;
             pbPlaneUsed.ImageLocation = @"Resources\Images\Planes\" + selectedPlaneName + ".jpg";
             FillBombList();
+            FillBuildingList();
+            FillSpecific();
+            FillDamage();
         }
 
         private void frmReport_Load(object sender, EventArgs e)
         {
             myBuilding = mydatabase.GetBuildings();
             FillScreen();
+
         }
         private void FillBombList() 
         {
@@ -52,6 +57,29 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
                     lstBombs.Items.Add(item);
                 }
+        }
+        private void FillBuildingList() 
+        {
+            lstAllTargets.Items.Clear();
+            foreach (var dr in myBuilding)
+            {
+                ListViewItem item = new ListViewItem(dr.BuildingName);
+
+                lstAllTargets.Items.Add(item);
+            }
+        }
+        private void FillSpecific()
+        {
+            int selected = GenerateUniqueNumbers(1, myBuilding.Count, -1)[0];
+            mySelectedBuilding = myBuilding[selected].BuildingName;
+            lstBuildingChosen.Items.Clear();
+            ListViewItem item = new ListViewItem(mySelectedBuilding);
+
+            lstBuildingChosen.Items.Add(item);
+        }
+        private void FillDamage()
+        { 
+        
         }
         public List<int> GenerateUniqueNumbers(int amountOfNumbers, int maxRange, int excludeNumber)
         {

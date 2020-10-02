@@ -36,7 +36,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.pbPlaneUsed = new System.Windows.Forms.PictureBox();
             this.txtPlaneName = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lstAllTargets = new System.Windows.Forms.ListView();
             this.label6 = new System.Windows.Forms.Label();
             this.lblReportHeading = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -48,7 +48,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.listView2 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.listView3 = new System.Windows.Forms.ListView();
@@ -58,6 +57,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.CHBomb = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CBTarget = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CHTarget = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lstBuildingChosen = new System.Windows.Forms.ListView();
             this.pnlPlaneNameAnePicture.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlaneUsed)).BeginInit();
             this.panel6.SuspendLayout();
@@ -94,6 +94,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.pbPlaneUsed.Location = new System.Drawing.Point(0, 50);
             this.pbPlaneUsed.Name = "pbPlaneUsed";
             this.pbPlaneUsed.Size = new System.Drawing.Size(235, 172);
+            this.pbPlaneUsed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPlaneUsed.TabIndex = 1;
             this.pbPlaneUsed.TabStop = false;
             // 
@@ -113,24 +114,24 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.panel6.Controls.Add(this.listView1);
+            this.panel6.Controls.Add(this.lstAllTargets);
             this.panel6.Controls.Add(this.label6);
             this.panel6.Location = new System.Drawing.Point(522, 106);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(235, 187);
             this.panel6.TabIndex = 5;
             // 
-            // listView1
+            // lstAllTargets
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstAllTargets.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.CBTarget});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(23, 41);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(195, 130);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lstAllTargets.HideSelection = false;
+            this.lstAllTargets.Location = new System.Drawing.Point(23, 41);
+            this.lstAllTargets.Name = "lstAllTargets";
+            this.lstAllTargets.Size = new System.Drawing.Size(195, 130);
+            this.lstAllTargets.TabIndex = 1;
+            this.lstAllTargets.UseCompatibleStateImageBehavior = false;
+            this.lstAllTargets.View = System.Windows.Forms.View.Details;
             // 
             // label6
             // 
@@ -242,24 +243,12 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.panel4.Controls.Add(this.listView2);
+            this.panel4.Controls.Add(this.lstBuildingChosen);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Location = new System.Drawing.Point(522, 320);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(235, 187);
             this.panel4.TabIndex = 6;
-            // 
-            // listView2
-            // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.CHTarget});
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(23, 41);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(195, 130);
-            this.listView2.TabIndex = 2;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
             // 
             // label1
             // 
@@ -332,7 +321,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             // 
             // CHBomb
             // 
-            this.CHBomb.Text = "Bombs";
+            this.CHBomb.Text = "Bombs Name";
             this.CHBomb.Width = 200;
             // 
             // CBTarget
@@ -344,6 +333,18 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             // 
             this.CHTarget.Text = "Target";
             this.CHTarget.Width = 200;
+            // 
+            // lstBuildingChosen
+            // 
+            this.lstBuildingChosen.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.CHTarget});
+            this.lstBuildingChosen.HideSelection = false;
+            this.lstBuildingChosen.Location = new System.Drawing.Point(23, 41);
+            this.lstBuildingChosen.Name = "lstBuildingChosen";
+            this.lstBuildingChosen.Size = new System.Drawing.Size(195, 130);
+            this.lstBuildingChosen.TabIndex = 2;
+            this.lstBuildingChosen.UseCompatibleStateImageBehavior = false;
+            this.lstBuildingChosen.View = System.Windows.Forms.View.Details;
             // 
             // frmReport
             // 
@@ -387,9 +388,8 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListView lstBombs;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lstAllTargets;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ListView listView3;
@@ -404,6 +404,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ColumnHeader CHBomb;
         private System.Windows.Forms.ColumnHeader CBTarget;
+        private System.Windows.Forms.ListView lstBuildingChosen;
         private System.Windows.Forms.ColumnHeader CHTarget;
     }
 }
