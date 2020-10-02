@@ -200,6 +200,33 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.DataHandlers
                 myConnection.Close();
             }
         }
+
+        public List<Buildings> GetBuildings()
+        {
+            List<Buildings> myBuildingCollection = new List<Buildings>();
+            try
+            {
+                myConnection = new SqlConnection(@"Data Source =.; Initial Catalog = MilitarySimDataDase; Integrated Security = SSPI");
+            }
+            catch (Exception) { throw; }
+            try
+            {
+                myConnection.Open();
+                myCommand = new SqlCommand("SELECT * FROM Buidings", myConnection);
+                myReader = myCommand.ExecuteReader();
+                while (myReader.Read())
+                {
+                    Buildings myBuilding = new Buildings((int)myReader["BuildingID"], (string)myReader["BuildingName"], (string)myReader["BuildingType"], (int)myReader["BuildingHealth"]);
+                    myBuildingCollection.Add(myBuilding);
+                }
+            }
+            catch (Exception) { throw; }
+            finally
+            {
+                myConnection.Close();
+            }
+            return myBuildingCollection;
+        }
     }
 
 }

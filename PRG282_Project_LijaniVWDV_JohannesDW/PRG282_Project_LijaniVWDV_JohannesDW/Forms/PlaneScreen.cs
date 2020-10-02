@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes;
 
 namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 {
@@ -19,10 +20,12 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         private string myselectedPlane = "";
         private float myremainingRange = 0;
         private Bomb myBomb = new Bomb();
+
         public frmPlane()
         {
             InitializeComponent();
         }
+
         public frmPlane(List<string> myBombList, string selectedplanename, float rangeLeft)
         {
             myselectedBombs = myBombList;
@@ -36,6 +39,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             myPlaneCollection = myDatabase.SelectAllPlanes();
             FillPlaneForm();
         }
+
         private void FillPlaneForm() 
         {
             List<PictureBox> myPicBox = new List<PictureBox> { pbPlane1, pbPlane2, pbPlane3, pbPlane4 };
@@ -45,6 +49,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             }
             fillAllLables();
         }
+
         private void fillAllLables() 
         {
             List<Label> myNameLable = new List<Label> { lblPlaneName1, lblPlaneName2, lblPlaneName3, lblPlaneName4 };
@@ -119,6 +124,31 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             frmInventory myInventoryScreen = new frmInventory(myPlaneCollection[3].PlaneName, myPlaneCollection[3].Payload, myPlaneCollection[3].FuelCapacity, myPlaneCollection[3].MountingPoints);
             myInventoryScreen.ShowDialog();
             Close();
+        }
+
+
+        
+        private void btnSelectPlane1_Click(object sender, EventArgs e)
+        {
+            MainSimScreen mainscreen = new MainSimScreen(myPlaneCollection[0].PlaneName, myPlaneCollection[0].FuelCapacity, myPlaneCollection[0].PlaneHP, myPlaneCollection[0].Payload, myPlaneCollection[0].MaxSpeed, myPlaneCollection[0].MaxAltitude);
+            
+            
+            mainscreen.ShowDialog();
+        }
+
+        private void btnSelectPlane2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSelectPlane3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSelectPlane4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

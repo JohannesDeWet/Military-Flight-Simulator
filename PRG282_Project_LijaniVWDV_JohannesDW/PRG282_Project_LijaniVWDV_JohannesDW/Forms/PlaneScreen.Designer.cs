@@ -163,6 +163,7 @@
             this.btnSelectPlane1.TabIndex = 2;
             this.btnSelectPlane1.Text = "SELECT";
             this.btnSelectPlane1.UseVisualStyleBackColor = true;
+            this.btnSelectPlane1.Click += new System.EventHandler(this.btnSelectPlane1_Click);
             // 
             // lblHardPoints1
             // 
@@ -357,6 +358,7 @@
             this.btnSelectPlane4.TabIndex = 4;
             this.btnSelectPlane4.Text = "SELECT";
             this.btnSelectPlane4.UseVisualStyleBackColor = true;
+            this.btnSelectPlane4.Click += new System.EventHandler(this.btnSelectPlane4_Click);
             // 
             // lblHardPoints4
             // 
@@ -551,6 +553,7 @@
             this.btnSelectPlane3.TabIndex = 3;
             this.btnSelectPlane3.Text = "SELECT";
             this.btnSelectPlane3.UseVisualStyleBackColor = true;
+            this.btnSelectPlane3.Click += new System.EventHandler(this.btnSelectPlane3_Click);
             // 
             // lblHardPoints3
             // 
@@ -745,6 +748,7 @@
             this.btnSelectPlane2.TabIndex = 4;
             this.btnSelectPlane2.Text = "SELECT";
             this.btnSelectPlane2.UseVisualStyleBackColor = true;
+            this.btnSelectPlane2.Click += new System.EventHandler(this.btnSelectPlane2_Click);
             // 
             // lblHardPoints2
             // 

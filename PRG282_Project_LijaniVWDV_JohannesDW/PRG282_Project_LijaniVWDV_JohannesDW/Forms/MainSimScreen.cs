@@ -35,27 +35,34 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         private bool mPaused;
         private bool mRunning;
         private int mSearchLimit;
+        private string selectedPlaneName;
+        private int planeHP;
+        private int planePayload;
+        private int planeAlt;
+
+        public static int globalAltitude;
+        public static int globalAltitudeChosenPlane;
         #endregion
 
-        public static int planealtitude;
-
-
+        #region Constructors
         public MainSimScreen()
         {
             InitializeComponent();
-
-            WelcomeUser();
-            //making sure the user follows the right path of events
-            grpbxRunSim.Visible = false;
-            ucPlaneStats1.Visible = false;
-
-            nrAltirude.Visible = true;
-            lblHint.Visible = true;
-            lblAltitude.Visible = true;
-
         }
 
-        
+        public MainSimScreen(string planeName, int range, int hp, int payload, int speed, int alt)
+        {
+            selectedPlaneName = planeName;
+            mSearchLimit = range;
+            planeHP = hp;
+            planePayload = payload;
+            mDelay = speed;
+            planeAlt = alt;
+            globalAltitudeChosenPlane = planeAlt;
+            InitializeComponent();
+        }
+        #endregion
+
         private delegate void PathFinderDebugDelegate(int parentX, int parentY, int x, int y, PathFinderNodeType type, int totalCost, int cost);
         private void PathFinderDebug(int parentX, int parentY, int x, int y, PathFinderNodeType type, int totalCost, int cost)
         {
@@ -145,15 +152,15 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
         public void DeterminAlt()
         {
-            if (nrAltirude.Value > 50 && nrAltirude.Value <= 100)
+            if (nrAltirude.Value > 15 && nrAltirude.Value <= 20)
             {
                 ucGrid1.ObstacleAlt = ObstacleAltitude.High;
             }
-            else if (nrAltirude.Value > 30 && nrAltirude.Value <= 50)
+            else if (nrAltirude.Value > 10 && nrAltirude.Value <= 15)
             {
                 ucGrid1.ObstacleAlt = ObstacleAltitude.Medium;
             }
-            else if (nrAltirude.Value <= 30)
+            else if (nrAltirude.Value <= 10)
             {
                 ucGrid1.ObstacleAlt = ObstacleAltitude.Low;
             }
@@ -182,8 +189,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
                 Stop();
             mRunning = !mRunning;
         }
-
-        int chosenPlaneAlt = 54;
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -257,7 +262,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
                 case DialogResult.Yes:
                     pnlPlaceObstacles.Visible = false;
                     grpbxRunSim.Visible = true;
-                    ucPlaneStats1.Visible = true;
+                    panel1.Visible = true;
                     break;
                 case DialogResult.No:
                     break;
@@ -287,8 +292,24 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
         private void ucGrid1_Enter(object sender, EventArgs e)
         {
-            planealtitude = (int)nrAltirude.Value;
-            //MessageBox.Show(planealtitude.ToString());
+            globalAltitude = (int)nrAltirude.Value;
+        }
+
+        private void MainSimScreen_Load(object sender, EventArgs e)
+        {
+            WelcomeUser();
+
+            //making sure the user follows the right path of events
+            grpbxRunSim.Visible = false;
+            panel1.Visible = false;
+
+            nrAltirude.Visible = true;
+            lblHint.Visible = true;
+            lblAltitude.Visible = true;
+
+            lblAltitude.Text += planeAlt.ToString();
+            lblPlaneAlt.Text = selectedPlaneName;
+
         }
     }
 }
