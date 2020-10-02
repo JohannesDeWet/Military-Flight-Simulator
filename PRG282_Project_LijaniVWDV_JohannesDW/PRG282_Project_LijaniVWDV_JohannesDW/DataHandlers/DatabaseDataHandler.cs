@@ -67,6 +67,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.DataHandlers
             }
             return myBombCollection;
         }
+        
         public bool AdminCanLogin(string username, string password)
         {
             bool canLog = false;
@@ -200,7 +201,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.DataHandlers
                 myConnection.Close();
             }
         }
-
         public List<Buildings> GetBuildings()
         {
             List<Buildings> myBuildingCollection = new List<Buildings>();
@@ -218,32 +218,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.DataHandlers
                 {
                     Buildings myBuilding = new Buildings((string)myReader["BuildingID"], (string)myReader["BuildingName"], (string)myReader["BuildingType"], (int)myReader["BuildingHealth"]);
                     myBuildingCollection.Add(myBuilding);
-                }
-            }
-            catch (Exception) { throw; }
-            finally
-            {
-                myConnection.Close();
-            }
-            return myBuildingCollection;
-        }
-        public List<Buildings> SelectAllBuildings()
-        {
-            List<Buildings> myBuildingCollection = new List<Buildings>();
-            try
-            {
-                myConnection = new SqlConnection(@"Data Source =.; Initial Catalog = MilitarySimDataDase; Integrated Security = SSPI");
-            }
-            catch (Exception) { throw; }
-            try
-            {
-                myConnection.Open();
-                myCommand = new SqlCommand("SELECT * FROM Buildings", myConnection);
-                myReader = myCommand.ExecuteReader();
-                while (myReader.Read())
-                {
-                    Buildings myPlane = new Buildings((string)myReader["BuildingID"], (string)myReader["BuildingName"], (string)myReader["BuildingType"], (int)myReader["BuildingHealth"]);
-                    myBuildingCollection.Add(myPlane);
                 }
             }
             catch (Exception) { throw; }

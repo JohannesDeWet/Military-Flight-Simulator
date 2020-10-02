@@ -39,7 +39,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             FillBombList();
             FillBuildingList();
             FillSpecific();
-            FillDamage();
         }
 
         private void frmReport_Load(object sender, EventArgs e)
@@ -76,10 +75,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             ListViewItem item = new ListViewItem(mySelectedBuilding);
 
             lstBuildingChosen.Items.Add(item);
-        }
-        private void FillDamage()
-        { 
-        
         }
         public List<int> GenerateUniqueNumbers(int amountOfNumbers, int maxRange, int excludeNumber)
         {
