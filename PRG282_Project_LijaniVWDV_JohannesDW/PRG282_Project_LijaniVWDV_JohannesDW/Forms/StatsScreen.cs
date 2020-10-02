@@ -18,5 +18,9 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         {
             InitializeComponent();
         }
+        public frmReport(string planename)
+        {
+            InitializeComponent();
+        }
     }
 }
