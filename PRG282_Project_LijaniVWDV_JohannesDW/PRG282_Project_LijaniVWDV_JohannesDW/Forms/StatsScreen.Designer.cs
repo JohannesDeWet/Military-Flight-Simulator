@@ -32,7 +32,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReport));
             this.pnlPlaneNameAnePicture = new System.Windows.Forms.Panel();
-            this.listView4 = new System.Windows.Forms.ListView();
+            this.lstBombs = new System.Windows.Forms.ListView();
             this.pbPlaneUsed = new System.Windows.Forms.PictureBox();
             this.txtPlaneName = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -40,11 +40,11 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.label6 = new System.Windows.Forms.Label();
             this.lblReportHeading = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblDamagePercentage = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblMaxDamage = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblDamageDone = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -55,6 +55,9 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.btnLaunch = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.CHBomb = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CBTarget = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CHTarget = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlPlaneNameAnePicture.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPlaneUsed)).BeginInit();
             this.panel6.SuspendLayout();
@@ -66,7 +69,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             // pnlPlaneNameAnePicture
             // 
             this.pnlPlaneNameAnePicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.pnlPlaneNameAnePicture.Controls.Add(this.listView4);
+            this.pnlPlaneNameAnePicture.Controls.Add(this.lstBombs);
             this.pnlPlaneNameAnePicture.Controls.Add(this.pbPlaneUsed);
             this.pnlPlaneNameAnePicture.Controls.Add(this.txtPlaneName);
             this.pnlPlaneNameAnePicture.Location = new System.Drawing.Point(12, 106);
@@ -74,14 +77,17 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.pnlPlaneNameAnePicture.Size = new System.Drawing.Size(235, 401);
             this.pnlPlaneNameAnePicture.TabIndex = 0;
             // 
-            // listView4
+            // lstBombs
             // 
-            this.listView4.HideSelection = false;
-            this.listView4.Location = new System.Drawing.Point(18, 242);
-            this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(195, 130);
-            this.listView4.TabIndex = 2;
-            this.listView4.UseCompatibleStateImageBehavior = false;
+            this.lstBombs.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.CHBomb});
+            this.lstBombs.HideSelection = false;
+            this.lstBombs.Location = new System.Drawing.Point(18, 242);
+            this.lstBombs.Name = "lstBombs";
+            this.lstBombs.Size = new System.Drawing.Size(195, 130);
+            this.lstBombs.TabIndex = 2;
+            this.lstBombs.UseCompatibleStateImageBehavior = false;
+            this.lstBombs.View = System.Windows.Forms.View.Details;
             // 
             // pbPlaneUsed
             // 
@@ -116,12 +122,15 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             // 
             // listView1
             // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.CBTarget});
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(23, 41);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(195, 130);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // label6
             // 
@@ -151,11 +160,11 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.lblDamagePercentage);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.lblMaxDamage);
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.lblDamageDone);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(12, 528);
@@ -163,14 +172,14 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.panel3.Size = new System.Drawing.Size(551, 263);
             this.panel3.TabIndex = 4;
             // 
-            // label10
+            // lblDamagePercentage
             // 
-            this.label10.Location = new System.Drawing.Point(292, 103);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(100, 23);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "label10";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDamagePercentage.Location = new System.Drawing.Point(292, 103);
+            this.lblDamagePercentage.Name = "lblDamagePercentage";
+            this.lblDamagePercentage.Size = new System.Drawing.Size(100, 23);
+            this.lblDamagePercentage.TabIndex = 9;
+            this.lblDamagePercentage.Text = "Damage Done";
+            this.lblDamagePercentage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label9
             // 
@@ -178,17 +187,17 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 23);
             this.label9.TabIndex = 8;
-            this.label9.Text = "label9";
+            this.label9.Text = "DamagePercentage";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label8
+            // lblMaxDamage
             // 
-            this.label8.Location = new System.Drawing.Point(53, 103);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 23);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "label8";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMaxDamage.Location = new System.Drawing.Point(53, 103);
+            this.lblMaxDamage.Name = "lblMaxDamage";
+            this.lblMaxDamage.Size = new System.Drawing.Size(100, 23);
+            this.lblMaxDamage.TabIndex = 7;
+            this.lblMaxDamage.Text = "Damage Done";
+            this.lblMaxDamage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
@@ -196,17 +205,17 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 23);
             this.label7.TabIndex = 6;
-            this.label7.Text = "label7";
+            this.label7.Text = "Damage Done";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // lblDamageDone
             // 
-            this.label5.Location = new System.Drawing.Point(174, 103);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 23);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "label5";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDamageDone.Location = new System.Drawing.Point(174, 103);
+            this.lblDamageDone.Name = "lblDamageDone";
+            this.lblDamageDone.Size = new System.Drawing.Size(100, 23);
+            this.lblDamageDone.TabIndex = 5;
+            this.lblDamageDone.Text = "Damage Done";
+            this.lblDamageDone.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -214,7 +223,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 23);
             this.label4.TabIndex = 4;
-            this.label4.Text = "label4";
+            this.label4.Text = "Max Damage";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
@@ -242,12 +251,15 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             // 
             // listView2
             // 
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.CHTarget});
             this.listView2.HideSelection = false;
             this.listView2.Location = new System.Drawing.Point(23, 41);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(195, 130);
             this.listView2.TabIndex = 2;
             this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
             // 
             // label1
             // 
@@ -318,13 +330,28 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.button1.Text = "H O M E";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // CHBomb
+            // 
+            this.CHBomb.Text = "Bombs";
+            this.CHBomb.Width = 200;
+            // 
+            // CBTarget
+            // 
+            this.CBTarget.Text = "Target";
+            this.CBTarget.Width = 200;
+            // 
+            // CHTarget
+            // 
+            this.CHTarget.Text = "Target";
+            this.CHTarget.Width = 200;
+            // 
             // frmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(802, 815);
+            this.ClientSize = new System.Drawing.Size(963, 816);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLaunch);
             this.Controls.Add(this.panel5);
@@ -337,6 +364,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.Name = "frmReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report";
+            this.Load += new System.EventHandler(this.frmReport_Load);
             this.pnlPlaneNameAnePicture.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbPlaneUsed)).EndInit();
             this.panel6.ResumeLayout(false);
@@ -358,7 +386,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         private System.Windows.Forms.Label lblReportHeading;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListView listView4;
+        private System.Windows.Forms.ListView lstBombs;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ListView listView2;
@@ -368,11 +396,14 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLaunch;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblDamagePercentage;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblMaxDamage;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblDamageDone;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ColumnHeader CHBomb;
+        private System.Windows.Forms.ColumnHeader CBTarget;
+        private System.Windows.Forms.ColumnHeader CHTarget;
     }
 }

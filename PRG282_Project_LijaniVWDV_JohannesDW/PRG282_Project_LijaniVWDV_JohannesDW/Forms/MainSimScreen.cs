@@ -51,9 +51,8 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         }
 
         List<string> inventoryList = new List<string>();
-        frmInventory frmIn = new frmInventory();
 
-        public MainSimScreen(string planeName, int range, int hp, int payload, int speed, int alt)
+        public MainSimScreen(string planeName, int range, int hp, int payload, int speed, int alt, List<string> inventory)
         {
             selectedPlaneName = planeName;
             mSearchLimit = range;
@@ -62,6 +61,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             mDelay = speed;
             planeAlt = alt;
             globalAltitudeChosenPlane = planeAlt;
+            inventoryList = inventory;
         
             InitializeComponent();
         }
@@ -290,8 +290,10 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
         private void btnContinue_Click(object sender, EventArgs e)
         {
-            frmReport report = new frmReport(selectedPlaneName, mSearchLimit, inventoryList);
-            report.Show();
+            Hide();
+            frmReport myAdminScreen = new frmReport(selectedPlaneName, mSearchLimit, inventoryList);
+            myAdminScreen.ShowDialog();
+            Close();
         }
 
         private void ucGrid1_Enter(object sender, EventArgs e)
@@ -301,8 +303,6 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 
         private void MainSimScreen_Load(object sender, EventArgs e)
         {
-
-            inventoryList = frmIn.CreateListofInventoryBombItems();
 
             WelcomeUser();
 

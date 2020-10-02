@@ -130,28 +130,28 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         
         private void btnSelectPlane1_Click(object sender, EventArgs e)
         {
-            MainSimScreen mainscreen = new MainSimScreen(myPlaneCollection[0].PlaneName, myPlaneCollection[0].FuelCapacity, myPlaneCollection[0].PlaneHP, myPlaneCollection[0].Payload, myPlaneCollection[0].MaxSpeed, myPlaneCollection[0].MaxAltitude);
+            MainSimScreen mainscreen = new MainSimScreen(myPlaneCollection[0].PlaneName, myPlaneCollection[0].FuelCapacity, myPlaneCollection[0].PlaneHP, myPlaneCollection[0].Payload, myPlaneCollection[0].MaxSpeed, myPlaneCollection[0].MaxAltitude, myselectedBombs);
             
             mainscreen.ShowDialog();
         }
 
         private void btnSelectPlane2_Click(object sender, EventArgs e)
         {
-            MainSimScreen mainscreen = new MainSimScreen(myPlaneCollection[1].PlaneName, myPlaneCollection[1].FuelCapacity, myPlaneCollection[1].PlaneHP, myPlaneCollection[1].Payload, myPlaneCollection[1].MaxSpeed, myPlaneCollection[1].MaxAltitude);
+            MainSimScreen mainscreen = new MainSimScreen(myPlaneCollection[1].PlaneName, myPlaneCollection[1].FuelCapacity, myPlaneCollection[1].PlaneHP, myPlaneCollection[1].Payload, myPlaneCollection[1].MaxSpeed, myPlaneCollection[1].MaxAltitude, myselectedBombs);
 
             mainscreen.ShowDialog();
         }
 
         private void btnSelectPlane3_Click(object sender, EventArgs e)
         {
-            MainSimScreen mainscreen = new MainSimScreen(myPlaneCollection[2].PlaneName, myPlaneCollection[2].FuelCapacity, myPlaneCollection[2].PlaneHP, myPlaneCollection[2].Payload, myPlaneCollection[2].MaxSpeed, myPlaneCollection[2].MaxAltitude);
+            MainSimScreen mainscreen = new MainSimScreen(myPlaneCollection[2].PlaneName, myPlaneCollection[2].FuelCapacity, myPlaneCollection[2].PlaneHP, myPlaneCollection[2].Payload, myPlaneCollection[2].MaxSpeed, myPlaneCollection[2].MaxAltitude, myselectedBombs);
 
             mainscreen.ShowDialog();
         }
 
         private void btnSelectPlane4_Click(object sender, EventArgs e)
         {
-            MainSimScreen mainscreen = new MainSimScreen(myPlaneCollection[3].PlaneName, myPlaneCollection[3].FuelCapacity, myPlaneCollection[3].PlaneHP, myPlaneCollection[3].Payload, myPlaneCollection[3].MaxSpeed, myPlaneCollection[3].MaxAltitude);
+            MainSimScreen mainscreen = new MainSimScreen(myPlaneCollection[3].PlaneName, myPlaneCollection[3].FuelCapacity, myPlaneCollection[3].PlaneHP, myPlaneCollection[3].Payload, myPlaneCollection[3].MaxSpeed, myPlaneCollection[3].MaxAltitude, myselectedBombs);
 
             mainscreen.ShowDialog();
         }
