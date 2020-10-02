@@ -59,6 +59,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             mDelay = speed;
             planeAlt = alt;
             globalAltitudeChosenPlane = planeAlt;
+
             InitializeComponent();
         }
         #endregion
@@ -307,8 +308,12 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             lblHint.Visible = true;
             lblAltitude.Visible = true;
 
-            lblAltitude.Text += planeAlt.ToString();
-            lblPlaneAlt.Text = selectedPlaneName;
+            lblPlaneName.Text = selectedPlaneName;
+            lblPlaneAlt.Text += planeAlt.ToString();
+            lblPlaneHP.Text += planeHP.ToString();
+            lblPlanePayload.Text += planePayload.ToString();
+            lblPlaneRange.Text += mSearchLimit.ToString();
+            lblPlaneSpeed.Text += mDelay.ToString();
 
         }
     }

@@ -49,13 +49,13 @@
             this.btnContinue = new System.Windows.Forms.Button();
             this.ucGrid1 = new PRG282_Project_LijaniVWDV_JohannesDW.Forms.ucGrid();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblPlaneStats = new System.Windows.Forms.Label();
-            this.lblPlaneName = new System.Windows.Forms.Label();
-            this.lblPlaneRange = new System.Windows.Forms.Label();
-            this.lblPlanePayload = new System.Windows.Forms.Label();
-            this.lblPlaneHP = new System.Windows.Forms.Label();
-            this.lblPlaneSpeed = new System.Windows.Forms.Label();
             this.lblPlaneAlt = new System.Windows.Forms.Label();
+            this.lblPlaneSpeed = new System.Windows.Forms.Label();
+            this.lblPlaneHP = new System.Windows.Forms.Label();
+            this.lblPlanePayload = new System.Windows.Forms.Label();
+            this.lblPlaneRange = new System.Windows.Forms.Label();
+            this.lblPlaneName = new System.Windows.Forms.Label();
+            this.lblPlaneStats = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nrAltirude)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TBarSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumSearchLimit)).BeginInit();
@@ -335,52 +335,14 @@
             this.panel1.Size = new System.Drawing.Size(238, 330);
             this.panel1.TabIndex = 42;
             // 
-            // lblPlaneStats
+            // lblPlaneAlt
             // 
-            this.lblPlaneStats.AutoSize = true;
-            this.lblPlaneStats.Font = new System.Drawing.Font("Stencil", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlaneStats.Location = new System.Drawing.Point(47, 8);
-            this.lblPlaneStats.Name = "lblPlaneStats";
-            this.lblPlaneStats.Size = new System.Drawing.Size(140, 24);
-            this.lblPlaneStats.TabIndex = 0;
-            this.lblPlaneStats.Text = "Plane Stats:";
-            // 
-            // lblPlaneName
-            // 
-            this.lblPlaneName.AutoSize = true;
-            this.lblPlaneName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPlaneName.Location = new System.Drawing.Point(94, 32);
-            this.lblPlaneName.Name = "lblPlaneName";
-            this.lblPlaneName.Size = new System.Drawing.Size(52, 17);
-            this.lblPlaneName.TabIndex = 1;
-            this.lblPlaneName.Text = "label1";
-            // 
-            // lblPlaneRange
-            // 
-            this.lblPlaneRange.AutoSize = true;
-            this.lblPlaneRange.Location = new System.Drawing.Point(39, 73);
-            this.lblPlaneRange.Name = "lblPlaneRange";
-            this.lblPlaneRange.Size = new System.Drawing.Size(42, 13);
-            this.lblPlaneRange.TabIndex = 2;
-            this.lblPlaneRange.Text = "Range:";
-            // 
-            // lblPlanePayload
-            // 
-            this.lblPlanePayload.AutoSize = true;
-            this.lblPlanePayload.Location = new System.Drawing.Point(39, 179);
-            this.lblPlanePayload.Name = "lblPlanePayload";
-            this.lblPlanePayload.Size = new System.Drawing.Size(48, 13);
-            this.lblPlanePayload.TabIndex = 3;
-            this.lblPlanePayload.Text = "Payload:";
-            // 
-            // lblPlaneHP
-            // 
-            this.lblPlaneHP.AutoSize = true;
-            this.lblPlaneHP.Location = new System.Drawing.Point(39, 132);
-            this.lblPlaneHP.Name = "lblPlaneHP";
-            this.lblPlaneHP.Size = new System.Drawing.Size(25, 13);
-            this.lblPlaneHP.TabIndex = 4;
-            this.lblPlaneHP.Text = "HP:";
+            this.lblPlaneAlt.AutoSize = true;
+            this.lblPlaneAlt.Location = new System.Drawing.Point(39, 228);
+            this.lblPlaneAlt.Name = "lblPlaneAlt";
+            this.lblPlaneAlt.Size = new System.Drawing.Size(45, 13);
+            this.lblPlaneAlt.TabIndex = 6;
+            this.lblPlaneAlt.Text = "Altitude:";
             // 
             // lblPlaneSpeed
             // 
@@ -391,14 +353,52 @@
             this.lblPlaneSpeed.TabIndex = 5;
             this.lblPlaneSpeed.Text = "Speed: ";
             // 
-            // lblPlaneAlt
+            // lblPlaneHP
             // 
-            this.lblPlaneAlt.AutoSize = true;
-            this.lblPlaneAlt.Location = new System.Drawing.Point(39, 228);
-            this.lblPlaneAlt.Name = "lblPlaneAlt";
-            this.lblPlaneAlt.Size = new System.Drawing.Size(45, 13);
-            this.lblPlaneAlt.TabIndex = 6;
-            this.lblPlaneAlt.Text = "Altitude:";
+            this.lblPlaneHP.AutoSize = true;
+            this.lblPlaneHP.Location = new System.Drawing.Point(39, 132);
+            this.lblPlaneHP.Name = "lblPlaneHP";
+            this.lblPlaneHP.Size = new System.Drawing.Size(25, 13);
+            this.lblPlaneHP.TabIndex = 4;
+            this.lblPlaneHP.Text = "HP:";
+            // 
+            // lblPlanePayload
+            // 
+            this.lblPlanePayload.AutoSize = true;
+            this.lblPlanePayload.Location = new System.Drawing.Point(39, 179);
+            this.lblPlanePayload.Name = "lblPlanePayload";
+            this.lblPlanePayload.Size = new System.Drawing.Size(48, 13);
+            this.lblPlanePayload.TabIndex = 3;
+            this.lblPlanePayload.Text = "Payload:";
+            // 
+            // lblPlaneRange
+            // 
+            this.lblPlaneRange.AutoSize = true;
+            this.lblPlaneRange.Location = new System.Drawing.Point(39, 73);
+            this.lblPlaneRange.Name = "lblPlaneRange";
+            this.lblPlaneRange.Size = new System.Drawing.Size(42, 13);
+            this.lblPlaneRange.TabIndex = 2;
+            this.lblPlaneRange.Text = "Range:";
+            // 
+            // lblPlaneName
+            // 
+            this.lblPlaneName.AutoSize = true;
+            this.lblPlaneName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlaneName.Location = new System.Drawing.Point(48, 32);
+            this.lblPlaneName.Name = "lblPlaneName";
+            this.lblPlaneName.Size = new System.Drawing.Size(52, 17);
+            this.lblPlaneName.TabIndex = 1;
+            this.lblPlaneName.Text = "label1";
+            // 
+            // lblPlaneStats
+            // 
+            this.lblPlaneStats.AutoSize = true;
+            this.lblPlaneStats.Font = new System.Drawing.Font("Stencil", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlaneStats.Location = new System.Drawing.Point(47, 8);
+            this.lblPlaneStats.Name = "lblPlaneStats";
+            this.lblPlaneStats.Size = new System.Drawing.Size(140, 24);
+            this.lblPlaneStats.TabIndex = 0;
+            this.lblPlaneStats.Text = "Plane Stats:";
             // 
             // MainSimScreen
             // 
