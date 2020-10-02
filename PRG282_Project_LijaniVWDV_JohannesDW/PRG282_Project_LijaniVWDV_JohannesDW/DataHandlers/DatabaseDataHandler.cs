@@ -253,6 +253,38 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.DataHandlers
             }
             return myBuildingCollection;
         }
+
+        public Plane GetSpecificPlane(string planeName)
+        {
+            Plane myPlane = null;
+            try
+            {
+                myConnection = new SqlConnection(@"Data Source =.; Initial Catalog = MilitarySimDataDase; Integrated Security = SSPI");
+            }
+            catch (Exception) { throw; }
+            try
+            {
+                string query = @"SELECT * FROM Planes WHERE PlaneName = " + planeName;
+                myConnection.Open();
+                myCommand = new SqlCommand(query, myConnection);
+                myReader = myCommand.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    myPlane = new Plane((string)myReader["PlaneID"], (string)myReader["PlaneName"], (int)myReader["PlaneHP"], (string)myReader["PlaneType"], (int)myReader["MaxAltitude"], (int)myReader["PayLoad"], (int)myReader["CruiseSpeed"], (int)myReader["MaxSpeed"], (int)myReader["FuelRange"], (int)myReader["MountingPoints"]);
+                }
+
+            }
+            catch (Exception) 
+            {
+                MessageBox.Show("There was an error connection to the database");
+            }
+            finally
+            {
+                myConnection.Close();
+            }
+            return myPlane;
+        }
     }
 
 }

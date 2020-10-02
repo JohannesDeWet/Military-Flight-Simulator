@@ -19,6 +19,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         string selectedPlaneName = "";
         int mSearchLimit=0;
         List<string> myInventory = new List<string>();
+        Plane myPlane = new Plane();
         public frmReport()
         {
             InitializeComponent();
@@ -42,6 +43,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         {
             myBuilding = mydatabase.GetBuildings();
             FillScreen();
+            FillPostRunStats();
         }
         private void FillBombList() 
         {
@@ -81,6 +83,26 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
                 }
             }
             return randomContainer;
+        }
+
+        public void FillPostRunStats()
+        {
+            myPlane = mydatabase.GetSpecificPlane(selectedPlaneName);
+
+            ListViewItem lvi = new ListViewItem(myPlane.PlaneName);
+            lvi.SubItems.Add(myPlane.FuelCapacity.ToString());
+            lvi.SubItems.Add(myPlane.MaxSpeed.ToString());
+            lvi.SubItems.Add(myPlane.MaxAltitude.ToString());
+            lvi.SubItems.Add(mSearchLimit.ToString());
+            lstPostRun.Items.Add(lvi);
+
+            //string[] row = { myPlane.PlaneName, myPlane.FuelCapacity.ToString(), myPlane.MaxSpeed.ToString(), myPlane.MaxAltitude.ToString(), mSearchLimit.ToString() };
+            //lstPostRun.Items.Clear();
+            
+            //ListViewItem item = new ListViewItem(row);
+
+            //lstBombs.Items.Add(item);
+           
         }
     }
 }
