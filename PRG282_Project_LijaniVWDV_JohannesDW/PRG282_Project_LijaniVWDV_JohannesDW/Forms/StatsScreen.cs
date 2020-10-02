@@ -9,8 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using PRG282_Project_LijaniVWDV_JohannesDW.Classes.Path_Finding_Classes;
-
 namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
 {
     public partial class frmReport : Form
@@ -47,7 +45,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
         {
             myBuilding = mydatabase.GetBuildings();
             FillScreen();
-            StatReport();
+
         }
         private void FillBombList() 
         {
@@ -108,16 +106,17 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             return randomContainer;
         }
 
-        public void StatReport()
+        private void btnLaunch_Click(object sender, EventArgs e)
         {
-            Plane specificPlane = mydatabase.GetSpecificPlane(selectedPlaneName)[0];
+            Environment.Exit(0);
+        }
 
-            int dist = PathFinderFast.travelled;
-
-            lblPlaneRange.Text += specificPlane.FuelCapacity.ToString() + "km";
-            lblRangeTravelled.Text += dist.ToString() + "km";
-            lblPlaneSpeed.Text += specificPlane.MaxSpeed.ToString() + "km/h";
-            lblPlaneAlt.Text += specificPlane.MaxAltitude.ToString() + "km";
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Hide();
+            frmIntro intro = new frmIntro();
+            intro.ShowDialog();
+            Close();
         }
     }
 }

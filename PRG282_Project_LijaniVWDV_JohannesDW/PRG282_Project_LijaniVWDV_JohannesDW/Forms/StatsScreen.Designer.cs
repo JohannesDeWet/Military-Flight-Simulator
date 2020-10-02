@@ -239,6 +239,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.btnLaunch.TabIndex = 3;
             this.btnLaunch.Text = "E X I T";
             this.btnLaunch.UseVisualStyleBackColor = false;
+            this.btnLaunch.Click += new System.EventHandler(this.btnLaunch_Click);
             // 
             // button1
             // 
@@ -251,6 +252,7 @@ namespace PRG282_Project_LijaniVWDV_JohannesDW.Forms
             this.button1.TabIndex = 8;
             this.button1.Text = "H O M E";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblPlaneRange
             // 
